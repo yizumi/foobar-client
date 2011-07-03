@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD283E9813C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
+		FD283E9A13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
+		FD283E9C13C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
+		FD283EA213C02AED00FC57EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD283EA013C02AED00FC57EE /* InfoPlist.strings */; };
+		FD283EA513C02AED00FC57EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283EA413C02AED00FC57EE /* main.m */; };
+		FD283EA813C02AED00FC57EE /* FooBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283EA713C02AED00FC57EE /* FooBarAppDelegate.m */; };
+		FD283EAB13C02AED00FC57EE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD283EA913C02AED00FC57EE /* MainWindow.xib */; };
+		FD283EAE13C02AED00FC57EE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283EAD13C02AED00FC57EE /* FirstViewController.m */; };
+		FD283EB113C02AED00FC57EE /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283EB013C02AED00FC57EE /* SecondViewController.m */; };
+		FD283EB413C02AED00FC57EE /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD283EB213C02AED00FC57EE /* FirstView.xib */; };
+		FD283EB713C02AED00FC57EE /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD283EB513C02AED00FC57EE /* SecondView.xib */; };
+		FD283EBE13C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
+		FD283EBF13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
+		FD283EC013C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
+		FD283EC813C02AED00FC57EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD283EC613C02AED00FC57EE /* InfoPlist.strings */; };
+		FD283ECB13C02AED00FC57EE /* FooBarTests.h in Resources */ = {isa = PBXBuildFile; fileRef = FD283ECA13C02AED00FC57EE /* FooBarTests.h */; };
+		FD283ECD13C02AED00FC57EE /* FooBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283ECC13C02AED00FC57EE /* FooBarTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD283EC113C02AED00FC57EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD283E8A13C02AED00FC57EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD283E9213C02AED00FC57EE;
+			remoteInfo = FooBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD283E9313C02AED00FC57EE /* FooBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FooBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD283E9713C02AED00FC57EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FD283E9913C02AED00FC57EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD283E9F13C02AED00FC57EE /* FooBar-Info.plist */ = {isa = PBXFileReference; path = "FooBar-Info.plist"; sourceTree = "<group>"; };
+		FD283EA113C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD283EA313C02AED00FC57EE /* FooBar-Prefix.pch */ = {isa = PBXFileReference; path = "FooBar-Prefix.pch"; sourceTree = "<group>"; };
+		FD283EA413C02AED00FC57EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FD283EA613C02AED00FC57EE /* FooBarAppDelegate.h */ = {isa = PBXFileReference; path = FooBarAppDelegate.h; sourceTree = "<group>"; };
+		FD283EA713C02AED00FC57EE /* FooBarAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooBarAppDelegate.m; sourceTree = "<group>"; };
+		FD283EAA13C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FD283EAC13C02AED00FC57EE /* FirstViewController.h */ = {isa = PBXFileReference; path = FirstViewController.h; sourceTree = "<group>"; };
+		FD283EAD13C02AED00FC57EE /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		FD283EAF13C02AED00FC57EE /* SecondViewController.h */ = {isa = PBXFileReference; path = SecondViewController.h; sourceTree = "<group>"; };
+		FD283EB013C02AED00FC57EE /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		FD283EB313C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstView.xib; sourceTree = "<group>"; };
+		FD283EB613C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondView.xib; sourceTree = "<group>"; };
+		FD283EBD13C02AED00FC57EE /* FooBarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooBarTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD283EC513C02AED00FC57EE /* FooBarTests-Info.plist */ = {isa = PBXFileReference; path = "FooBarTests-Info.plist"; sourceTree = "<group>"; };
+		FD283EC713C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FD283EC913C02AED00FC57EE /* FooBarTests-Prefix.pch */ = {isa = PBXFileReference; path = "FooBarTests-Prefix.pch"; sourceTree = "<group>"; };
+		FD283ECA13C02AED00FC57EE /* FooBarTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooBarTests.h; sourceTree = "<group>"; };
+		FD283ECC13C02AED00FC57EE /* FooBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooBarTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD283E9013C02AED00FC57EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD283E9813C02AED00FC57EE /* UIKit.framework in Frameworks */,
+				FD283E9A13C02AED00FC57EE /* Foundation.framework in Frameworks */,
+				FD283E9C13C02AED00FC57EE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD283EB913C02AED00FC57EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD283EBE13C02AED00FC57EE /* UIKit.framework in Frameworks */,
+				FD283EBF13C02AED00FC57EE /* Foundation.framework in Frameworks */,
+				FD283EC013C02AED00FC57EE /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD283E8813C02AED00FC57EE = {
+			isa = PBXGroup;
+			children = (
+				FD283E9D13C02AED00FC57EE /* FooBar */,
+				FD283EC313C02AED00FC57EE /* FooBarTests */,
+				FD283E9613C02AED00FC57EE /* Frameworks */,
+				FD283E9413C02AED00FC57EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD283E9413C02AED00FC57EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD283E9313C02AED00FC57EE /* FooBar.app */,
+				FD283EBD13C02AED00FC57EE /* FooBarTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD283E9613C02AED00FC57EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD283E9713C02AED00FC57EE /* UIKit.framework */,
+				FD283E9913C02AED00FC57EE /* Foundation.framework */,
+				FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD283E9D13C02AED00FC57EE /* FooBar */ = {
+			isa = PBXGroup;
+			children = (
+				FD283EA613C02AED00FC57EE /* FooBarAppDelegate.h */,
+				FD283EA713C02AED00FC57EE /* FooBarAppDelegate.m */,
+				FD283EA913C02AED00FC57EE /* MainWindow.xib */,
+				FD283EAC13C02AED00FC57EE /* FirstViewController.h */,
+				FD283EAD13C02AED00FC57EE /* FirstViewController.m */,
+				FD283EAF13C02AED00FC57EE /* SecondViewController.h */,
+				FD283EB013C02AED00FC57EE /* SecondViewController.m */,
+				FD283EB213C02AED00FC57EE /* FirstView.xib */,
+				FD283EB513C02AED00FC57EE /* SecondView.xib */,
+				FD283E9E13C02AED00FC57EE /* Supporting Files */,
+			);
+			path = FooBar;
+			sourceTree = "<group>";
+		};
+		FD283E9E13C02AED00FC57EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD283E9F13C02AED00FC57EE /* FooBar-Info.plist */,
+				FD283EA013C02AED00FC57EE /* InfoPlist.strings */,
+				FD283EA313C02AED00FC57EE /* FooBar-Prefix.pch */,
+				FD283EA413C02AED00FC57EE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD283EC313C02AED00FC57EE /* FooBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD283ECA13C02AED00FC57EE /* FooBarTests.h */,
+				FD283ECC13C02AED00FC57EE /* FooBarTests.m */,
+				FD283EC413C02AED00FC57EE /* Supporting Files */,
+			);
+			path = FooBarTests;
+			sourceTree = "<group>";
+		};
+		FD283EC413C02AED00FC57EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD283EC513C02AED00FC57EE /* FooBarTests-Info.plist */,
+				FD283EC613C02AED00FC57EE /* InfoPlist.strings */,
+				FD283EC913C02AED00FC57EE /* FooBarTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD283E9213C02AED00FC57EE /* FooBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD283ED013C02AED00FC57EE /* Build configuration list for PBXNativeTarget "FooBar" */;
+			buildPhases = (
+				FD283E8F13C02AED00FC57EE /* Sources */,
+				FD283E9013C02AED00FC57EE /* Frameworks */,
+				FD283E9113C02AED00FC57EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FooBar;
+			productName = FooBar;
+			productReference = FD283E9313C02AED00FC57EE /* FooBar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD283EBC13C02AED00FC57EE /* FooBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD283ED313C02AED00FC57EE /* Build configuration list for PBXNativeTarget "FooBarTests" */;
+			buildPhases = (
+				FD283EB813C02AED00FC57EE /* Sources */,
+				FD283EB913C02AED00FC57EE /* Frameworks */,
+				FD283EBA13C02AED00FC57EE /* Resources */,
+				FD283EBB13C02AED00FC57EE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD283EC213C02AED00FC57EE /* PBXTargetDependency */,
+			);
+			name = FooBarTests;
+			productName = FooBarTests;
+			productReference = FD283EBD13C02AED00FC57EE /* FooBarTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD283E8A13C02AED00FC57EE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = FD283E8D13C02AED00FC57EE /* Build configuration list for PBXProject "FooBar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD283E8813C02AED00FC57EE;
+			productRefGroup = FD283E9413C02AED00FC57EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD283E9213C02AED00FC57EE /* FooBar */,
+				FD283EBC13C02AED00FC57EE /* FooBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD283E9113C02AED00FC57EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD283EA213C02AED00FC57EE /* InfoPlist.strings in Resources */,
+				FD283EAB13C02AED00FC57EE /* MainWindow.xib in Resources */,
+				FD283EB413C02AED00FC57EE /* FirstView.xib in Resources */,
+				FD283EB713C02AED00FC57EE /* SecondView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD283EBA13C02AED00FC57EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD283EC813C02AED00FC57EE /* InfoPlist.strings in Resources */,
+				FD283ECB13C02AED00FC57EE /* FooBarTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD283EBB13C02AED00FC57EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD283E8F13C02AED00FC57EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD283EA513C02AED00FC57EE /* main.m in Sources */,
+				FD283EA813C02AED00FC57EE /* FooBarAppDelegate.m in Sources */,
+				FD283EAE13C02AED00FC57EE /* FirstViewController.m in Sources */,
+				FD283EB113C02AED00FC57EE /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD283EB813C02AED00FC57EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD283ECD13C02AED00FC57EE /* FooBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD283EC213C02AED00FC57EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD283E9213C02AED00FC57EE /* FooBar */;
+			targetProxy = FD283EC113C02AED00FC57EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD283EA013C02AED00FC57EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD283EA113C02AED00FC57EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FD283EA913C02AED00FC57EE /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD283EAA13C02AED00FC57EE /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		FD283EB213C02AED00FC57EE /* FirstView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD283EB313C02AED00FC57EE /* en */,
+			);
+			name = FirstView.xib;
+			sourceTree = "<group>";
+		};
+		FD283EB513C02AED00FC57EE /* SecondView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD283EB613C02AED00FC57EE /* en */,
+			);
+			name = SecondView.xib;
+			sourceTree = "<group>";
+		};
+		FD283EC613C02AED00FC57EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD283EC713C02AED00FC57EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD283ECE13C02AED00FC57EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FD283ECF13C02AED00FC57EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		FD283ED113C02AED00FC57EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FooBar/FooBar-Prefix.pch";
+				INFOPLIST_FILE = "FooBar/FooBar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FD283ED213C02AED00FC57EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FooBar/FooBar-Prefix.pch";
+				INFOPLIST_FILE = "FooBar/FooBar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FD283ED413C02AED00FC57EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FooBar.app/FooBar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FooBarTests/FooBarTests-Prefix.pch";
+				INFOPLIST_FILE = "FooBarTests/FooBarTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		FD283ED513C02AED00FC57EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FooBar.app/FooBar";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FooBarTests/FooBarTests-Prefix.pch";
+				INFOPLIST_FILE = "FooBarTests/FooBarTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD283E8D13C02AED00FC57EE /* Build configuration list for PBXProject "FooBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD283ECE13C02AED00FC57EE /* Debug */,
+				FD283ECF13C02AED00FC57EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD283ED013C02AED00FC57EE /* Build configuration list for PBXNativeTarget "FooBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD283ED113C02AED00FC57EE /* Debug */,
+				FD283ED213C02AED00FC57EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD283ED313C02AED00FC57EE /* Build configuration list for PBXNativeTarget "FooBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD283ED413C02AED00FC57EE /* Debug */,
+				FD283ED513C02AED00FC57EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD283E8A13C02AED00FC57EE /* Project object */;
+}
