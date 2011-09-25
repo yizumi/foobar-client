@@ -11,11 +11,38 @@
 
 @implementation FBConfig
 
+#if DEBUG
+NSString* const K_URL_REGISTER_DEVICE_TOKEN     = @"http://localhost:8888/foobar/GetTokenForDevice";
+NSString* const K_URL_GIVE_OR_REDEEM_POINTS     = @"http://localhost:8888/foobar/AddPoints";
+NSString* const K_URL_GET_STORE_LIST_FOR_DEVICE = @"http://localhost:8888/foobar/GetShopListForDevice";
+NSString* const K_URL_LOGIN_STORE               = @"http://localhost:8888/foobar/LoginShop";
+NSString* const K_URL_REGISTER_STORE            = @"http://localhost:8888/foobar/CreateShop";
+NSString* const K_URL_GET_REDEEM_TOKEN          = @"http://localhost:8888/foobar/GetRedeemToken";
+NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
+#elif DEBUG
+NSString* const K_URL_REGISTER_DEVICE_TOKEN     = @"https://ripsys01.appspot.com/foobar/GetTokenForDevice";
+NSString* const K_URL_GIVE_OR_REDEEM_POINTS     = @"https://ripsys01.appspot.com/foobar/AddPoints";
+NSString* const K_URL_GET_STORE_LIST_FOR_DEVICE = @"https://ripsys01.appspot.com/foobar/GetShopListForDevice";
+NSString* const K_URL_LOGIN_STORE               = @"https://ripsys01.appspot.com/foobar/LoginShop";
+NSString* const K_URL_REGISTER_STORE            = @"https://ripsys01.appspot.com/foobar/CreateShop";
+NSString* const K_URL_GET_REDEEM_TOKEN          = @"https://ripsys01.appspot.com/foobar/GetRedeemToken";
+NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
+#else
+NSString* const K_URL_REGISTER_DEVICE_TOKEN     = @"https://foobar.ripplesystem.com/registerDeviceToken.php";
+NSString* const K_URL_GIVE_OR_REDEEM_POINTS     = @"https://foobar.ripplesystem.com/giveOrRedeemPoints.php";
+NSString* const K_URL_GET_STORE_LIST_FOR_DEVICE = @"https://foobar.ripplesystem.com/getStoreListForDevice.php";
+NSString* const K_URL_LOGIN_STORE               = @"https://foobar.ripplesystem.com/loginStore.php";
+NSString* const K_URL_REGISTER_STORE            = @"https://foobar.ripplesystem.com/registerStore.php";
+NSString* const K_URL_GET_REDEEM_TOKEN          = @"https://foobar.ripplesystem.com/getRedeemToken.php";
+NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
+#endif
+
 @synthesize userLoginId;
 @synthesize userLoginToken;
 @synthesize storeLoginId;
 @synthesize storeLoginToken;
 @synthesize tokenExpireDate;
+@synthesize deviceId;
 
 static FBConfig* _sharedInstance;
 
@@ -47,7 +74,8 @@ static FBConfig* _sharedInstance;
     
     // Initialize
     [self setUserLoginId:@"yizumi@ripplesystem.com"];
-    [self setUserLoginToken:@"ACEGJ"];
+    [self setUserLoginToken:@""];
+    [self setDeviceId:[[UIDevice currentDevice]uniqueIdentifier]];
     return self;
 }
 

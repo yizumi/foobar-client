@@ -12,9 +12,10 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<string>IBProxyObject</string>
-			<string>IBUIView</string>
+			<string>IBUIProgressView</string>
 			<string>IBUIButton</string>
+			<string>IBUIView</string>
+			<string>IBProxyObject</string>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -583,11 +584,12 @@
 						<string key="NSFrame">{{14, 315}, {292, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="381705967"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<object class="NSFont" key="IBUIFont">
+						<object class="NSFont" key="IBUIFont" id="648565787">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">15</double>
 							<int key="NSfFlags">16</int>
@@ -600,6 +602,46 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="275657290"/>
+					</object>
+					<object class="IBUIButton" id="381705967">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{14, 312}, {292, 48}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="513155447"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAxIDEgMAA</bytes>
+						</object>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<int key="IBUIContentHorizontalAlignment">0</int>
+						<int key="IBUIContentVerticalAlignment">0</int>
+						<reference key="IBUIFont" ref="648565787"/>
+						<int key="IBUIButtonType">1</int>
+						<double key="IBUIContentEdgeInsets.top">-16</double>
+						<double key="IBUIContentEdgeInsets.bottom">0.0</double>
+						<double key="IBUIContentEdgeInsets.left">0.0</double>
+						<double key="IBUIContentEdgeInsets.right">0.0</double>
+						<string key="IBUINormalTitle">Token will expire in 00:00</string>
+						<reference key="IBUIHighlightedTitleColor" ref="1026299746"/>
+						<object class="NSColor" key="IBUINormalTitleColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+						</object>
+						<reference key="IBUINormalTitleShadowColor" ref="275657290"/>
+					</object>
+					<object class="IBUIProgressView" id="513155447">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">-2147483358</int>
+						<string key="NSFrame">{{85, 340}, {150, 9}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<bool key="IBUIOpaque">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<float key="IBUIProgress">0.5</float>
 					</object>
 				</object>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
@@ -842,6 +884,22 @@
 					</object>
 					<int key="connectionID">70</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">buttonRedeem</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="381705967"/>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">progress</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="513155447"/>
+					</object>
+					<int key="connectionID">74</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -883,6 +941,8 @@
 							<reference ref="373264356"/>
 							<reference ref="813930742"/>
 							<reference ref="389530950"/>
+							<reference ref="381705967"/>
+							<reference ref="513155447"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -901,131 +961,169 @@
 						<int key="objectID">9</int>
 						<reference key="object" ref="953182123"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonA</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
 						<reference key="object" ref="610799280"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonB</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
 						<reference key="object" ref="127658811"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonC</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
 						<reference key="object" ref="862596434"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonD</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
 						<reference key="object" ref="821696454"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonE</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">14</int>
 						<reference key="object" ref="297225326"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonF</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
 						<reference key="object" ref="341101474"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonG</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
 						<reference key="object" ref="520183131"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonH</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
 						<reference key="object" ref="661751244"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonJ</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
 						<reference key="object" ref="168043014"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonK</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">19</int>
 						<reference key="object" ref="276566869"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonL</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
 						<reference key="object" ref="35545699"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonM</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
 						<reference key="object" ref="961649159"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonN</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">22</int>
 						<reference key="object" ref="70906421"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonO</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">23</int>
 						<reference key="object" ref="264229892"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonP</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
 						<reference key="object" ref="360929381"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonQ</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">25</int>
 						<reference key="object" ref="157155592"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonR</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">26</int>
 						<reference key="object" ref="604002423"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonS</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">27</int>
 						<reference key="object" ref="471851226"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonT</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">28</int>
 						<reference key="object" ref="301116560"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonU</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">29</int>
 						<reference key="object" ref="49781524"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonV</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">30</int>
 						<reference key="object" ref="843717108"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonW</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">31</int>
 						<reference key="object" ref="365035273"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonX</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">32</int>
 						<reference key="object" ref="373264356"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">BUttonY</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">33</int>
 						<reference key="object" ref="813930742"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonZ</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">67</int>
 						<reference key="object" ref="389530950"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonNavi</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">71</int>
+						<reference key="object" ref="381705967"/>
+						<reference key="parent" ref="191373211"/>
+						<string key="objectName">ButtonRedeem</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">72</int>
+						<reference key="object" ref="513155447"/>
+						<reference key="parent" ref="191373211"/>
+						<string key="objectName">Progress</string>
 					</object>
 				</object>
 			</object>
@@ -1086,6 +1184,9 @@
 					<string>33.CustomClassName</string>
 					<string>33.IBPluginDependency</string>
 					<string>67.IBPluginDependency</string>
+					<string>71.IBPluginDependency</string>
+					<string>71.IBUIButtonInspectorSelectedEdgeInsetMetadataKey</string>
+					<string>72.IBPluginDependency</string>
 					<string>9.CustomClassName</string>
 					<string>9.IBPluginDependency</string>
 				</object>
@@ -1144,6 +1245,9 @@
 					<string>FBCodeButton</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<real value="0.0"/>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>FBCodeButton</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
@@ -1160,7 +1264,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">70</int>
+			<int key="maxID">74</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1209,6 +1313,7 @@
 							<string>buttonP</string>
 							<string>buttonQ</string>
 							<string>buttonR</string>
+							<string>buttonRedeem</string>
 							<string>buttonS</string>
 							<string>buttonT</string>
 							<string>buttonU</string>
@@ -1217,6 +1322,7 @@
 							<string>buttonX</string>
 							<string>buttonY</string>
 							<string>buttonZ</string>
+							<string>progress</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1238,6 +1344,7 @@
 							<string>FBCodeButton</string>
 							<string>FBCodeButton</string>
 							<string>FBCodeButton</string>
+							<string>UIButton</string>
 							<string>FBCodeButton</string>
 							<string>FBCodeButton</string>
 							<string>FBCodeButton</string>
@@ -1246,6 +1353,7 @@
 							<string>FBCodeButton</string>
 							<string>FBCodeButton</string>
 							<string>FBCodeButton</string>
+							<string>UIProgressView</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1270,6 +1378,7 @@
 							<string>buttonP</string>
 							<string>buttonQ</string>
 							<string>buttonR</string>
+							<string>buttonRedeem</string>
 							<string>buttonS</string>
 							<string>buttonT</string>
 							<string>buttonU</string>
@@ -1278,6 +1387,7 @@
 							<string>buttonX</string>
 							<string>buttonY</string>
 							<string>buttonZ</string>
+							<string>progress</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1354,6 +1464,10 @@
 								<string key="candidateClassName">FBCodeButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">buttonRedeem</string>
+								<string key="candidateClassName">UIButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">buttonS</string>
 								<string key="candidateClassName">FBCodeButton</string>
 							</object>
@@ -1384,6 +1498,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">buttonZ</string>
 								<string key="candidateClassName">FBCodeButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">progress</string>
+								<string key="candidateClassName">UIProgressView</string>
 							</object>
 						</object>
 					</object>

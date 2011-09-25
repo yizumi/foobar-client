@@ -7,9 +7,17 @@
 //
 
 #import "StoreListViewController.h"
+#import "NSObject+SBJson.h"
+#import "ASIFormDataRequest.h"
+#import "ASIHTTPRequest.h"
+#import "FBConfig.h"
+#import "FBStoreManager.h"
 #import "StoreListCellController.h"
+#import "StoreViewController.h"
 
 @implementation StoreListViewController
+
+@synthesize fetchedResults = _fetchedResults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,6 +31,8 @@
 - (void)dealloc
 {
     [super dealloc];
+    self.fetchedResults.delegate = nil;
+    self.fetchedResults = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,26 +66,30 @@
     
     self.navigationItem.leftBarButtonItem = refresh;
     self.navigationItem.title = @"Points";
+    self.fetchedResults = [[FBStoreManager sharedInstance] fetchStoreInfos];
     [refresh release];
 }
 
 - (void)refresh:(id)sender
 {
-    NSLog(@"Came here yo...");
     NSString* deviceId = [[UIDevice currentDevice]uniqueIdentifier];
     NSString* userToken = [[FBConfig sharedInstance]userLoginToken];
-    NSURL* url = [NSURL URLWithString:@"https://yizumi.ripplesystem.com/getStoreListForDevice.php"];
+    NSURL* url = [NSURL URLWithString:K_URL_GET_STORE_LIST_FOR_DEVICE];
     __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
     [req setPostValue:deviceId forKey:@"deviceId"];
     [req setPostValue:userToken forKey:@"userToken"];
-#if DEBUG
-    [req setValidatesSecureCertificate:NO];
-#endif
+    // Invoked up on successful completion
     [req setCompletionBlock:^(void){
         NSString* res = [req responseString];
-        NSDictionary* obj = [res JSONValue];
-        [[StoreInfoManager sharedInstance]refreshListWith:obj];
+        NSLog(@"Response: %@", res);
+        NSArray* storeList = [res JSONValue];
+        [[FBStoreManager sharedInstance]updateWithList:storeList];
+        // Need to refresh the view list here...
+        self.fetchedResults = [[FBStoreManager sharedInstance] fetchStoreInfos];
+        UITableView* v = (UITableView*)self.view;
+        [v reloadData];
     }];
+    // Invoked up on failure
     [req setFailedBlock:^(void) {
         NSError* error = [req error];
         NSLog(@"%@", error);
@@ -87,6 +101,11 @@
         [alert show];
         [alert release];
     }];
+
+    // Send the request
+#if DEBUG
+    [req setValidatesSecureCertificate:NO];
+#endif
     [req startAsynchronous];
 }
 
@@ -95,6 +114,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    self.fetchedResults = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -110,11 +130,28 @@
     }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+// Returns the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[[StoreInfoManager sharedInstance] stores] count];
+    return [self.fetchedResults.sections count];
 }
 
+// Returns the title for the secion
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString* title = [[[self.fetchedResults sections]objectAtIndex:section] name];
+    NSLog(@"Returning Title: %@", title);
+    return title;
+}
+
+// Returns the number of items in the section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResults sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
+}
+
+// Returns the cell for index
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StoreListCell* cell;
@@ -128,11 +165,27 @@
     }
     
     // NSArray* 
-    StoreInfo* store = [[[StoreInfoManager sharedInstance] stores] objectAtIndex:indexPath.row];
+    FBStore* store = [self.fetchedResults objectAtIndexPath:indexPath];
     [cell.titleLabel setText: store.name];
     [cell.pointLabel setText:[[NSString alloc] initWithFormat:@"%d Pt.",[store.points intValue]]];
 
     return cell;
+}
+
+// Event handler for cell tap
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSManagedObject* store = [self.fetchedResults objectAtIndexPath:indexPath];
+    StoreViewController* controller = [[StoreViewController alloc] init];
+    [controller setManagedObject:store];
+    
+    if( controller != nil )
+    {
+        // NSLog(@"Count: %@", [controller retainCount]);
+        [self.navigationController pushViewController:controller animated:YES];
+        // NSLog(@"Count: %@", [controller retainCount]);
+        [controller release];
+    }
 }
 
 

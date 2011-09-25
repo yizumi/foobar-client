@@ -88,11 +88,8 @@
     NSLog(@"Sending {DeviceId:%@, DeviceToken:%@}", deviceId, deviceTokenFmt);
     
     // Create URL, Request and Send the Request
-    NSURL* url = [NSURL URLWithString:@"https://yizumi.ripplesystem.com/registerDeviceToken.php"];
+    NSURL* url = [NSURL URLWithString:K_URL_REGISTER_DEVICE_TOKEN];
     __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
-#if DEBUG
-    [req setValidatesSecureCertificate:NO];
-#endif
     [req setPostValue:deviceId forKey:@"deviceId"];
     [req setPostValue:deviceTokenFmt forKey:@"deviceToken"];
     [req setCompletionBlock:^(void){
@@ -113,6 +110,11 @@
         [alert autorelease];
         NSLog(@"Error while getting user token from server:%@",error);
     }];
+
+    // Send the Request
+#if DEBUG
+    [req setValidatesSecureCertificate:NO];
+#endif
     [req startAsynchronous];
 }
 

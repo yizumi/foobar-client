@@ -8,10 +8,15 @@
 
 #import "ShowCodeViewModel.h"
 
-
 @implementation ShowCodeViewModel
 
-@synthesize mode, tokenDisplay, tokenInput, instruction, isTokenInputValid, config;
+@synthesize mode;
+@synthesize tokenDisplay;
+@synthesize tokenInput;
+@synthesize instruction;
+@synthesize isTokenInputValid;
+@synthesize config;
+@synthesize expirationDate;
 
 - (ShowCodeViewModel*) init
 {
@@ -22,7 +27,7 @@
     // initial values.
     self.tokenInput = @"";
     self.tokenDisplay = @"";
-    self.mode = 0;
+    self.mode = K_MODE_TAKE;
     self.instruction = @"Show Code to Salesperson";
     self.config = [FBConfig sharedInstance];
     
@@ -40,19 +45,38 @@
              forKeyPath:@"userLoginToken" 
                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                 context:nil];
-        
+    
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                              target:self
+                                            selector:@selector(checkExpiration:)
+                                            userInfo:nil
+                                             repeats:YES];
     return self;
+}
+
+- (void) stopTimer
+{
+    NSLog(@"Timer is being stopped");
+    [_timer invalidate];
 }
 
 - (void) dealloc
 {
+    NSLog(@"ViewModel is being dealloc'ed");
+    
+    // Remove 
+    [config removeObserver:self forKeyPath:@"userLoginToken"];
+    [self removeObserver:self forKeyPath:@"mode"];
+    [self removeObserver:self forKeyPath:@"tokenInput"];
+    
     [tokenInput release];
     [tokenDisplay release];
     [mode release];
     [instruction release];
     [isTokenInputValid release];
-    [config removeObserver:self forKeyPath:@"userLoginToken"];
     [config release];
+    _timer = nil;
     [super dealloc];
 }
 
@@ -93,6 +117,8 @@
                 [self setValue:@"Enter Code" forKey:@"instruction"];
                 [self setValue:tokenInput forKey:@"tokenDisplay"];
                 break;
+            case 2:
+                [self setValue:@"Present Code to Salesperson" forKey:@"instruction"];
         }
     }
     
@@ -118,11 +144,16 @@
     if ( [keyPath isEqual:@"userLoginToken"] )
     {
         NSString* newUserLoginToken = (NSString*)[change objectForKey:NSKeyValueChangeNewKey];
-        if( [mode intValue] == 0)
+        if( [mode intValue] == K_MODE_TAKE)
         {
             [self setValue:newUserLoginToken forKey:@"tokenDisplay"];
         }
     }
+}
+
+- (void) checkExpiration:(NSTimer*)timer
+{
+    NSLog(@"Just making sure I'm cleaned up");
 }
 
 @end

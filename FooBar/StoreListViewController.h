@@ -7,16 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StoreListCell.h"
-#import "StoreInfoManager.h"
-#import "ASIFormDataRequest.h"
-#import "FBConfig.h"
-#import "NSObject+SBJson.h"
-#import "StoreInfoManager.h"
+#import <CoreData/CoreData.h>
 
-@interface StoreListViewController : UITableViewController {
-    
+@interface StoreListViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+    NSFetchedResultsController* _fetchedResults;
 }
 
+@property (nonatomic, retain) NSFetchedResultsController* fetchedResults;
 
 @end

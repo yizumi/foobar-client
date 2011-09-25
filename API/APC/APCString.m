@@ -44,5 +44,11 @@ int chr_sort( const void * a , const void * b )
     return 1;
 }
 
+// helper function: get the url encoded string form of any object
+- (NSString*)urlEncode
+{
+    return [self stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+}
+
 
 @end

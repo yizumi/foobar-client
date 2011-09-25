@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "StoreInfoManager.h"
+#import "FBStoreManager.h"
 #import "APCArray.h"
 #import "APCString.h"
 #import "FBCodeButton.h"
@@ -18,34 +18,7 @@
 
 @interface ShowCodeViewController : UIViewController <UINavigationBarDelegate> {
     NSString* _BUTTON_LABELS;
-    UIButton* _buttonNavi;
-    FBCodeButton* _buttonA;
-    FBCodeButton* _buttonB;
-    FBCodeButton* _buttonC;
-    FBCodeButton* _buttonD;
-    FBCodeButton* _buttonE;
-    FBCodeButton* _buttonF;
-    FBCodeButton* _buttonG;
-    FBCodeButton* _buttonH;
-    FBCodeButton* _buttonJ;
-    FBCodeButton* _buttonK;
-    FBCodeButton* _buttonL;
-    FBCodeButton* _buttonM;
-    FBCodeButton* _buttonN;
-    FBCodeButton* _buttonO;
-    FBCodeButton* _buttonP;
-    FBCodeButton* _buttonQ;
-    FBCodeButton* _buttonR;
-    FBCodeButton* _buttonS;
-    FBCodeButton* _buttonT;
-    FBCodeButton* _buttonU;
-    FBCodeButton* _buttonV;
-    FBCodeButton* _buttonW;
-    FBCodeButton* _buttonX;
-    FBCodeButton* _buttonY;
-    FBCodeButton* _buttonZ;
     NSArray* _buttons;
-    ShowCodeViewModel* _viewModel;
 }
 
 - (void) onSegmentChanged:(id)sender;
@@ -78,5 +51,9 @@
 @property (nonatomic, retain) IBOutlet FBCodeButton* buttonY;
 @property (nonatomic, retain) IBOutlet FBCodeButton* buttonZ;
 @property (nonatomic, retain) IBOutlet UIButton* buttonNavi;
+@property (nonatomic, retain) IBOutlet UIButton* buttonRedeem;
+@property (nonatomic, retain) IBOutlet UIProgressView* progress;
+@property (nonatomic, retain) ShowCodeViewModel* viewModel;
+
 
 @end

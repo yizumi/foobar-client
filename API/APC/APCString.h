@@ -14,6 +14,7 @@
 // Returns -1 if not found.
 -(int) indexOf:(char)chr;
 -(NSString*) sort;
+-(NSString*) urlEncode;
 /* ソート関数 */
 int chr_sort( const void * a , const void * b );
 

@@ -96,7 +96,7 @@
 {
     NSNumber* points = [NSNumber numberWithInt:[numberField.text intValue]];
     // Setup the Async Shit
-    NSURL* url = [NSURL URLWithString:@"https://yizumi.ripplesystem.com/giveOrRedeemPoints.php"];
+    NSURL* url = [NSURL URLWithString:K_URL_GIVE_OR_REDEEM_POINTS];
     __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
     [req setPostValue:@"give" forKey:@"action"];
     [req setPostValue:points forKey:@"points"];
@@ -113,9 +113,21 @@
     [req setFailedBlock:^(void){
         NSString* res = [req responseString];
         NSLog(@"Something went wrong: %@", res);
+        NSError* error = [req error];
+        NSLog(@"%@", error);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Error while booking points" 
+                                                       delegate:nil 
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [alert release];
     }];
     
     // Send
+#if DEBUG
+    [req setValidatesSecureCertificate:NO];
+#endif
     [req startAsynchronous];
 }
 
