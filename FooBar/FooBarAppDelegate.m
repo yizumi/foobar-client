@@ -5,18 +5,21 @@
 //  Created by 泉 雄介 on 11/07/03.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
 #import "FooBarAppDelegate.h"
 
 @implementation FooBarAppDelegate
 
-
 @synthesize window=_window;
-
 @synthesize tabBarController=_tabBarController;
+@synthesize segmentedController=_segmentedController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Ask APNS to provide the app with device token.
+    // This will invoke application:didRegisterForRemoteNotificationsWithDeviceToken
+    [[UIApplication sharedApplication] 
+     registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound)];
+
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
     self.window.rootViewController = self.tabBarController;
@@ -67,7 +70,105 @@
 {
     [_window release];
     [_tabBarController release];
+    [_segmentedController release];
     [super dealloc];
+}
+
+/****** DeviceToken handler ******/
+- (void)application:application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Get the device token
+    NSString* deviceTokenString = [NSString stringWithFormat:@"%@",deviceToken];
+    NSString* deviceTokenFmt = [deviceTokenString substringWithRange:NSMakeRange(1,[deviceTokenString length]-2)];
+    
+    // Get the unique identifier of the device
+    NSString* deviceId = [[UIDevice currentDevice]uniqueIdentifier];
+    
+    // Log
+    NSLog(@"Sending {DeviceId:%@, DeviceToken:%@}", deviceId, deviceTokenFmt);
+    
+    // Create URL, Request and Send the Request
+    NSURL* url = [NSURL URLWithString:@"https://yizumi.ripplesystem.com/registerDeviceToken.php"];
+    __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
+#if DEBUG
+    [req setValidatesSecureCertificate:NO];
+#endif
+    [req setPostValue:deviceId forKey:@"deviceId"];
+    [req setPostValue:deviceTokenFmt forKey:@"deviceToken"];
+    [req setCompletionBlock:^(void){
+        NSString* responseString = [req responseString];
+        NSDictionary* obj = [responseString JSONValue];
+        NSString* userToken = [obj objectForKey:@"userToken"];
+        [[FBConfig sharedInstance] setValue:userToken forKey:@"userLoginToken"];
+        NSLog(@"Setting user token as: %@", userToken);
+    }];
+    [req setFailedBlock:^(void){
+        NSError* error = [req error];
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
+                                                       message:[error localizedDescription]
+                                                      delegate:nil
+                                             cancelButtonTitle:nil 
+                                             otherButtonTitles:@"OK", nil];
+        [alert show];
+        [alert autorelease];
+        NSLog(@"Error while getting user token from server:%@",error);
+    }];
+    [req startAsynchronous];
+}
+
+- (void)application:application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Result"
+                                                   message:[error localizedDescription]
+                                                  delegate:nil
+                                         cancelButtonTitle:nil 
+                                         otherButtonTitles:@"OK", nil];
+    [alert show];
+    [alert autorelease];   
+}
+
+- (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSString *alertMsg;
+    NSString *badge;
+    NSString *sound;
+    
+    if( [[userInfo objectForKey:@"aps"] objectForKey:@"alert"] != NULL)
+    {
+        alertMsg = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]; 
+    }
+    else
+    {
+        alertMsg = @"{no alert message in dictionary}";
+    }
+    
+    if( [[userInfo objectForKey:@"aps"] objectForKey:@"badge"] != NULL)
+    {
+        badge = [[userInfo objectForKey:@"aps"] objectForKey:@"badge"]; 
+    }
+    else
+    {
+        badge = @"{no badge number in dictionary}";
+    }
+    
+    if( [[userInfo objectForKey:@"aps"] objectForKey:@"sound"] != NULL)
+    {
+        sound = [[userInfo objectForKey:@"aps"] objectForKey:@"sound"]; 
+    }
+    else
+    {
+        sound = @"{no sound in dictionary}";
+    }
+    
+    AudioServicesPlaySystemSound (kSystemSoundID_Vibrate); 
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"FooBar"
+                                                    message:alertMsg 
+                                                   delegate:nil 
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    [alert release];
 }
 
 /*

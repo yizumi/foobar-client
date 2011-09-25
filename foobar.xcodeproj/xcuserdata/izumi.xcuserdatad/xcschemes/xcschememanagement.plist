@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FooBar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>FooBarTesting.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>FooBarTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FD283E9213C02AED00FC57EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD283EBC13C02AED00FC57EE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDD22EDE13E01E660048D284</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FDD22EF713E0267D0048D284</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

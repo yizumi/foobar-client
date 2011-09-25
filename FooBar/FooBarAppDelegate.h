@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface FooBarAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+#import "ASIFormDataRequest.h"
+#import "NSObject+SBJson.h"
+#import "FBConfig.h"
+
+@interface FooBarAppDelegate : NSObject <UIApplicationDelegate,
+UITabBarControllerDelegate> {
 
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedController;
 
 @end

@@ -1,15 +1,15 @@
 //
-//  FooBarTests.h
-//  foobar
+//  APCJson.h
+//  FooBar
 //
-//  Created by 泉 雄介 on 9/11/11.
+//  Created by 泉 雄介 on 7/12/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 
-@interface FooBarTests : SenTestCase {
+@interface APCJson : NSObject {
     
 }
 
