@@ -77,27 +77,75 @@
 /****** DeviceToken handler ******/
 - (void)application:application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    // Get the device token
+    // Parse the received deviceToken
     NSString* deviceTokenString = [NSString stringWithFormat:@"%@",deviceToken];
     NSString* deviceTokenFmt = [deviceTokenString substringWithRange:NSMakeRange(1,[deviceTokenString length]-2)];
+    [self getTokenForDevice:deviceTokenFmt];
+}
+
+- (void)application:application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Result"
+                                                   message:[error localizedDescription]
+                                                  delegate:nil
+                                         cancelButtonTitle:nil 
+                                         otherButtonTitles:@"OK", nil];
+    [alert show];
+    [alert autorelease];
     
+    [self getTokenForDevice:nil];
+}
+
+- (void)getTokenForDevice:(NSString*)deviceToken
+{    
     // Get the unique identifier of the device
     NSString* deviceId = [[UIDevice currentDevice]uniqueIdentifier];
     
     // Log
-    NSLog(@"Sending {DeviceId:%@, DeviceToken:%@}", deviceId, deviceTokenFmt);
+    NSLog(@"Sending {DeviceId:%@}}", deviceId);
     
     // Create URL, Request and Send the Request
     NSURL* url = [NSURL URLWithString:K_URL_REGISTER_DEVICE_TOKEN];
     __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
+    [req setTimeOutSeconds: 30];
     [req setPostValue:deviceId forKey:@"deviceId"];
-    [req setPostValue:deviceTokenFmt forKey:@"deviceToken"];
+#if DEBUG
+    [req setValidatesSecureCertificate:NO];
+#endif
+    
+    if (deviceToken != nil)
+    {
+        NSLog(@"... And {DeviceToken:%@}", deviceToken);
+        [req setPostValue:deviceToken forKey:@"deviceToken"];
+    }
     [req setCompletionBlock:^(void){
         NSString* responseString = [req responseString];
         NSDictionary* obj = [responseString JSONValue];
-        NSString* userToken = [obj objectForKey:@"userToken"];
-        [[FBConfig sharedInstance] setValue:userToken forKey:@"userLoginToken"];
-        NSLog(@"Setting user token as: %@", userToken);
+        if ( [[obj objectForKey:@"success"] boolValue] == YES)
+        {
+            NSString* userToken = [obj objectForKey:@"token"];
+            [[FBConfig sharedInstance] setValue:userToken forKey:@"userLoginToken"];
+            NSLog(@"Setting user token as: %@", userToken);
+        }
+        else
+        {
+            int failCode = [[obj objectForKey:@"failCode"] intValue];
+            NSString* errorMessage = @"Unknown Error";
+            switch (failCode)
+            {
+                case 1: // FAILCODE_MISSING_DEVICE_ID
+                    errorMessage = @"Missing DeviceID";
+                    break;
+            }
+            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
+                                                           message:errorMessage
+                                                          delegate:nil
+                                                 cancelButtonTitle:nil
+                                                 otherButtonTitles:@"OK", nil];
+            [alert show];
+            [alert autorelease];
+            NSLog(@"GetTokenForDevice Failed (Code:%@)", failCode);
+        }
     }];
     [req setFailedBlock:^(void){
         NSError* error = [req error];
@@ -110,23 +158,13 @@
         [alert autorelease];
         NSLog(@"Error while getting user token from server:%@",error);
     }];
-
+    
     // Send the Request
 #if DEBUG
     [req setValidatesSecureCertificate:NO];
 #endif
     [req startAsynchronous];
-}
 
-- (void)application:application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Result"
-                                                   message:[error localizedDescription]
-                                                  delegate:nil
-                                         cancelButtonTitle:nil 
-                                         otherButtonTitles:@"OK", nil];
-    [alert show];
-    [alert autorelease];   
 }
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary *)userInfo

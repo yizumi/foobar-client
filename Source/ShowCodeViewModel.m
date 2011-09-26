@@ -46,19 +46,7 @@
                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                 context:nil];
     
-    
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1
-                                              target:self
-                                            selector:@selector(checkExpiration:)
-                                            userInfo:nil
-                                             repeats:YES];
     return self;
-}
-
-- (void) stopTimer
-{
-    NSLog(@"Timer is being stopped");
-    [_timer invalidate];
 }
 
 - (void) dealloc
@@ -119,6 +107,7 @@
                 break;
             case 2:
                 [self setValue:@"Present Code to Salesperson" forKey:@"instruction"];
+                [self beginExpirationTimer];
         }
     }
     
@@ -151,9 +140,33 @@
     }
 }
 
+- (void) beginExpirationTimer
+{
+    NSLog(@"Beginning the timer");
+    // Should only be activated for MODE=3
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                              target:self
+                                            selector:@selector(checkExpiration:)
+                                            userInfo:nil
+                                             repeats:YES];
+}
+
 - (void) checkExpiration:(NSTimer*)timer
 {
-    NSLog(@"Just making sure I'm cleaned up");
+    NSLog(@"Timer working...");
+}
+
+- (void) stopExpirationTimer
+{
+    if (_timer && [_timer isValid])
+    {
+        NSLog(@"Stopping the timer");
+        [_timer invalidate];
+    }
+    else
+    {
+        NSLog(@"Timer is not active");
+    }
 }
 
 @end

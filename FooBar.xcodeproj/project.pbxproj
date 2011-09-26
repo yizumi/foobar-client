@@ -10,25 +10,9 @@
 		FD283E9813C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
 		FD283E9A13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
 		FD283E9C13C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
-		FD283EA213C02AED00FC57EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD283EA013C02AED00FC57EE /* InfoPlist.strings */; };
-		FD283EA513C02AED00FC57EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283EA413C02AED00FC57EE /* main.m */; };
-		FD283EA813C02AED00FC57EE /* FooBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD283EA713C02AED00FC57EE /* FooBarAppDelegate.m */; };
-		FD283EAB13C02AED00FC57EE /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD283EA913C02AED00FC57EE /* MainWindow.xib */; };
 		FD283EBE13C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
 		FD283EBF13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
 		FD283EC013C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
-		FD283EC813C02AED00FC57EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD283EC613C02AED00FC57EE /* InfoPlist.strings */; };
-		FD283ED813C02B2F00FC57EE /* FooBarData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD283ED613C02B2F00FC57EE /* FooBarData.xcdatamodeld */; };
-		FD2BF60D141CE61000E6E6E5 /* FooBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2BF60A141CE4CB00E6E6E5 /* FooBarTests.m */; };
-		FD2BF613141CF45D00E6E6E5 /* FBStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2BF612141CF45D00E6E6E5 /* FBStore.m */; };
-		FD3092CD1415153B0051FCD9 /* FBStoreExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3092CC1415153A0051FCD9 /* FBStoreExt.m */; };
-		FD3092E014151A110051FCD9 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3092DF14151A100051FCD9 /* StoreViewController.m */; };
-		FD35DA7313CA58C9008DB019 /* FBCodeButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = FD35DA7113CA58C9008DB019 /* FBCodeButtonOff.png */; };
-		FD35DA7413CA58C9008DB019 /* FBCodeButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = FD35DA7213CA58C9008DB019 /* FBCodeButtonOn.png */; };
-		FD35DA7813CAA452008DB019 /* FBConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD35DA7713CAA452008DB019 /* FBConfig.m */; };
-		FD375B8713C879B50061FE83 /* Points.png in Resources */ = {isa = PBXBuildFile; fileRef = FD375B8613C879B50061FE83 /* Points.png */; };
-		FD375B8A13C879C00061FE83 /* Coupon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD375B8913C879C00061FE83 /* Coupon.png */; };
-		FD375B8C13C879CA0061FE83 /* ShowCode.png in Resources */ = {isa = PBXBuildFile; fileRef = FD375B8B13C879CA0061FE83 /* ShowCode.png */; };
 		FD48394D13DCD7BF00EA0397 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD48394C13DCD7BF00EA0397 /* libz.1.2.3.dylib */; };
 		FD48395013DCD7C600EA0397 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD48394F13DCD7C600EA0397 /* CFNetwork.framework */; };
 		FD48395213DCD7CD00EA0397 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD48395113DCD7CD00EA0397 /* SystemConfiguration.framework */; };
@@ -43,47 +27,67 @@
 		FD48397313DCD86000EA0397 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FD48396913DCD86000EA0397 /* ASIInputStream.m */; };
 		FD48397413DCD86000EA0397 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FD48396B13DCD86000EA0397 /* ASINetworkQueue.m */; };
 		FD48397713DCD87900EA0397 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FD48397613DCD87900EA0397 /* Reachability.m */; };
-		FD577F9813D8D7890043BFB4 /* ButtonAquaGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FD577F9613D8D7890043BFB4 /* ButtonAquaGreen.png */; };
-		FD577F9913D8D7890043BFB4 /* ButtonAquaRed.png in Resources */ = {isa = PBXBuildFile; fileRef = FD577F9713D8D7890043BFB4 /* ButtonAquaRed.png */; };
-		FD7DE95213C5DA8B00887511 /* numberBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = FD7DE95113C5DA8B00887511 /* numberBackground.png */; };
-		FD7F0E0213C485BF0061548E /* FBStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD7F0E0113C485BF0061548E /* FBStoreManager.m */; };
 		FD7F0E0513C486070061548E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7F0E0413C486070061548E /* CoreData.framework */; };
-		FD8BE2F013E0B83A00CD3F1E /* APCDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8BE2EF13E0B83A00CD3F1E /* APCDateUtil.m */; };
 		FD8C3B8E141A2B99004D7A5C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8C3B8D141A2B99004D7A5C /* icon.png */; };
-		FD94BF2213D8527400E373D2 /* BookPoints.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD94BF2113D8527400E373D2 /* BookPoints.xib */; };
-		FD94BF2613D8530D00E373D2 /* BookPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD94BF2513D8530D00E373D2 /* BookPointsViewController.m */; };
-		FD96F41813CA530A00F3591F /* FBCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD96F41713CA530A00F3591F /* FBCodeButton.m */; };
-		FD9EE70013C8287F00FC80D8 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FD9EE6FF13C8287F00FC80D8 /* Background.png */; };
-		FD9EE70413C8389400FC80D8 /* APCString.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE70313C8389400FC80D8 /* APCString.m */; };
-		FD9EE70713C8390F00FC80D8 /* APCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9EE70613C8390F00FC80D8 /* APCArray.m */; };
-		FDA0DA821416CFEB00BC526C /* StoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA0DA811416CFEB00BC526C /* StoreView.xib */; };
-		FDA0DA841416D04A00BC526C /* StoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA0DA831416D04A00BC526C /* StoreViewCell.xib */; };
-		FDA0DA8A14182EFC00BC526C /* StoreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA0DA8914182EFC00BC526C /* StoreViewCell.m */; };
-		FDA0DA8C1418377D00BC526C /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDA0DA8B1418377D00BC526C /* ContactCell.xib */; };
-		FDA0DA8F141839EB00BC526C /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA0DA8E141839EA00BC526C /* ContactCell.m */; };
-		FDA2810613CBA65D00F34014 /* ShowCodeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA2810513CBA65C00F34014 /* ShowCodeViewModel.m */; };
-		FDA661D513C5660A006F4EE7 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661BD13C5660A006F4EE7 /* NSObject+SBJson.m */; };
-		FDA661D613C5660A006F4EE7 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661C013C5660A006F4EE7 /* SBJsonParser.m */; };
-		FDA661D713C5660A006F4EE7 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661C213C5660A006F4EE7 /* SBJsonStreamParser.m */; };
-		FDA661D813C5660A006F4EE7 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661C413C5660A006F4EE7 /* SBJsonStreamParserAccumulator.m */; };
-		FDA661D913C5660A006F4EE7 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661C613C5660A006F4EE7 /* SBJsonStreamParserAdapter.m */; };
-		FDA661DA13C5660A006F4EE7 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661C813C5660A006F4EE7 /* SBJsonStreamParserState.m */; };
-		FDA661DB13C5660A006F4EE7 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661CA13C5660A006F4EE7 /* SBJsonStreamWriter.m */; };
-		FDA661DC13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661CC13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.m */; };
-		FDA661DD13C5660A006F4EE7 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661CE13C5660A006F4EE7 /* SBJsonStreamWriterState.m */; };
-		FDA661DE13C5660A006F4EE7 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661D013C5660A006F4EE7 /* SBJsonTokeniser.m */; };
-		FDA661DF13C5660A006F4EE7 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661D213C5660A006F4EE7 /* SBJsonUTF8Stream.m */; };
-		FDA661E013C5660A006F4EE7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA661D413C5660A006F4EE7 /* SBJsonWriter.m */; };
-		FDAC7CDF13D5972B0028ABFB /* APCRoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = FDAC7CDE13D5972A0028ABFB /* APCRoundRect.m */; };
-		FDB40E2713C7539E004B549A /* StoreListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDB40E2613C7539E004B549A /* StoreListCell.xib */; };
-		FDB40E2A13C75637004B549A /* StoreListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB40E2913C75636004B549A /* StoreListCell.m */; };
-		FDB40E2D13C757B7004B549A /* StoreListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB40E2C13C757B7004B549A /* StoreListCellController.m */; };
-		FDC0AEBB13C0F51E00BF8337 /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0AEBA13C0F51E00BF8337 /* CouponViewController.m */; };
-		FDC0AEBD13C0F57D00BF8337 /* CouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC0AEBC13C0F57D00BF8337 /* CouponView.xib */; };
-		FDC0AEBF13C0F67900BF8337 /* ShowCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC0AEBE13C0F67900BF8337 /* ShowCodeView.xib */; };
-		FDC0AEC213C0F69000BF8337 /* ShowCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0AEC113C0F69000BF8337 /* ShowCodeViewController.m */; };
-		FDC0AEC613C0F70500BF8337 /* StoreListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC0AEC513C0F70500BF8337 /* StoreListView.xib */; };
-		FDC0AEC913C0F71900BF8337 /* StoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC0AEC813C0F71900BF8337 /* StoreListViewController.m */; };
+		FDBC296D142FDA3B00FABA0C /* ButtonAquaGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC2964142FDA3B00FABA0C /* ButtonAquaGreen.png */; };
+		FDBC296E142FDA3B00FABA0C /* ButtonAquaRed.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC2965142FDA3B00FABA0C /* ButtonAquaRed.png */; };
+		FDBC296F142FDA3B00FABA0C /* FBCodeButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC2966142FDA3B00FABA0C /* FBCodeButtonOn.png */; };
+		FDBC2970142FDA3B00FABA0C /* FBCodeButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC2967142FDA3B00FABA0C /* FBCodeButtonOff.png */; };
+		FDBC2971142FDA3B00FABA0C /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC2968142FDA3B00FABA0C /* Background.png */; };
+		FDBC2972142FDA3B00FABA0C /* NumberBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC2969142FDA3B00FABA0C /* NumberBackground.png */; };
+		FDBC2973142FDA3B00FABA0C /* Coupon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC296A142FDA3B00FABA0C /* Coupon.png */; };
+		FDBC2974142FDA3B00FABA0C /* Points.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC296B142FDA3B00FABA0C /* Points.png */; };
+		FDBC2975142FDA3B00FABA0C /* ShowCode.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC296C142FDA3B00FABA0C /* ShowCode.png */; };
+		FDBC297C142FDA7000FABA0C /* FBStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2977142FDA7000FABA0C /* FBStore.m */; };
+		FDBC297D142FDA7000FABA0C /* FBStoreExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2979142FDA7000FABA0C /* FBStoreExt.m */; };
+		FDBC297E142FDA7000FABA0C /* FBStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC297B142FDA7000FABA0C /* FBStoreManager.m */; };
+		FDBC2981142FDA9800FABA0C /* FooBarData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDBC297F142FDA9800FABA0C /* FooBarData.xcdatamodeld */; };
+		FDBC2999142FDAB600FABA0C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2984142FDAB600FABA0C /* SBJsonParser.m */; };
+		FDBC299A142FDAB600FABA0C /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2986142FDAB600FABA0C /* SBJsonStreamParser.m */; };
+		FDBC299B142FDAB600FABA0C /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2988142FDAB600FABA0C /* SBJsonStreamParserAccumulator.m */; };
+		FDBC299C142FDAB600FABA0C /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC298A142FDAB600FABA0C /* SBJsonStreamParserAdapter.m */; };
+		FDBC299D142FDAB600FABA0C /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC298C142FDAB600FABA0C /* SBJsonStreamParserState.m */; };
+		FDBC299E142FDAB600FABA0C /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC298E142FDAB600FABA0C /* SBJsonStreamWriter.m */; };
+		FDBC299F142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2990142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.m */; };
+		FDBC29A0142FDAB600FABA0C /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2992142FDAB600FABA0C /* SBJsonStreamWriterState.m */; };
+		FDBC29A1142FDAB600FABA0C /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2994142FDAB600FABA0C /* SBJsonTokeniser.m */; };
+		FDBC29A2142FDAB600FABA0C /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2996142FDAB600FABA0C /* SBJsonUTF8Stream.m */; };
+		FDBC29A3142FDAB600FABA0C /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2998142FDAB600FABA0C /* SBJsonWriter.m */; };
+		FDBC29A6142FDAD300FABA0C /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29A5142FDAD300FABA0C /* NSObject+SBJson.m */; };
+		FDBC29B1142FDAE600FABA0C /* APCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29A8142FDAE600FABA0C /* APCArray.m */; };
+		FDBC29B2142FDAE600FABA0C /* APCDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29AA142FDAE600FABA0C /* APCDateUtil.m */; };
+		FDBC29B3142FDAE600FABA0C /* APCJson.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29AC142FDAE600FABA0C /* APCJson.m */; };
+		FDBC29B4142FDAE600FABA0C /* APCRoundRect.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29AE142FDAE600FABA0C /* APCRoundRect.m */; };
+		FDBC29B5142FDAE600FABA0C /* APCString.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29B0142FDAE600FABA0C /* APCString.m */; };
+		FDBC29B8142FDAFF00FABA0C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29B6142FDAFF00FABA0C /* MainWindow.xib */; };
+		FDBC29BB142FDB2500FABA0C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29B9142FDB2500FABA0C /* InfoPlist.strings */; };
+		FDBC29BE142FDB5300FABA0C /* FBCodeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29BD142FDB5300FABA0C /* FBCodeButton.m */; };
+		FDBC29C2142FDB6300FABA0C /* BookPoints.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29BF142FDB6300FABA0C /* BookPoints.xib */; };
+		FDBC29C3142FDB6300FABA0C /* BookPointsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29C1142FDB6300FABA0C /* BookPointsViewController.m */; };
+		FDBC29C9142FDB9E00FABA0C /* ShowCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29C4142FDB9E00FABA0C /* ShowCodeView.xib */; };
+		FDBC29CA142FDB9E00FABA0C /* ShowCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29C6142FDB9E00FABA0C /* ShowCodeViewController.m */; };
+		FDBC29CB142FDB9E00FABA0C /* ShowCodeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29C8142FDB9E00FABA0C /* ShowCodeViewModel.m */; };
+		FDBC29D4142FDBC100FABA0C /* StoreListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29CD142FDBC100FABA0C /* StoreListCell.m */; };
+		FDBC29D5142FDBC100FABA0C /* StoreListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29CE142FDBC100FABA0C /* StoreListCell.xib */; };
+		FDBC29D6142FDBC100FABA0C /* StoreListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29D0142FDBC100FABA0C /* StoreListCellController.m */; };
+		FDBC29D7142FDBC100FABA0C /* StoreListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29D1142FDBC100FABA0C /* StoreListView.xib */; };
+		FDBC29D8142FDBC100FABA0C /* StoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29D3142FDBC100FABA0C /* StoreListViewController.m */; };
+		FDBC29DF142FDBE000FABA0C /* StoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29D9142FDBE000FABA0C /* StoreView.xib */; };
+		FDBC29E0142FDBE000FABA0C /* StoreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29DB142FDBE000FABA0C /* StoreViewCell.m */; };
+		FDBC29E1142FDBE000FABA0C /* StoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29DC142FDBE000FABA0C /* StoreViewCell.xib */; };
+		FDBC29E2142FDBE000FABA0C /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29DE142FDBE000FABA0C /* StoreViewController.m */; };
+		FDBC29E6142FDBF600FABA0C /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29E4142FDBF600FABA0C /* ContactCell.m */; };
+		FDBC29E7142FDBF600FABA0C /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29E5142FDBF600FABA0C /* ContactCell.xib */; };
+		FDBC29EB142FDC0C00FABA0C /* CouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29E8142FDC0C00FABA0C /* CouponView.xib */; };
+		FDBC29EC142FDC0C00FABA0C /* CouponViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29EA142FDC0C00FABA0C /* CouponViewController.m */; };
+		FDBC29EF142FDC2C00FABA0C /* FooBar-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29ED142FDC2C00FABA0C /* FooBar-Info.plist */; };
+		FDBC29F2142FDC4C00FABA0C /* FBConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29F1142FDC4C00FABA0C /* FBConfig.m */; };
+		FDBC29F6142FDC6B00FABA0C /* FooBarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29F4142FDC6B00FABA0C /* FooBarAppDelegate.m */; };
+		FDBC29F7142FDC6B00FABA0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29F5142FDC6B00FABA0C /* main.m */; };
+		FDBC29FD1430976100FABA0C /* FooBarTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */; };
+		FDBC29FE1430978900FABA0C /* FooBarTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */; };
+		FDBC29FF1430979800FABA0C /* FooBarTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */; };
+		FDBC2A001430A52E00FABA0C /* FooBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29F91430974A00FABA0C /* FooBarTests.m */; };
 		FDD22EF213E01F9D0048D284 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD22EF113E01F9D0048D284 /* SenTestingKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,33 +106,7 @@
 		FD283E9713C02AED00FC57EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD283E9913C02AED00FC57EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FD283E9F13C02AED00FC57EE /* FooBar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FooBar-Info.plist"; sourceTree = "<group>"; };
-		FD283EA113C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FD283EA313C02AED00FC57EE /* FooBar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FooBar-Prefix.pch"; sourceTree = "<group>"; };
-		FD283EA413C02AED00FC57EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FD283EA613C02AED00FC57EE /* FooBarAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FooBarAppDelegate.h; sourceTree = "<group>"; };
-		FD283EA713C02AED00FC57EE /* FooBarAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FooBarAppDelegate.m; sourceTree = "<group>"; };
-		FD283EAA13C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		FD283EBD13C02AED00FC57EE /* FooBarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FooBarTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD283EC513C02AED00FC57EE /* FooBarTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FooBarTests-Info.plist"; sourceTree = "<group>"; };
-		FD283EC713C02AED00FC57EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FD283EC913C02AED00FC57EE /* FooBarTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FooBarTests-Prefix.pch"; sourceTree = "<group>"; };
-		FD283ED713C02B2F00FC57EE /* FooBarData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FooBarData.xcdatamodel; sourceTree = "<group>"; };
-		FD2BF609141CE4CB00E6E6E5 /* FooBarTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FooBarTests.h; sourceTree = "<group>"; };
-		FD2BF60A141CE4CB00E6E6E5 /* FooBarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FooBarTests.m; sourceTree = "<group>"; };
-		FD2BF611141CF45D00E6E6E5 /* FBStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBStore.h; sourceTree = "<group>"; };
-		FD2BF612141CF45D00E6E6E5 /* FBStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBStore.m; sourceTree = "<group>"; };
-		FD3092CB1415153A0051FCD9 /* FBStoreExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBStoreExt.h; sourceTree = "<group>"; };
-		FD3092CC1415153A0051FCD9 /* FBStoreExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBStoreExt.m; sourceTree = "<group>"; };
-		FD3092DE14151A100051FCD9 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
-		FD3092DF14151A100051FCD9 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
-		FD35DA7113CA58C9008DB019 /* FBCodeButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBCodeButtonOff.png; sourceTree = "<group>"; };
-		FD35DA7213CA58C9008DB019 /* FBCodeButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBCodeButtonOn.png; sourceTree = "<group>"; };
-		FD35DA7613CAA452008DB019 /* FBConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConfig.h; sourceTree = "<group>"; };
-		FD35DA7713CAA452008DB019 /* FBConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBConfig.m; sourceTree = "<group>"; };
-		FD375B8613C879B50061FE83 /* Points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Points.png; sourceTree = "<group>"; };
-		FD375B8913C879C00061FE83 /* Coupon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coupon.png; sourceTree = "<group>"; };
-		FD375B8B13C879CA0061FE83 /* ShowCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ShowCode.png; sourceTree = "<group>"; };
+		FD283EBD13C02AED00FC57EE /* FooBarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FooBarTests.octest; path = "/Users/izumi/Desktop/iPhone Apps/foobar/build/Release-iphoneos/FooBarTests.octest"; sourceTree = "<absolute>"; };
 		FD48394C13DCD7BF00EA0397 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		FD48394F13DCD7C600EA0397 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FD48395113DCD7CD00EA0397 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -156,75 +134,102 @@
 		FD48396C13DCD86000EA0397 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../../../work/pokeb-asi-http-request-404bbfe/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
 		FD48397513DCD87900EA0397 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../../work/pokeb-asi-http-request-404bbfe/External/Reachability/Reachability.h"; sourceTree = "<group>"; };
 		FD48397613DCD87900EA0397 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../../work/pokeb-asi-http-request-404bbfe/External/Reachability/Reachability.m"; sourceTree = "<group>"; };
-		FD577F9613D8D7890043BFB4 /* ButtonAquaGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonAquaGreen.png; sourceTree = "<group>"; };
-		FD577F9713D8D7890043BFB4 /* ButtonAquaRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonAquaRed.png; sourceTree = "<group>"; };
-		FD7DE95113C5DA8B00887511 /* numberBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberBackground.png; sourceTree = "<group>"; };
-		FD7F0E0013C485BF0061548E /* FBStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStoreManager.h; path = FooBar/FBStoreManager.h; sourceTree = "<group>"; };
-		FD7F0E0113C485BF0061548E /* FBStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStoreManager.m; path = FooBar/FBStoreManager.m; sourceTree = "<group>"; };
 		FD7F0E0413C486070061548E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FD8BE2EE13E0B83A00CD3F1E /* APCDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCDateUtil.h; sourceTree = "<group>"; };
-		FD8BE2EF13E0B83A00CD3F1E /* APCDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCDateUtil.m; sourceTree = "<group>"; };
 		FD8C3B8D141A2B99004D7A5C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = SOURCE_ROOT; };
-		FD94BF2113D8527400E373D2 /* BookPoints.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookPoints.xib; sourceTree = "<group>"; };
-		FD94BF2413D8530D00E373D2 /* BookPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPointsViewController.h; sourceTree = "<group>"; };
-		FD94BF2513D8530D00E373D2 /* BookPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPointsViewController.m; sourceTree = "<group>"; };
-		FD96F41613CA530A00F3591F /* FBCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBCodeButton.h; sourceTree = "<group>"; };
-		FD96F41713CA530A00F3591F /* FBCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBCodeButton.m; sourceTree = "<group>"; };
-		FD9EE6FF13C8287F00FC80D8 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
-		FD9EE70213C8389400FC80D8 /* APCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCString.h; sourceTree = "<group>"; };
-		FD9EE70313C8389400FC80D8 /* APCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCString.m; sourceTree = "<group>"; };
-		FD9EE70513C8390F00FC80D8 /* APCArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCArray.h; sourceTree = "<group>"; };
-		FD9EE70613C8390F00FC80D8 /* APCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCArray.m; sourceTree = "<group>"; };
-		FDA0DA811416CFEB00BC526C /* StoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreView.xib; sourceTree = "<group>"; };
-		FDA0DA831416D04A00BC526C /* StoreViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreViewCell.xib; sourceTree = "<group>"; };
-		FDA0DA8814182EFC00BC526C /* StoreViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewCell.h; sourceTree = "<group>"; };
-		FDA0DA8914182EFC00BC526C /* StoreViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewCell.m; sourceTree = "<group>"; };
-		FDA0DA8B1418377D00BC526C /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
-		FDA0DA8D141839EA00BC526C /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
-		FDA0DA8E141839EA00BC526C /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
-		FDA2810413CBA65C00F34014 /* ShowCodeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCodeViewModel.h; sourceTree = "<group>"; };
-		FDA2810513CBA65C00F34014 /* ShowCodeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCodeViewModel.m; sourceTree = "<group>"; };
-		FDA661BC13C5660A006F4EE7 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
-		FDA661BD13C5660A006F4EE7 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
-		FDA661BE13C5660A006F4EE7 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
-		FDA661BF13C5660A006F4EE7 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		FDA661C013C5660A006F4EE7 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		FDA661C113C5660A006F4EE7 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
-		FDA661C213C5660A006F4EE7 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
-		FDA661C313C5660A006F4EE7 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
-		FDA661C413C5660A006F4EE7 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
-		FDA661C513C5660A006F4EE7 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		FDA661C613C5660A006F4EE7 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
-		FDA661C713C5660A006F4EE7 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
-		FDA661C813C5660A006F4EE7 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
-		FDA661C913C5660A006F4EE7 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		FDA661CA13C5660A006F4EE7 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
-		FDA661CB13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
-		FDA661CC13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
-		FDA661CD13C5660A006F4EE7 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
-		FDA661CE13C5660A006F4EE7 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
-		FDA661CF13C5660A006F4EE7 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
-		FDA661D013C5660A006F4EE7 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
-		FDA661D113C5660A006F4EE7 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
-		FDA661D213C5660A006F4EE7 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
-		FDA661D313C5660A006F4EE7 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		FDA661D413C5660A006F4EE7 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		FDAC7CDD13D5972A0028ABFB /* APCRoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCRoundRect.h; sourceTree = "<group>"; };
-		FDAC7CDE13D5972A0028ABFB /* APCRoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCRoundRect.m; sourceTree = "<group>"; };
-		FDB40E2613C7539E004B549A /* StoreListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreListCell.xib; sourceTree = "<group>"; };
-		FDB40E2813C75636004B549A /* StoreListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreListCell.h; sourceTree = "<group>"; };
-		FDB40E2913C75636004B549A /* StoreListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreListCell.m; sourceTree = "<group>"; };
-		FDB40E2B13C757B6004B549A /* StoreListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreListCellController.h; sourceTree = "<group>"; };
-		FDB40E2C13C757B7004B549A /* StoreListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreListCellController.m; sourceTree = "<group>"; };
-		FDC0AEB913C0F51E00BF8337 /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponViewController.h; sourceTree = "<group>"; };
-		FDC0AEBA13C0F51E00BF8337 /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponViewController.m; sourceTree = "<group>"; };
-		FDC0AEBC13C0F57D00BF8337 /* CouponView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponView.xib; sourceTree = "<group>"; };
-		FDC0AEBE13C0F67900BF8337 /* ShowCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowCodeView.xib; sourceTree = "<group>"; };
-		FDC0AEC013C0F69000BF8337 /* ShowCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCodeViewController.h; sourceTree = "<group>"; };
-		FDC0AEC113C0F69000BF8337 /* ShowCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCodeViewController.m; sourceTree = "<group>"; };
-		FDC0AEC513C0F70500BF8337 /* StoreListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreListView.xib; sourceTree = "<group>"; };
-		FDC0AEC713C0F71900BF8337 /* StoreListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreListViewController.h; sourceTree = "<group>"; };
-		FDC0AEC813C0F71900BF8337 /* StoreListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreListViewController.m; sourceTree = "<group>"; };
+		FDBC2964142FDA3B00FABA0C /* ButtonAquaGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonAquaGreen.png; path = Resources/ButtonAquaGreen.png; sourceTree = SOURCE_ROOT; };
+		FDBC2965142FDA3B00FABA0C /* ButtonAquaRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonAquaRed.png; path = Resources/ButtonAquaRed.png; sourceTree = SOURCE_ROOT; };
+		FDBC2966142FDA3B00FABA0C /* FBCodeButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FBCodeButtonOn.png; path = Resources/FBCodeButtonOn.png; sourceTree = SOURCE_ROOT; };
+		FDBC2967142FDA3B00FABA0C /* FBCodeButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FBCodeButtonOff.png; path = Resources/FBCodeButtonOff.png; sourceTree = SOURCE_ROOT; };
+		FDBC2968142FDA3B00FABA0C /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = Resources/Background.png; sourceTree = SOURCE_ROOT; };
+		FDBC2969142FDA3B00FABA0C /* NumberBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NumberBackground.png; path = Resources/NumberBackground.png; sourceTree = SOURCE_ROOT; };
+		FDBC296A142FDA3B00FABA0C /* Coupon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coupon.png; path = Resources/Coupon.png; sourceTree = SOURCE_ROOT; };
+		FDBC296B142FDA3B00FABA0C /* Points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Points.png; path = Resources/Points.png; sourceTree = SOURCE_ROOT; };
+		FDBC296C142FDA3B00FABA0C /* ShowCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ShowCode.png; path = Resources/ShowCode.png; sourceTree = SOURCE_ROOT; };
+		FDBC2976142FDA7000FABA0C /* FBStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStore.h; path = Source/FBStore.h; sourceTree = "<group>"; };
+		FDBC2977142FDA7000FABA0C /* FBStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStore.m; path = Source/FBStore.m; sourceTree = "<group>"; };
+		FDBC2978142FDA7000FABA0C /* FBStoreExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStoreExt.h; path = Source/FBStoreExt.h; sourceTree = "<group>"; };
+		FDBC2979142FDA7000FABA0C /* FBStoreExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStoreExt.m; path = Source/FBStoreExt.m; sourceTree = "<group>"; };
+		FDBC297A142FDA7000FABA0C /* FBStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStoreManager.h; path = Source/FBStoreManager.h; sourceTree = "<group>"; };
+		FDBC297B142FDA7000FABA0C /* FBStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStoreManager.m; path = Source/FBStoreManager.m; sourceTree = "<group>"; };
+		FDBC2980142FDA9800FABA0C /* FooBarData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FooBarData.xcdatamodel; sourceTree = "<group>"; };
+		FDBC2982142FDAB600FABA0C /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = Source/SBJson.h; sourceTree = "<group>"; };
+		FDBC2983142FDAB600FABA0C /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = Source/SBJsonParser.h; sourceTree = "<group>"; };
+		FDBC2984142FDAB600FABA0C /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = Source/SBJsonParser.m; sourceTree = "<group>"; };
+		FDBC2985142FDAB600FABA0C /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = Source/SBJsonStreamParser.h; sourceTree = "<group>"; };
+		FDBC2986142FDAB600FABA0C /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParser.m; path = Source/SBJsonStreamParser.m; sourceTree = "<group>"; };
+		FDBC2987142FDAB600FABA0C /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAccumulator.h; path = Source/SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		FDBC2988142FDAB600FABA0C /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAccumulator.m; path = Source/SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		FDBC2989142FDAB600FABA0C /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = Source/SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		FDBC298A142FDAB600FABA0C /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAdapter.m; path = Source/SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		FDBC298B142FDAB600FABA0C /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = Source/SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		FDBC298C142FDAB600FABA0C /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserState.m; path = Source/SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		FDBC298D142FDAB600FABA0C /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriter.h; path = Source/SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		FDBC298E142FDAB600FABA0C /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriter.m; path = Source/SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		FDBC298F142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterAccumulator.h; path = Source/SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		FDBC2990142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterAccumulator.m; path = Source/SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		FDBC2991142FDAB600FABA0C /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamWriterState.h; path = Source/SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		FDBC2992142FDAB600FABA0C /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamWriterState.m; path = Source/SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		FDBC2993142FDAB600FABA0C /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = Source/SBJsonTokeniser.h; sourceTree = "<group>"; };
+		FDBC2994142FDAB600FABA0C /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = Source/SBJsonTokeniser.m; sourceTree = "<group>"; };
+		FDBC2995142FDAB600FABA0C /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonUTF8Stream.h; path = Source/SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		FDBC2996142FDAB600FABA0C /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = Source/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		FDBC2997142FDAB600FABA0C /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = Source/SBJsonWriter.h; sourceTree = "<group>"; };
+		FDBC2998142FDAB600FABA0C /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = Source/SBJsonWriter.m; sourceTree = "<group>"; };
+		FDBC29A4142FDAD300FABA0C /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "Source/NSObject+SBJson.h"; sourceTree = "<group>"; };
+		FDBC29A5142FDAD300FABA0C /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "Source/NSObject+SBJson.m"; sourceTree = "<group>"; };
+		FDBC29A7142FDAE600FABA0C /* APCArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCArray.h; path = Source/APCArray.h; sourceTree = "<group>"; };
+		FDBC29A8142FDAE600FABA0C /* APCArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCArray.m; path = Source/APCArray.m; sourceTree = "<group>"; };
+		FDBC29A9142FDAE600FABA0C /* APCDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCDateUtil.h; path = Source/APCDateUtil.h; sourceTree = "<group>"; };
+		FDBC29AA142FDAE600FABA0C /* APCDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCDateUtil.m; path = Source/APCDateUtil.m; sourceTree = "<group>"; };
+		FDBC29AB142FDAE600FABA0C /* APCJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCJson.h; path = Source/APCJson.h; sourceTree = "<group>"; };
+		FDBC29AC142FDAE600FABA0C /* APCJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCJson.m; path = Source/APCJson.m; sourceTree = "<group>"; };
+		FDBC29AD142FDAE600FABA0C /* APCRoundRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCRoundRect.h; path = Source/APCRoundRect.h; sourceTree = "<group>"; };
+		FDBC29AE142FDAE600FABA0C /* APCRoundRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCRoundRect.m; path = Source/APCRoundRect.m; sourceTree = "<group>"; };
+		FDBC29AF142FDAE600FABA0C /* APCString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCString.h; path = Source/APCString.h; sourceTree = "<group>"; };
+		FDBC29B0142FDAE600FABA0C /* APCString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCString.m; path = Source/APCString.m; sourceTree = "<group>"; };
+		FDBC29B7142FDAFF00FABA0C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = Source/en.lproj/MainWindow.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29BA142FDB2500FABA0C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Source/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		FDBC29BC142FDB5300FABA0C /* FBCodeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBCodeButton.h; path = Source/FBCodeButton.h; sourceTree = SOURCE_ROOT; };
+		FDBC29BD142FDB5300FABA0C /* FBCodeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBCodeButton.m; path = Source/FBCodeButton.m; sourceTree = SOURCE_ROOT; };
+		FDBC29BF142FDB6300FABA0C /* BookPoints.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookPoints.xib; path = Source/BookPoints.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29C0142FDB6300FABA0C /* BookPointsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPointsViewController.h; path = Source/BookPointsViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29C1142FDB6300FABA0C /* BookPointsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPointsViewController.m; path = Source/BookPointsViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29C4142FDB9E00FABA0C /* ShowCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShowCodeView.xib; path = Source/ShowCodeView.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29C5142FDB9E00FABA0C /* ShowCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCodeViewController.h; path = Source/ShowCodeViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29C6142FDB9E00FABA0C /* ShowCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCodeViewController.m; path = Source/ShowCodeViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29C7142FDB9E00FABA0C /* ShowCodeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCodeViewModel.h; path = Source/ShowCodeViewModel.h; sourceTree = SOURCE_ROOT; };
+		FDBC29C8142FDB9E00FABA0C /* ShowCodeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCodeViewModel.m; path = Source/ShowCodeViewModel.m; sourceTree = SOURCE_ROOT; };
+		FDBC29CC142FDBC100FABA0C /* StoreListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreListCell.h; path = Source/StoreListCell.h; sourceTree = SOURCE_ROOT; };
+		FDBC29CD142FDBC100FABA0C /* StoreListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreListCell.m; path = Source/StoreListCell.m; sourceTree = SOURCE_ROOT; };
+		FDBC29CE142FDBC100FABA0C /* StoreListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreListCell.xib; path = Source/StoreListCell.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29CF142FDBC100FABA0C /* StoreListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreListCellController.h; path = Source/StoreListCellController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29D0142FDBC100FABA0C /* StoreListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreListCellController.m; path = Source/StoreListCellController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29D1142FDBC100FABA0C /* StoreListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreListView.xib; path = Source/StoreListView.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29D2142FDBC100FABA0C /* StoreListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreListViewController.h; path = Source/StoreListViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29D3142FDBC100FABA0C /* StoreListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreListViewController.m; path = Source/StoreListViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29D9142FDBE000FABA0C /* StoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreView.xib; path = Source/StoreView.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29DA142FDBE000FABA0C /* StoreViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewCell.h; path = Source/StoreViewCell.h; sourceTree = SOURCE_ROOT; };
+		FDBC29DB142FDBE000FABA0C /* StoreViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewCell.m; path = Source/StoreViewCell.m; sourceTree = SOURCE_ROOT; };
+		FDBC29DC142FDBE000FABA0C /* StoreViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreViewCell.xib; path = Source/StoreViewCell.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29DD142FDBE000FABA0C /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewController.h; path = Source/StoreViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29DE142FDBE000FABA0C /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewController.m; path = Source/StoreViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29E3142FDBF600FABA0C /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = Source/ContactCell.h; sourceTree = SOURCE_ROOT; };
+		FDBC29E4142FDBF600FABA0C /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = Source/ContactCell.m; sourceTree = SOURCE_ROOT; };
+		FDBC29E5142FDBF600FABA0C /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactCell.xib; path = Source/ContactCell.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29E8142FDC0C00FABA0C /* CouponView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CouponView.xib; path = Source/CouponView.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29E9142FDC0C00FABA0C /* CouponViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CouponViewController.h; path = Source/CouponViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29EA142FDC0C00FABA0C /* CouponViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CouponViewController.m; path = Source/CouponViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29ED142FDC2C00FABA0C /* FooBar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "FooBar-Info.plist"; sourceTree = "<group>"; };
+		FDBC29EE142FDC2C00FABA0C /* FooBar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FooBar-Prefix.pch"; sourceTree = "<group>"; };
+		FDBC29F0142FDC4C00FABA0C /* FBConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConfig.h; path = Source/FBConfig.h; sourceTree = "<group>"; };
+		FDBC29F1142FDC4C00FABA0C /* FBConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBConfig.m; path = Source/FBConfig.m; sourceTree = "<group>"; };
+		FDBC29F3142FDC6B00FABA0C /* FooBarAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FooBarAppDelegate.h; path = Source/FooBarAppDelegate.h; sourceTree = "<group>"; };
+		FDBC29F4142FDC6B00FABA0C /* FooBarAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FooBarAppDelegate.m; path = Source/FooBarAppDelegate.m; sourceTree = "<group>"; };
+		FDBC29F5142FDC6B00FABA0C /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		FDBC29F81430974A00FABA0C /* FooBarTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FooBarTests.h; path = Tests/FooBarTests.h; sourceTree = SOURCE_ROOT; };
+		FDBC29F91430974A00FABA0C /* FooBarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FooBarTests.m; path = Tests/FooBarTests.m; sourceTree = SOURCE_ROOT; };
+		FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FooBarTests-Info.plist"; path = "Tests/FooBarTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FDBC29FC1430976100FABA0C /* FooBarTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FooBarTests-Prefix.pch"; path = "Tests/FooBarTests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FDD22EF113E01F9D0048D284 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -262,12 +267,11 @@
 		FD283E8813C02AED00FC57EE = {
 			isa = PBXGroup;
 			children = (
-				FD283E9E13C02AED00FC57EE /* Supporting Files */,
-				FDA661BB13C565ED006F4EE7 /* Classes */,
-				FD7F0E0313C485D50061548E /* Model */,
+				FDBC29ED142FDC2C00FABA0C /* FooBar-Info.plist */,
+				FDBC29EE142FDC2C00FABA0C /* FooBar-Prefix.pch */,
+				FDBC2963142FD96C00FABA0C /* Source */,
 				FD283ED913C0812E00FC57EE /* Resources */,
-				FD283E9D13C02AED00FC57EE /* FooBar */,
-				FD283EC313C02AED00FC57EE /* FooBarTests */,
+				FD283EC313C02AED00FC57EE /* Tests */,
 				FD283E9613C02AED00FC57EE /* Frameworks */,
 				FD283E9413C02AED00FC57EE /* Products */,
 			);
@@ -277,7 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				FD283E9313C02AED00FC57EE /* foobar.app */,
-				FD283EBD13C02AED00FC57EE /* FooBarTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -299,51 +302,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FD283E9D13C02AED00FC57EE /* FooBar */ = {
+		FD283E9D13C02AED00FC57EE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FD35DA7613CAA452008DB019 /* FBConfig.h */,
-				FD35DA7713CAA452008DB019 /* FBConfig.m */,
-				FD283EA613C02AED00FC57EE /* FooBarAppDelegate.h */,
-				FD283EA713C02AED00FC57EE /* FooBarAppDelegate.m */,
-				FD283EA913C02AED00FC57EE /* MainWindow.xib */,
+				FDBC29B9142FDB2500FABA0C /* InfoPlist.strings */,
+				FDBC29B6142FDAFF00FABA0C /* MainWindow.xib */,
 				FD8E9BAC141AE18B00F04696 /* ShowCodeView */,
 				FD8E9BAE141AE1AC00F04696 /* BookPoints */,
 				FD8E9BAF141AE1C900F04696 /* StoreList */,
 				FD8E9BB0141AE4BF00F04696 /* StoreView */,
 				FD8E9BB1141AE4E500F04696 /* CouponView */,
 			);
+			name = View;
 			path = FooBar;
 			sourceTree = "<group>";
 		};
-		FD283E9E13C02AED00FC57EE /* Supporting Files */ = {
+		FD283EC313C02AED00FC57EE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FD283E9F13C02AED00FC57EE /* FooBar-Info.plist */,
-				FD283EA013C02AED00FC57EE /* InfoPlist.strings */,
-				FD283EA313C02AED00FC57EE /* FooBar-Prefix.pch */,
-				FD283EA413C02AED00FC57EE /* main.m */,
-			);
-			name = "Supporting Files";
-			path = FooBar;
-			sourceTree = "<group>";
-		};
-		FD283EC313C02AED00FC57EE /* FooBarTests */ = {
-			isa = PBXGroup;
-			children = (
+				FDBC29F81430974A00FABA0C /* FooBarTests.h */,
+				FDBC29F91430974A00FABA0C /* FooBarTests.m */,
 				FD283EC413C02AED00FC57EE /* Supporting Files */,
-				FD2BF609141CE4CB00E6E6E5 /* FooBarTests.h */,
-				FD2BF60A141CE4CB00E6E6E5 /* FooBarTests.m */,
 			);
+			name = Tests;
 			path = FooBarTests;
 			sourceTree = "<group>";
 		};
 		FD283EC413C02AED00FC57EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FD283EC513C02AED00FC57EE /* FooBarTests-Info.plist */,
-				FD283EC613C02AED00FC57EE /* InfoPlist.strings */,
-				FD283EC913C02AED00FC57EE /* FooBarTests-Prefix.pch */,
+				FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */,
+				FDBC29FC1430976100FABA0C /* FooBarTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -351,51 +340,51 @@
 		FD283ED913C0812E00FC57EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FDBC2964142FDA3B00FABA0C /* ButtonAquaGreen.png */,
+				FDBC2965142FDA3B00FABA0C /* ButtonAquaRed.png */,
+				FDBC2966142FDA3B00FABA0C /* FBCodeButtonOn.png */,
+				FDBC2967142FDA3B00FABA0C /* FBCodeButtonOff.png */,
+				FDBC2968142FDA3B00FABA0C /* Background.png */,
+				FDBC2969142FDA3B00FABA0C /* NumberBackground.png */,
+				FDBC296A142FDA3B00FABA0C /* Coupon.png */,
+				FDBC296B142FDA3B00FABA0C /* Points.png */,
+				FDBC296C142FDA3B00FABA0C /* ShowCode.png */,
 				FD8C3B8D141A2B99004D7A5C /* icon.png */,
-				FD577F9613D8D7890043BFB4 /* ButtonAquaGreen.png */,
-				FD577F9713D8D7890043BFB4 /* ButtonAquaRed.png */,
-				FD35DA7113CA58C9008DB019 /* FBCodeButtonOff.png */,
-				FD35DA7213CA58C9008DB019 /* FBCodeButtonOn.png */,
-				FD9EE6FF13C8287F00FC80D8 /* Background.png */,
-				FD7DE95113C5DA8B00887511 /* numberBackground.png */,
-				FD375B8613C879B50061FE83 /* Points.png */,
-				FD375B8913C879C00061FE83 /* Coupon.png */,
-				FD375B8B13C879CA0061FE83 /* ShowCode.png */,
 			);
 			name = Resources;
 			path = FooBar;
 			sourceTree = "<group>";
 		};
-		FD48395713DCD81900EA0397 /* Json */ = {
+		FD48395713DCD81900EA0397 /* SBJson */ = {
 			isa = PBXGroup;
 			children = (
-				FDA661BC13C5660A006F4EE7 /* NSObject+SBJson.h */,
-				FDA661BD13C5660A006F4EE7 /* NSObject+SBJson.m */,
-				FDA661BE13C5660A006F4EE7 /* SBJson.h */,
-				FDA661BF13C5660A006F4EE7 /* SBJsonParser.h */,
-				FDA661C013C5660A006F4EE7 /* SBJsonParser.m */,
-				FDA661C113C5660A006F4EE7 /* SBJsonStreamParser.h */,
-				FDA661C213C5660A006F4EE7 /* SBJsonStreamParser.m */,
-				FDA661C313C5660A006F4EE7 /* SBJsonStreamParserAccumulator.h */,
-				FDA661C413C5660A006F4EE7 /* SBJsonStreamParserAccumulator.m */,
-				FDA661C513C5660A006F4EE7 /* SBJsonStreamParserAdapter.h */,
-				FDA661C613C5660A006F4EE7 /* SBJsonStreamParserAdapter.m */,
-				FDA661C713C5660A006F4EE7 /* SBJsonStreamParserState.h */,
-				FDA661C813C5660A006F4EE7 /* SBJsonStreamParserState.m */,
-				FDA661C913C5660A006F4EE7 /* SBJsonStreamWriter.h */,
-				FDA661CA13C5660A006F4EE7 /* SBJsonStreamWriter.m */,
-				FDA661CB13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.h */,
-				FDA661CC13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.m */,
-				FDA661CD13C5660A006F4EE7 /* SBJsonStreamWriterState.h */,
-				FDA661CE13C5660A006F4EE7 /* SBJsonStreamWriterState.m */,
-				FDA661CF13C5660A006F4EE7 /* SBJsonTokeniser.h */,
-				FDA661D013C5660A006F4EE7 /* SBJsonTokeniser.m */,
-				FDA661D113C5660A006F4EE7 /* SBJsonUTF8Stream.h */,
-				FDA661D213C5660A006F4EE7 /* SBJsonUTF8Stream.m */,
-				FDA661D313C5660A006F4EE7 /* SBJsonWriter.h */,
-				FDA661D413C5660A006F4EE7 /* SBJsonWriter.m */,
+				FDBC29A4142FDAD300FABA0C /* NSObject+SBJson.h */,
+				FDBC29A5142FDAD300FABA0C /* NSObject+SBJson.m */,
+				FDBC2982142FDAB600FABA0C /* SBJson.h */,
+				FDBC2983142FDAB600FABA0C /* SBJsonParser.h */,
+				FDBC2984142FDAB600FABA0C /* SBJsonParser.m */,
+				FDBC2985142FDAB600FABA0C /* SBJsonStreamParser.h */,
+				FDBC2986142FDAB600FABA0C /* SBJsonStreamParser.m */,
+				FDBC2987142FDAB600FABA0C /* SBJsonStreamParserAccumulator.h */,
+				FDBC2988142FDAB600FABA0C /* SBJsonStreamParserAccumulator.m */,
+				FDBC2989142FDAB600FABA0C /* SBJsonStreamParserAdapter.h */,
+				FDBC298A142FDAB600FABA0C /* SBJsonStreamParserAdapter.m */,
+				FDBC298B142FDAB600FABA0C /* SBJsonStreamParserState.h */,
+				FDBC298C142FDAB600FABA0C /* SBJsonStreamParserState.m */,
+				FDBC298D142FDAB600FABA0C /* SBJsonStreamWriter.h */,
+				FDBC298E142FDAB600FABA0C /* SBJsonStreamWriter.m */,
+				FDBC298F142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.h */,
+				FDBC2990142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.m */,
+				FDBC2991142FDAB600FABA0C /* SBJsonStreamWriterState.h */,
+				FDBC2992142FDAB600FABA0C /* SBJsonStreamWriterState.m */,
+				FDBC2993142FDAB600FABA0C /* SBJsonTokeniser.h */,
+				FDBC2994142FDAB600FABA0C /* SBJsonTokeniser.m */,
+				FDBC2995142FDAB600FABA0C /* SBJsonUTF8Stream.h */,
+				FDBC2996142FDAB600FABA0C /* SBJsonUTF8Stream.m */,
+				FDBC2997142FDAB600FABA0C /* SBJsonWriter.h */,
+				FDBC2998142FDAB600FABA0C /* SBJsonWriter.m */,
 			);
-			name = Json;
+			name = SBJson;
 			sourceTree = "<group>";
 		};
 		FD48395813DCD82300EA0397 /* ASI */ = {
@@ -430,13 +419,13 @@
 		FD7F0E0313C485D50061548E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FD2BF611141CF45D00E6E6E5 /* FBStore.h */,
-				FD2BF612141CF45D00E6E6E5 /* FBStore.m */,
-				FD283ED613C02B2F00FC57EE /* FooBarData.xcdatamodeld */,
-				FD7F0E0013C485BF0061548E /* FBStoreManager.h */,
-				FD7F0E0113C485BF0061548E /* FBStoreManager.m */,
-				FD3092CB1415153A0051FCD9 /* FBStoreExt.h */,
-				FD3092CC1415153A0051FCD9 /* FBStoreExt.m */,
+				FDBC297F142FDA9800FABA0C /* FooBarData.xcdatamodeld */,
+				FDBC2976142FDA7000FABA0C /* FBStore.h */,
+				FDBC2977142FDA7000FABA0C /* FBStore.m */,
+				FDBC2978142FDA7000FABA0C /* FBStoreExt.h */,
+				FDBC2979142FDA7000FABA0C /* FBStoreExt.m */,
+				FDBC297A142FDA7000FABA0C /* FBStoreManager.h */,
+				FDBC297B142FDA7000FABA0C /* FBStoreManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -444,11 +433,11 @@
 		FD8E9BAC141AE18B00F04696 /* ShowCodeView */ = {
 			isa = PBXGroup;
 			children = (
-				FDC0AEBE13C0F67900BF8337 /* ShowCodeView.xib */,
-				FDC0AEC013C0F69000BF8337 /* ShowCodeViewController.h */,
-				FDC0AEC113C0F69000BF8337 /* ShowCodeViewController.m */,
-				FDA2810413CBA65C00F34014 /* ShowCodeViewModel.h */,
-				FDA2810513CBA65C00F34014 /* ShowCodeViewModel.m */,
+				FDBC29C4142FDB9E00FABA0C /* ShowCodeView.xib */,
+				FDBC29C5142FDB9E00FABA0C /* ShowCodeViewController.h */,
+				FDBC29C6142FDB9E00FABA0C /* ShowCodeViewController.m */,
+				FDBC29C7142FDB9E00FABA0C /* ShowCodeViewModel.h */,
+				FDBC29C8142FDB9E00FABA0C /* ShowCodeViewModel.m */,
 			);
 			name = ShowCodeView;
 			sourceTree = "<group>";
@@ -456,11 +445,11 @@
 		FD8E9BAE141AE1AC00F04696 /* BookPoints */ = {
 			isa = PBXGroup;
 			children = (
-				FD96F41613CA530A00F3591F /* FBCodeButton.h */,
-				FD96F41713CA530A00F3591F /* FBCodeButton.m */,
-				FD94BF2113D8527400E373D2 /* BookPoints.xib */,
-				FD94BF2413D8530D00E373D2 /* BookPointsViewController.h */,
-				FD94BF2513D8530D00E373D2 /* BookPointsViewController.m */,
+				FDBC29BF142FDB6300FABA0C /* BookPoints.xib */,
+				FDBC29C0142FDB6300FABA0C /* BookPointsViewController.h */,
+				FDBC29C1142FDB6300FABA0C /* BookPointsViewController.m */,
+				FDBC29BC142FDB5300FABA0C /* FBCodeButton.h */,
+				FDBC29BD142FDB5300FABA0C /* FBCodeButton.m */,
 			);
 			name = BookPoints;
 			sourceTree = "<group>";
@@ -468,14 +457,14 @@
 		FD8E9BAF141AE1C900F04696 /* StoreList */ = {
 			isa = PBXGroup;
 			children = (
-				FDC0AEC513C0F70500BF8337 /* StoreListView.xib */,
-				FDC0AEC713C0F71900BF8337 /* StoreListViewController.h */,
-				FDC0AEC813C0F71900BF8337 /* StoreListViewController.m */,
-				FDB40E2613C7539E004B549A /* StoreListCell.xib */,
-				FDB40E2813C75636004B549A /* StoreListCell.h */,
-				FDB40E2913C75636004B549A /* StoreListCell.m */,
-				FDB40E2B13C757B6004B549A /* StoreListCellController.h */,
-				FDB40E2C13C757B7004B549A /* StoreListCellController.m */,
+				FDBC29CC142FDBC100FABA0C /* StoreListCell.h */,
+				FDBC29CD142FDBC100FABA0C /* StoreListCell.m */,
+				FDBC29CE142FDBC100FABA0C /* StoreListCell.xib */,
+				FDBC29CF142FDBC100FABA0C /* StoreListCellController.h */,
+				FDBC29D0142FDBC100FABA0C /* StoreListCellController.m */,
+				FDBC29D1142FDBC100FABA0C /* StoreListView.xib */,
+				FDBC29D2142FDBC100FABA0C /* StoreListViewController.h */,
+				FDBC29D3142FDBC100FABA0C /* StoreListViewController.m */,
 			);
 			name = StoreList;
 			sourceTree = "<group>";
@@ -483,15 +472,15 @@
 		FD8E9BB0141AE4BF00F04696 /* StoreView */ = {
 			isa = PBXGroup;
 			children = (
-				FDA0DA811416CFEB00BC526C /* StoreView.xib */,
-				FD3092DE14151A100051FCD9 /* StoreViewController.h */,
-				FD3092DF14151A100051FCD9 /* StoreViewController.m */,
-				FDA0DA831416D04A00BC526C /* StoreViewCell.xib */,
-				FDA0DA8814182EFC00BC526C /* StoreViewCell.h */,
-				FDA0DA8914182EFC00BC526C /* StoreViewCell.m */,
-				FDA0DA8B1418377D00BC526C /* ContactCell.xib */,
-				FDA0DA8D141839EA00BC526C /* ContactCell.h */,
-				FDA0DA8E141839EA00BC526C /* ContactCell.m */,
+				FDBC29E5142FDBF600FABA0C /* ContactCell.xib */,
+				FDBC29E3142FDBF600FABA0C /* ContactCell.h */,
+				FDBC29E4142FDBF600FABA0C /* ContactCell.m */,
+				FDBC29D9142FDBE000FABA0C /* StoreView.xib */,
+				FDBC29DA142FDBE000FABA0C /* StoreViewCell.h */,
+				FDBC29DB142FDBE000FABA0C /* StoreViewCell.m */,
+				FDBC29DC142FDBE000FABA0C /* StoreViewCell.xib */,
+				FDBC29DD142FDBE000FABA0C /* StoreViewController.h */,
+				FDBC29DE142FDBE000FABA0C /* StoreViewController.m */,
 			);
 			name = StoreView;
 			sourceTree = "<group>";
@@ -499,36 +488,53 @@
 		FD8E9BB1141AE4E500F04696 /* CouponView */ = {
 			isa = PBXGroup;
 			children = (
-				FDC0AEBC13C0F57D00BF8337 /* CouponView.xib */,
-				FDC0AEB913C0F51E00BF8337 /* CouponViewController.h */,
-				FDC0AEBA13C0F51E00BF8337 /* CouponViewController.m */,
+				FDBC29E8142FDC0C00FABA0C /* CouponView.xib */,
+				FDBC29E9142FDC0C00FABA0C /* CouponViewController.h */,
+				FDBC29EA142FDC0C00FABA0C /* CouponViewController.m */,
 			);
 			name = CouponView;
 			sourceTree = "<group>";
 		};
-		FD9EE70113C8387000FC80D8 /* APCFramework */ = {
+		FD9EE70113C8387000FC80D8 /* APC */ = {
 			isa = PBXGroup;
 			children = (
-				FD9EE70213C8389400FC80D8 /* APCString.h */,
-				FD9EE70313C8389400FC80D8 /* APCString.m */,
-				FD9EE70513C8390F00FC80D8 /* APCArray.h */,
-				FD9EE70613C8390F00FC80D8 /* APCArray.m */,
-				FDAC7CDD13D5972A0028ABFB /* APCRoundRect.h */,
-				FDAC7CDE13D5972A0028ABFB /* APCRoundRect.m */,
-				FD8BE2EE13E0B83A00CD3F1E /* APCDateUtil.h */,
-				FD8BE2EF13E0B83A00CD3F1E /* APCDateUtil.m */,
+				FDBC29A7142FDAE600FABA0C /* APCArray.h */,
+				FDBC29A8142FDAE600FABA0C /* APCArray.m */,
+				FDBC29A9142FDAE600FABA0C /* APCDateUtil.h */,
+				FDBC29AA142FDAE600FABA0C /* APCDateUtil.m */,
+				FDBC29AB142FDAE600FABA0C /* APCJson.h */,
+				FDBC29AC142FDAE600FABA0C /* APCJson.m */,
+				FDBC29AD142FDAE600FABA0C /* APCRoundRect.h */,
+				FDBC29AE142FDAE600FABA0C /* APCRoundRect.m */,
+				FDBC29AF142FDAE600FABA0C /* APCString.h */,
+				FDBC29B0142FDAE600FABA0C /* APCString.m */,
 			);
-			name = APCFramework;
+			name = APC;
 			sourceTree = "<group>";
 		};
-		FDA661BB13C565ED006F4EE7 /* Classes */ = {
+		FDA661BB13C565ED006F4EE7 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				FD48395813DCD82300EA0397 /* ASI */,
-				FD48395713DCD81900EA0397 /* Json */,
-				FD9EE70113C8387000FC80D8 /* APCFramework */,
+				FD48395713DCD81900EA0397 /* SBJson */,
+				FD9EE70113C8387000FC80D8 /* APC */,
 			);
-			name = Classes;
+			name = API;
+			sourceTree = "<group>";
+		};
+		FDBC2963142FD96C00FABA0C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FDBC29F3142FDC6B00FABA0C /* FooBarAppDelegate.h */,
+				FDBC29F4142FDC6B00FABA0C /* FooBarAppDelegate.m */,
+				FDBC29F5142FDC6B00FABA0C /* main.m */,
+				FDBC29F0142FDC4C00FABA0C /* FBConfig.h */,
+				FDBC29F1142FDC4C00FABA0C /* FBConfig.m */,
+				FDA661BB13C565ED006F4EE7 /* API */,
+				FD7F0E0313C485D50061548E /* Model */,
+				FD283E9D13C02AED00FC57EE /* View */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,9 +557,9 @@
 			productReference = FD283E9313C02AED00FC57EE /* foobar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FD283EBC13C02AED00FC57EE /* FooBarTests */ = {
+		FD283EBC13C02AED00FC57EE /* foobar-tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD283ED313C02AED00FC57EE /* Build configuration list for PBXNativeTarget "FooBarTests" */;
+			buildConfigurationList = FD283ED313C02AED00FC57EE /* Build configuration list for PBXNativeTarget "foobar-tests" */;
 			buildPhases = (
 				FD283EB813C02AED00FC57EE /* Sources */,
 				FD283EB913C02AED00FC57EE /* Frameworks */,
@@ -565,7 +571,7 @@
 			dependencies = (
 				FD283EC213C02AED00FC57EE /* PBXTargetDependency */,
 			);
-			name = FooBarTests;
+			name = "foobar-tests";
 			productName = FooBarTests;
 			productReference = FD283EBD13C02AED00FC57EE /* FooBarTests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -588,7 +594,7 @@
 			projectRoot = "";
 			targets = (
 				FD283E9213C02AED00FC57EE /* foobar */,
-				FD283EBC13C02AED00FC57EE /* FooBarTests */,
+				FD283EBC13C02AED00FC57EE /* foobar-tests */,
 			);
 		};
 /* End PBXProject section */
@@ -598,26 +604,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD283EA213C02AED00FC57EE /* InfoPlist.strings in Resources */,
-				FD283EAB13C02AED00FC57EE /* MainWindow.xib in Resources */,
-				FDC0AEBD13C0F57D00BF8337 /* CouponView.xib in Resources */,
-				FDC0AEBF13C0F67900BF8337 /* ShowCodeView.xib in Resources */,
-				FDC0AEC613C0F70500BF8337 /* StoreListView.xib in Resources */,
-				FD7DE95213C5DA8B00887511 /* numberBackground.png in Resources */,
-				FDB40E2713C7539E004B549A /* StoreListCell.xib in Resources */,
-				FD9EE70013C8287F00FC80D8 /* Background.png in Resources */,
-				FD375B8713C879B50061FE83 /* Points.png in Resources */,
-				FD375B8A13C879C00061FE83 /* Coupon.png in Resources */,
-				FD375B8C13C879CA0061FE83 /* ShowCode.png in Resources */,
-				FD35DA7313CA58C9008DB019 /* FBCodeButtonOff.png in Resources */,
-				FD35DA7413CA58C9008DB019 /* FBCodeButtonOn.png in Resources */,
-				FD94BF2213D8527400E373D2 /* BookPoints.xib in Resources */,
-				FD577F9813D8D7890043BFB4 /* ButtonAquaGreen.png in Resources */,
-				FD577F9913D8D7890043BFB4 /* ButtonAquaRed.png in Resources */,
-				FDA0DA821416CFEB00BC526C /* StoreView.xib in Resources */,
-				FDA0DA841416D04A00BC526C /* StoreViewCell.xib in Resources */,
-				FDA0DA8C1418377D00BC526C /* ContactCell.xib in Resources */,
 				FD8C3B8E141A2B99004D7A5C /* icon.png in Resources */,
+				FDBC296D142FDA3B00FABA0C /* ButtonAquaGreen.png in Resources */,
+				FDBC296E142FDA3B00FABA0C /* ButtonAquaRed.png in Resources */,
+				FDBC296F142FDA3B00FABA0C /* FBCodeButtonOn.png in Resources */,
+				FDBC2970142FDA3B00FABA0C /* FBCodeButtonOff.png in Resources */,
+				FDBC2971142FDA3B00FABA0C /* Background.png in Resources */,
+				FDBC2972142FDA3B00FABA0C /* NumberBackground.png in Resources */,
+				FDBC2973142FDA3B00FABA0C /* Coupon.png in Resources */,
+				FDBC2974142FDA3B00FABA0C /* Points.png in Resources */,
+				FDBC2975142FDA3B00FABA0C /* ShowCode.png in Resources */,
+				FDBC29B8142FDAFF00FABA0C /* MainWindow.xib in Resources */,
+				FDBC29BB142FDB2500FABA0C /* InfoPlist.strings in Resources */,
+				FDBC29C2142FDB6300FABA0C /* BookPoints.xib in Resources */,
+				FDBC29C9142FDB9E00FABA0C /* ShowCodeView.xib in Resources */,
+				FDBC29D5142FDBC100FABA0C /* StoreListCell.xib in Resources */,
+				FDBC29D7142FDBC100FABA0C /* StoreListView.xib in Resources */,
+				FDBC29DF142FDBE000FABA0C /* StoreView.xib in Resources */,
+				FDBC29E1142FDBE000FABA0C /* StoreViewCell.xib in Resources */,
+				FDBC29E7142FDBF600FABA0C /* ContactCell.xib in Resources */,
+				FDBC29EB142FDC0C00FABA0C /* CouponView.xib in Resources */,
+				FDBC29EF142FDC2C00FABA0C /* FooBar-Info.plist in Resources */,
+				FDBC29FD1430976100FABA0C /* FooBarTests-Info.plist in Resources */,
+				FDBC29FE1430978900FABA0C /* FooBarTests-Info.plist in Resources */,
+				FDBC29FF1430979800FABA0C /* FooBarTests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +635,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD283EC813C02AED00FC57EE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,34 +661,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD283EA513C02AED00FC57EE /* main.m in Sources */,
-				FD283EA813C02AED00FC57EE /* FooBarAppDelegate.m in Sources */,
-				FD283ED813C02B2F00FC57EE /* FooBarData.xcdatamodeld in Sources */,
-				FDC0AEBB13C0F51E00BF8337 /* CouponViewController.m in Sources */,
-				FDC0AEC213C0F69000BF8337 /* ShowCodeViewController.m in Sources */,
-				FDC0AEC913C0F71900BF8337 /* StoreListViewController.m in Sources */,
-				FD7F0E0213C485BF0061548E /* FBStoreManager.m in Sources */,
-				FDA661D513C5660A006F4EE7 /* NSObject+SBJson.m in Sources */,
-				FDA661D613C5660A006F4EE7 /* SBJsonParser.m in Sources */,
-				FDA661D713C5660A006F4EE7 /* SBJsonStreamParser.m in Sources */,
-				FDA661D813C5660A006F4EE7 /* SBJsonStreamParserAccumulator.m in Sources */,
-				FDA661D913C5660A006F4EE7 /* SBJsonStreamParserAdapter.m in Sources */,
-				FDA661DA13C5660A006F4EE7 /* SBJsonStreamParserState.m in Sources */,
-				FDA661DB13C5660A006F4EE7 /* SBJsonStreamWriter.m in Sources */,
-				FDA661DC13C5660A006F4EE7 /* SBJsonStreamWriterAccumulator.m in Sources */,
-				FDA661DD13C5660A006F4EE7 /* SBJsonStreamWriterState.m in Sources */,
-				FDA661DE13C5660A006F4EE7 /* SBJsonTokeniser.m in Sources */,
-				FDA661DF13C5660A006F4EE7 /* SBJsonUTF8Stream.m in Sources */,
-				FDA661E013C5660A006F4EE7 /* SBJsonWriter.m in Sources */,
-				FDB40E2A13C75637004B549A /* StoreListCell.m in Sources */,
-				FDB40E2D13C757B7004B549A /* StoreListCellController.m in Sources */,
-				FD9EE70413C8389400FC80D8 /* APCString.m in Sources */,
-				FD9EE70713C8390F00FC80D8 /* APCArray.m in Sources */,
-				FD96F41813CA530A00F3591F /* FBCodeButton.m in Sources */,
-				FD35DA7813CAA452008DB019 /* FBConfig.m in Sources */,
-				FDA2810613CBA65D00F34014 /* ShowCodeViewModel.m in Sources */,
-				FDAC7CDF13D5972B0028ABFB /* APCRoundRect.m in Sources */,
-				FD94BF2613D8530D00E373D2 /* BookPointsViewController.m in Sources */,
 				FD48396D13DCD86000EA0397 /* ASIAuthenticationDialog.m in Sources */,
 				FD48396E13DCD86000EA0397 /* ASIDataCompressor.m in Sources */,
 				FD48396F13DCD86000EA0397 /* ASIDataDecompressor.m in Sources */,
@@ -689,12 +670,41 @@
 				FD48397313DCD86000EA0397 /* ASIInputStream.m in Sources */,
 				FD48397413DCD86000EA0397 /* ASINetworkQueue.m in Sources */,
 				FD48397713DCD87900EA0397 /* Reachability.m in Sources */,
-				FD8BE2F013E0B83A00CD3F1E /* APCDateUtil.m in Sources */,
-				FD3092CD1415153B0051FCD9 /* FBStoreExt.m in Sources */,
-				FD3092E014151A110051FCD9 /* StoreViewController.m in Sources */,
-				FDA0DA8A14182EFC00BC526C /* StoreViewCell.m in Sources */,
-				FDA0DA8F141839EB00BC526C /* ContactCell.m in Sources */,
-				FD2BF613141CF45D00E6E6E5 /* FBStore.m in Sources */,
+				FDBC297C142FDA7000FABA0C /* FBStore.m in Sources */,
+				FDBC297D142FDA7000FABA0C /* FBStoreExt.m in Sources */,
+				FDBC297E142FDA7000FABA0C /* FBStoreManager.m in Sources */,
+				FDBC2981142FDA9800FABA0C /* FooBarData.xcdatamodeld in Sources */,
+				FDBC2999142FDAB600FABA0C /* SBJsonParser.m in Sources */,
+				FDBC299A142FDAB600FABA0C /* SBJsonStreamParser.m in Sources */,
+				FDBC299B142FDAB600FABA0C /* SBJsonStreamParserAccumulator.m in Sources */,
+				FDBC299C142FDAB600FABA0C /* SBJsonStreamParserAdapter.m in Sources */,
+				FDBC299D142FDAB600FABA0C /* SBJsonStreamParserState.m in Sources */,
+				FDBC299E142FDAB600FABA0C /* SBJsonStreamWriter.m in Sources */,
+				FDBC299F142FDAB600FABA0C /* SBJsonStreamWriterAccumulator.m in Sources */,
+				FDBC29A0142FDAB600FABA0C /* SBJsonStreamWriterState.m in Sources */,
+				FDBC29A1142FDAB600FABA0C /* SBJsonTokeniser.m in Sources */,
+				FDBC29A2142FDAB600FABA0C /* SBJsonUTF8Stream.m in Sources */,
+				FDBC29A3142FDAB600FABA0C /* SBJsonWriter.m in Sources */,
+				FDBC29A6142FDAD300FABA0C /* NSObject+SBJson.m in Sources */,
+				FDBC29B1142FDAE600FABA0C /* APCArray.m in Sources */,
+				FDBC29B2142FDAE600FABA0C /* APCDateUtil.m in Sources */,
+				FDBC29B3142FDAE600FABA0C /* APCJson.m in Sources */,
+				FDBC29B4142FDAE600FABA0C /* APCRoundRect.m in Sources */,
+				FDBC29B5142FDAE600FABA0C /* APCString.m in Sources */,
+				FDBC29BE142FDB5300FABA0C /* FBCodeButton.m in Sources */,
+				FDBC29C3142FDB6300FABA0C /* BookPointsViewController.m in Sources */,
+				FDBC29CA142FDB9E00FABA0C /* ShowCodeViewController.m in Sources */,
+				FDBC29CB142FDB9E00FABA0C /* ShowCodeViewModel.m in Sources */,
+				FDBC29D4142FDBC100FABA0C /* StoreListCell.m in Sources */,
+				FDBC29D6142FDBC100FABA0C /* StoreListCellController.m in Sources */,
+				FDBC29D8142FDBC100FABA0C /* StoreListViewController.m in Sources */,
+				FDBC29E0142FDBE000FABA0C /* StoreViewCell.m in Sources */,
+				FDBC29E2142FDBE000FABA0C /* StoreViewController.m in Sources */,
+				FDBC29E6142FDBF600FABA0C /* ContactCell.m in Sources */,
+				FDBC29EC142FDC0C00FABA0C /* CouponViewController.m in Sources */,
+				FDBC29F2142FDC4C00FABA0C /* FBConfig.m in Sources */,
+				FDBC29F6142FDC6B00FABA0C /* FooBarAppDelegate.m in Sources */,
+				FDBC29F7142FDC6B00FABA0C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,7 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD2BF60D141CE61000E6E6E5 /* FooBarTests.m in Sources */,
+				FDBC2A001430A52E00FABA0C /* FooBarTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,26 +727,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FD283EA013C02AED00FC57EE /* InfoPlist.strings */ = {
+		FDBC29B6142FDAFF00FABA0C /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FD283EA113C02AED00FC57EE /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		FD283EA913C02AED00FC57EE /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD283EAA13C02AED00FC57EE /* en */,
+				FDBC29B7142FDAFF00FABA0C /* en */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		FD283EC613C02AED00FC57EE /* InfoPlist.strings */ = {
+		FDBC29B9142FDB2500FABA0C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FD283EC713C02AED00FC57EE /* en */,
+				FDBC29BA142FDB2500FABA0C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -788,8 +790,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FooBar/FooBar-Prefix.pch";
-				INFOPLIST_FILE = "FooBar/FooBar-Info.plist";
+				GCC_PREFIX_HEADER = "FooBar-Prefix.pch";
+				INFOPLIST_FILE = "FooBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "55165566-BEEE-47E7-81F3-ED8B963BFBFC";
 				WRAPPER_EXTENSION = app;
@@ -802,8 +804,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FooBar/FooBar-Prefix.pch";
-				INFOPLIST_FILE = "FooBar/FooBar-Info.plist";
+				GCC_PREFIX_HEADER = "FooBar-Prefix.pch";
+				INFOPLIST_FILE = "FooBar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -822,8 +824,8 @@
 					"\"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FooBarTests/FooBarTests-Prefix.pch";
-				INFOPLIST_FILE = "FooBarTests/FooBarTests-Info.plist";
+				GCC_PREFIX_HEADER = "FooBarTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/FooBarTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
@@ -847,8 +849,8 @@
 					"\"$(DEVELOPER_DIR)/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/Developer/Library/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FooBarTests/FooBarTests-Prefix.pch";
-				INFOPLIST_FILE = "FooBarTests/FooBarTests-Info.plist";
+				GCC_PREFIX_HEADER = "FooBarTests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/FooBarTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
 					SenTestingKit,
@@ -881,7 +883,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD283ED313C02AED00FC57EE /* Build configuration list for PBXNativeTarget "FooBarTests" */ = {
+		FD283ED313C02AED00FC57EE /* Build configuration list for PBXNativeTarget "foobar-tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD283ED413C02AED00FC57EE /* Debug */,
@@ -893,14 +895,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FD283ED613C02B2F00FC57EE /* FooBarData.xcdatamodeld */ = {
+		FDBC297F142FDA9800FABA0C /* FooBarData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FD283ED713C02B2F00FC57EE /* FooBarData.xcdatamodel */,
+				FDBC2980142FDA9800FABA0C /* FooBarData.xcdatamodel */,
 			);
-			currentVersion = FD283ED713C02B2F00FC57EE /* FooBarData.xcdatamodel */;
+			currentVersion = FDBC2980142FDA9800FABA0C /* FooBarData.xcdatamodel */;
 			name = FooBarData.xcdatamodeld;
-			path = FooBar/FooBarData.xcdatamodeld;
+			path = Source/FooBarData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

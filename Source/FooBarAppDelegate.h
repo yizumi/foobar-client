@@ -22,4 +22,6 @@ UITabBarControllerDelegate> {
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *segmentedController;
 
+- (void)getTokenForDevice:(NSString*)deviceToken;
+
 @end

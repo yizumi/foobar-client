@@ -9,9 +9,9 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface FooBarTests : SenTestCase {
-@private
-    
+@interface FooBarTests : SenTestCase
+{
+    @private
 }
 
 @end

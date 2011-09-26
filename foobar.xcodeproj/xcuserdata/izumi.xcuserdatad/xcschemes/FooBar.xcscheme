@@ -33,7 +33,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD283EBC13C02AED00FC57EE"
                BuildableName = "FooBarTests.octest"
-               BlueprintName = "FooBarTests"
+               BlueprintName = "foobar-tests"
                ReferencedContainer = "container:foobar.xcodeproj">
             </BuildableReference>
          </TestableReference>

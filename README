@@ -1,1 +1,11 @@
 foobar-client
+
+( ) Allow GetTokenForDevice to accept APN device Id
+	- Change the data model [DONE]
+	- Change the command [DONE]
+	- Change the test case (Server) [DONE]
+	- Change the test case (Client)
+( ) Rename Store to Shop
+( ) Allow GetTokenForDevice without APN response.
+( ) Implement Store Regsiter
+( ) Implement 

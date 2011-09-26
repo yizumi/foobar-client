@@ -26,8 +26,9 @@
 @property (retain,nonatomic) NSDate* expirationDate;
 @property (retain,nonatomic) FBConfig* config;
 
-- (void) stopTimer;
 - (void) toggleInputTokenChar:(char)chr;
+- (void) beginExpirationTimer;
 - (void) checkExpiration:(NSTimer*)timer;
+- (void) stopExpirationTimer;
 
 @end

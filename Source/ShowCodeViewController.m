@@ -40,6 +40,17 @@
 @synthesize progress;
 @synthesize viewModel;
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Custom initialization
+        ShowCodeViewModel* vm = [[ShowCodeViewModel alloc]init];
+        viewModel = vm;
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -135,7 +146,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     NSLog(@"Stopping timer");
-    [viewModel stopTimer];
+    [viewModel stopExpirationTimer];
 }
 
 - (void)dealloc
