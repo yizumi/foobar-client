@@ -181,8 +181,10 @@
         NSString* newToken = (NSString *)[change objectForKey:NSKeyValueChangeNewKey];
         [_buttons forEach:^(id item) {
             FBCodeButton* button = (FBCodeButton*)item;
-            int index = [newToken indexOf:[button.titleLabel.text characterAtIndex:0]];
-            [button setChecked: index > -1];            
+            NSString* origTitle = [button getOrigTitle];
+            int index = [newToken indexOf:[origTitle characterAtIndex:0]];
+            NSString* title = index > -1 ? [NSString stringWithFormat:@"%d", index+1] : origTitle;
+            [button setChecked: index > -1 withTitle:title];
         }];
     }
     else if ([keyPath isEqual:@"instruction"])
@@ -233,8 +235,9 @@
     FBCodeButton* button = (FBCodeButton*)sender;
     if( [viewModel.mode intValue] == K_MODE_GIVE )
     {
-        NSLog(@"User pressed '%@'", button.titleLabel.text);
-        [viewModel toggleInputTokenChar:[button.titleLabel.text characterAtIndex:0]];
+        NSString* origTitle = [button getOrigTitle];
+        NSLog(@"User pressed '%@'", origTitle);
+        [viewModel toggleInputTokenChar:[origTitle characterAtIndex:0]];
         [viewModel setValue:viewModel.tokenInput forKey:@"tokenDisplay"];
         NSLog(@"Display token: %@ / Input token: %@", viewModel.tokenDisplay, viewModel.tokenInput);
     }

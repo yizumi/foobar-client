@@ -5,7 +5,9 @@ foobar-client
 	- Change the command [DONE]
 	- Change the test case (Server) [DONE]
 	- Change the test case (Client)
+( ) Implementation for order based input [DONE]
+	- Show the numeric value upon clicking based on the index of the character + 1.
 ( ) Rename Store to Shop
-( ) Allow GetTokenForDevice without APN response.
+( ) Allow GetTokenForDevice without APN response. [DONE]
 ( ) Implement Store Regsiter
-( ) Implement 
+( ) Internationalization for all the messages (EN|JP|KR|CN)

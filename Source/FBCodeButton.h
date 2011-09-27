@@ -12,10 +12,12 @@
 
 @interface FBCodeButton : UIButton {
     BOOL _isChecked;
+    NSString* _origTitle;
 }
 
 @property (nonatomic, setter = setChecked:) BOOL isChecked;
 
-- (void) setChecked:(BOOL) checked;
+- (NSString*) getOrigTitle;
+- (void) setChecked:(BOOL)checked withTitle:(NSString*)title;
 
 @end

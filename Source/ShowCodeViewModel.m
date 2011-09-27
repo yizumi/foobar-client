@@ -79,12 +79,14 @@
         NSString* newStr = [NSString stringWithFormat:@"%@%@",
                             [tokenDisplay substringToIndex:index],
                              [tokenDisplay substringFromIndex:index+1]];
-        [self setValue:[newStr sort] forKey:@"tokenInput"];
+        // [self setValue:[newStr sort] forKey:@"tokenInput"];
+        [self setValue:newStr forKey:@"tokenInput"];
     }
     else
     {
         NSString* newStr = [NSString stringWithFormat:@"%@%c", tokenDisplay, chr];
-        [self setValue:[newStr sort] forKey:@"tokenInput"];
+        // [self setValue:[newStr sort] forKey:@"tokenInput"];
+        [self setValue:newStr forKey:@"tokenInput"];
     }
 }
 

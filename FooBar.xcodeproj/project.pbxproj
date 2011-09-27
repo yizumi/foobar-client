@@ -433,6 +433,8 @@
 		FD8E9BAC141AE18B00F04696 /* ShowCodeView */ = {
 			isa = PBXGroup;
 			children = (
+				FDBC29BC142FDB5300FABA0C /* FBCodeButton.h */,
+				FDBC29BD142FDB5300FABA0C /* FBCodeButton.m */,
 				FDBC29C4142FDB9E00FABA0C /* ShowCodeView.xib */,
 				FDBC29C5142FDB9E00FABA0C /* ShowCodeViewController.h */,
 				FDBC29C6142FDB9E00FABA0C /* ShowCodeViewController.m */,
@@ -448,8 +450,6 @@
 				FDBC29BF142FDB6300FABA0C /* BookPoints.xib */,
 				FDBC29C0142FDB6300FABA0C /* BookPointsViewController.h */,
 				FDBC29C1142FDB6300FABA0C /* BookPointsViewController.m */,
-				FDBC29BC142FDB5300FABA0C /* FBCodeButton.h */,
-				FDBC29BD142FDB5300FABA0C /* FBCodeButton.m */,
 			);
 			name = BookPoints;
 			sourceTree = "<group>";
