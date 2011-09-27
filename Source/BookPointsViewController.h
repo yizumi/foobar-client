@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "APCArray.h"
 #import "ASIFormDataRequest.h"
-#import "FBConfig.h"
 
 
 @interface BookPointsViewController : UIViewController {

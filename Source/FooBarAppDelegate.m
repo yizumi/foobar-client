@@ -6,6 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 #import "FooBarAppDelegate.h"
+#import "FBConfig.h"
 
 @implementation FooBarAppDelegate
 
@@ -13,8 +14,24 @@
 @synthesize tabBarController=_tabBarController;
 @synthesize segmentedController=_segmentedController;
 
++ (void)initialize
+{
+    if ([self class] == [FooBarAppDelegate class])
+    {
+        // UIApplication* myApp = [UIApplication sharedApplication];
+        if ([[FBConfig sharedInstance] test] == 0)
+        {
+            [[FBConfig sharedInstance] setTest:1];
+        }
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    int num = [[FBConfig sharedInstance] test];
+    NSLog( @"Current Test Value: %d", num);
+    [[FBConfig sharedInstance] setTest:num+1];
+    
     // Ask APNS to provide the app with device token.
     // This will invoke application:didRegisterForRemoteNotificationsWithDeviceToken
     [[UIApplication sharedApplication] 
@@ -124,7 +141,7 @@
         if ( [[obj objectForKey:@"success"] boolValue] == YES)
         {
             NSString* userToken = [obj objectForKey:@"token"];
-            [[FBConfig sharedInstance] setValue:userToken forKey:@"userLoginToken"];
+            [[FBConfig sharedInstance] setUserToken:userToken];
             NSLog(@"Setting user token as: %@", userToken);
         }
         else
@@ -210,19 +227,5 @@
     [alert show];
     [alert release];
 }
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
-
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed
-{
-}
-*/
 
 @end

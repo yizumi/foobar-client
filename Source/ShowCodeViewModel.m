@@ -40,9 +40,10 @@
            forKeyPath:@"tokenInput" 
               options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
               context:nil];
-    
-    [config addObserver:self 
-             forKeyPath:@"userLoginToken" 
+
+    NSUserDefaults* konfig = [NSUserDefaults standardUserDefaults];
+    [konfig addObserver:self 
+             forKeyPath:K_DEFAULTS_USER_TOKEN
                 options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                 context:nil];
     
@@ -53,8 +54,9 @@
 {
     NSLog(@"ViewModel is being dealloc'ed");
     
+    NSUserDefaults* konfig = [NSUserDefaults standardUserDefaults];
     // Remove 
-    [config removeObserver:self forKeyPath:@"userLoginToken"];
+    [konfig removeObserver:self forKeyPath:K_DEFAULTS_USER_TOKEN];
     [self removeObserver:self forKeyPath:@"mode"];
     [self removeObserver:self forKeyPath:@"tokenInput"];
     
@@ -101,7 +103,7 @@
         {
             case 0:
                 [self setValue:@"Present Code to Salesperson" forKey:@"instruction"];
-                [self setValue:[FBConfig sharedInstance].userLoginToken forKey:@"tokenDisplay"];
+                [self setValue:[[FBConfig sharedInstance] userToken] forKey:@"tokenDisplay"];
                 break;
             case 1:
                 [self setValue:@"Enter Code" forKey:@"instruction"];

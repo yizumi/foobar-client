@@ -7,7 +7,7 @@
 //
 
 #import "BookPointsViewController.h"
-
+#import "FBConfig.h"
 
 @implementation BookPointsViewController
 
@@ -100,7 +100,7 @@
     __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
     [req setPostValue:@"give" forKey:@"action"];
     [req setPostValue:points forKey:@"points"];
-    [req setPostValue:[[FBConfig sharedInstance]userLoginToken] forKey:@"from_user_token"];
+    [req setPostValue:[[FBConfig sharedInstance]userToken] forKey:@"from_user_token"];
     [req setPostValue:@"abcde" forKey:@"to_user_token"];
     // If succeed, close the panel
     [req setCompletionBlock:^(void){

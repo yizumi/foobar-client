@@ -1,13 +1,14 @@
 foobar-client
 
-( ) Allow GetTokenForDevice to accept APN device Id
+(x) Save User Token, Store Id, all that shit in NSUserDefaults
+(x) Allow GetTokenForDevice to accept APN device Id
 	- Change the data model [DONE]
 	- Change the command [DONE]
 	- Change the test case (Server) [DONE]
 	- Change the test case (Client)
-( ) Implementation for order based input [DONE]
+(x) Implementation for order based input [DONE]
 	- Show the numeric value upon clicking based on the index of the character + 1.
 ( ) Rename Store to Shop
-( ) Allow GetTokenForDevice without APN response. [DONE]
+(x) Allow GetTokenForDevice without APN response. [DONE]
 ( ) Implement Store Regsiter
 ( ) Internationalization for all the messages (EN|JP|KR|CN)

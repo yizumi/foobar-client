@@ -29,12 +29,9 @@ NSString* const K_URL_GET_REDEEM_TOKEN          = @"https://ripsys01.appspot.com
 NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
 #endif
 
-@synthesize userLoginId;
-@synthesize userLoginToken;
-@synthesize storeLoginId;
-@synthesize storeLoginToken;
-@synthesize tokenExpireDate;
-@synthesize deviceId;
+NSString* const K_DEFAULTS_USER_TOKEN           = @"userToken";
+NSString* const K_DEFAULTS_SHOP_KEY             = @"shopKey";
+NSString* const K_DEFAULTS_TEST                 = @"test";
 
 static FBConfig* _sharedInstance;
 
@@ -49,11 +46,6 @@ static FBConfig* _sharedInstance;
 
 - (void) dealloc
 {
-    [userLoginId release];
-    [userLoginToken release];
-    [storeLoginId release];
-    [storeLoginToken release];
-    [tokenExpireDate release];
     [super dealloc];
 }
 
@@ -65,10 +57,49 @@ static FBConfig* _sharedInstance;
     }
     
     // Initialize
-    [self setUserLoginId:@"yizumi@ripplesystem.com"];
-    [self setUserLoginToken:@""];
-    [self setDeviceId:[[UIDevice currentDevice]uniqueIdentifier]];
     return self;
+}
+
+- (NSString*) deviceToken
+{
+    return [[UIDevice currentDevice]uniqueIdentifier];
+}
+
+- (NSString*) userToken
+{
+    NSString* value = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:K_DEFAULTS_USER_TOKEN];
+    if (value == nil)
+        return @"";
+    return value;
+}
+
+- (void) setUserToken:(NSString*)value
+{
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:K_DEFAULTS_USER_TOKEN];
+}
+
+- (long) shopKey
+{
+    NSNumber* number = (NSNumber*)[[NSUserDefaults standardUserDefaults] objectForKey:K_DEFAULTS_SHOP_KEY];
+    return [number longValue];
+}
+
+- (void) setShopKey:(long)value
+{
+    NSNumber* number = [NSNumber numberWithLong:value];
+    [[NSUserDefaults standardUserDefaults] setObject:number forKey:K_DEFAULTS_SHOP_KEY];
+}
+
+- (int) test
+{
+    NSNumber* number = (NSNumber*)[[NSUserDefaults standardUserDefaults] objectForKey:K_DEFAULTS_TEST];
+    return [number intValue];
+}
+
+- (void) setTest:(int)value
+{
+    NSNumber* number = [NSNumber numberWithInt:value];
+    [[NSUserDefaults standardUserDefaults] setObject:number forKey:K_DEFAULTS_TEST];
 }
 
 @end

@@ -73,7 +73,7 @@
 - (void)refresh:(id)sender
 {
     NSString* deviceId = [[UIDevice currentDevice]uniqueIdentifier];
-    NSString* userToken = [[FBConfig sharedInstance]userLoginToken];
+    NSString* userToken = [[FBConfig sharedInstance] userToken];
     NSURL* url = [NSURL URLWithString:K_URL_GET_STORE_LIST_FOR_DEVICE];
     __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
     [req setPostValue:deviceId forKey:@"deviceId"];

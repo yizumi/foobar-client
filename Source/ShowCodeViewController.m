@@ -252,7 +252,7 @@
     {
         // For TAKE
         case 0:
-            [viewModel setValue:[FBConfig sharedInstance].userLoginToken forKey:@"tokenDisplay"];
+            [viewModel setValue:[[FBConfig sharedInstance]userToken] forKey:@"tokenDisplay"];
             break;
         // For GIVE
         case 1:

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBConfig : NSObject {    
+@interface FBConfig : NSObject
+{
 }
 
 extern NSString* const K_URL_REGISTER_DEVICE_TOKEN;
@@ -19,14 +20,17 @@ extern NSString* const K_URL_REGISTER_STORE;
 extern NSString* const K_URL_GET_REDEEM_TOKEN;
 extern NSString* const K_URL_MAP;
 
-@property (retain,nonatomic) NSString* userLoginId;
-@property (retain,nonatomic) NSString* userLoginToken;
-@property (retain,nonatomic) NSString* storeLoginId;
-@property (retain,nonatomic) NSString* storeLoginToken;
-@property (retain,nonatomic) NSDate* tokenExpireDate;
-@property (retain,nonatomic) NSString* deviceId;
+// To be used for NSUserDefaults
+extern NSString* const K_DEFAULTS_TEST; // as int
+extern NSString* const K_DEFAULTS_USER_TOKEN; // as NSString
+extern NSString* const K_DEFAULTS_SHOP_KEY; // as long
 
-+ (FBConfig *) sharedInstance;
-- (FBConfig *) init;
++ (FBConfig*) sharedInstance;
+- (FBConfig*) init;
+
+@property (nonatomic) int test;
+@property (nonatomic, assign) NSString* userToken;
+@property (nonatomic) long shopKey;
+@property (nonatomic, readonly) NSString* deviceToken;
 
 @end

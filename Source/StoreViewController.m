@@ -288,7 +288,7 @@
     
     // Initialize values to send
     NSString* storeId = (NSString*)[_managedObject valueForKey:@"address"];
-    NSString* deviceId = [[FBConfig sharedInstance] deviceId];
+    NSString* deviceId = [[FBConfig sharedInstance] deviceToken];
 
     // Create URL, Request and Send the Request
     NSURL* url = [NSURL URLWithString:K_URL_GET_REDEEM_TOKEN];
