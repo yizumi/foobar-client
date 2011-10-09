@@ -215,6 +215,7 @@
         NSNumber* points = (NSNumber*)[response valueForKey:@"currentPoints"];
         NSString* message = [NSString stringWithFormat:@"残高は%dPt.です", [points intValue]];
         [APCWindow alert:message withTitle:@"ポイント加算完了"];
+        [[FBConfig sharedInstance] setRefreshShopList:YES];
         [self.navigationController popViewControllerAnimated:YES];
     }
     
@@ -223,6 +224,7 @@
         NSNumber* points = (NSNumber*)[response valueForKey:@"remainingPoints"];
         NSString* message = [NSString stringWithFormat:@"残高は%dPt.です", [points intValue]];
         [APCWindow alert:message withTitle:@"ポイント償還完了"];
+        [[FBConfig sharedInstance] setRefreshShopList:YES];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

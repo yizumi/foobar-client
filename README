@@ -2,7 +2,7 @@ foobar-client
 
 ( ) Add Logout button in Book Points screen
 ( ) Persist the shop name, and show the shop name in the Book Points screen
-( ) Refresh Shop List automatically upon changes
+(x) Refresh Shop List automatically upon changes
 ( ) No Redeem Token refresh if token is there and hasn't expired
 (x) Add Clear button, Back Space button in Book Points page
 (x) Save User Token, Store Id, all that shit in NSUserDefaults [DONE]

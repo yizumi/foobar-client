@@ -14,6 +14,7 @@ NSString* const K_DEFAULTS_TEST                     = @"test";
 NSString* const K_DEFAULTS_SHOP_KEY                 = @"shopKey";
 NSString* const K_DEFAULTS_SHOP_NAME                = @"shopName";
 NSString* const K_DEFAULTS_USER_TOKEN               = @"userToken";
+NSString* const K_DEFAULTS_REFRESH_SHOP_LIST        = @"refreshShopList";
 
 static FBConfig* _sharedInstance;
 
@@ -82,6 +83,18 @@ static FBConfig* _sharedInstance;
 {
     NSNumber* number = [NSNumber numberWithInt:value];
     [[NSUserDefaults standardUserDefaults] setObject:number forKey:K_DEFAULTS_TEST];
+}
+
+- (BOOL) refreshShopList
+{
+    NSNumber* number = (NSNumber*)[[NSUserDefaults standardUserDefaults] objectForKey:K_DEFAULTS_REFRESH_SHOP_LIST];
+    return [number boolValue];
+}
+
+- (void) setRefreshShopList:(BOOL)value
+{
+    NSNumber* number = [NSNumber numberWithBool:value];
+    [[NSUserDefaults standardUserDefaults] setObject:number forKey:K_DEFAULTS_REFRESH_SHOP_LIST];
 }
 
 @end
