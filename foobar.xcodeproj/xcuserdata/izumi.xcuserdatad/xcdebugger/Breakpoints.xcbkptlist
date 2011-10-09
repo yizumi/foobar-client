@@ -247,12 +247,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Source/ShopViewController.m"
-         timestampString = "339833842.442191"
+         timestampString = "339860905.524675"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "306"
-         endingLineNumber = "306"
+         startingLineNumber = "326"
+         endingLineNumber = "326"
          landmarkName = "-execSuccess:withResponse:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "Source/FooBarAppDelegate.m"
+         timestampString = "339872300.813692"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
+         landmarkName = "-application:didReceiveRemoteNotification:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

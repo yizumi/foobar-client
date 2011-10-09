@@ -8,6 +8,8 @@
 
 #import "ShowCodeViewController.h"
 #import "FBConfig.h"
+#import "FBGetRedeemToken.h"
+#import "APCDateUtil.h"
 
 @implementation ShowCodeViewController
 
@@ -239,14 +241,15 @@
             [progress setProgress:rate];
             int min = [remTimeInSec intValue] / 60;
             int sec = [remTimeInSec intValue] % 60;
-            NSString* instruction = [NSString stringWithFormat:@"このトークンはあと%d分%d秒有効です", min, sec];
+            NSString* instructionTmp = NSLocalizedString(@"ShowCodeView_Expiration", @"");
+            NSString* instruction = [NSString stringWithFormat:instructionTmp, min, sec];
             NSLog(@"Instruction: %@", instruction);
             [buttonRedeem setTitle:instruction forState:UIControlStateNormal];
         }
         else
         {
             [progress setProgress:0];
-            [buttonRedeem setTitle:@"このトークンは有効期限切れです" forState:UIControlStateNormal];
+            [buttonRedeem setTitle:NSLocalizedString(@"ShowCodeView_Expired",@"") forState:UIControlStateNormal];
         }
     }
 }
@@ -286,8 +289,9 @@
 
 - (IBAction)onMainButtonPush:(id)sender
 {
-    if( [viewModel.mode intValue] == 1 )
+    if( [viewModel.mode intValue] == K_MODE_GIVE )
     {
+        // Main button should transition to book points screen
         if( [viewModel.isTokenInputValid boolValue] )
         {
             UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
@@ -304,6 +308,43 @@
             [self.navigationController pushViewController:controller animated:YES];
             [controller release];
         }
+    }
+}
+
+- (IBAction) onExpButtonPush:(id)sender
+{
+    if ([viewModel.mode intValue] == K_MODE_REDEEM)
+    {
+        // Main button for redeem should refresh the token
+        FBGetRedeemToken* cmd = [[[FBGetRedeemToken alloc] init] autorelease];
+        [cmd setDelegate:self];
+        cmd.shopKey = viewModel.shopKey;
+        [cmd execAsync];
+    }
+}
+
+// =================================== FBCommandBaseDelegate ========================================
+
+- (void)execSuccess:(id)request withResponse:(id)response
+{
+    if ([request class] == [FBGetRedeemToken class])
+    {
+        // Shop Key...
+        NSNumber* shopKey = viewModel.shopKey;
+        
+        // Extract variables
+        NSString* redeemToken = (NSString*)[response valueForKey:@"redeemToken"];
+        NSString* expirationStr = (NSString*)[response valueForKey:@"expiration"];
+        NSDate* expiration = (NSDate*)[APCDateUtil dateWithString:expirationStr];
+        
+        // Update the shop info using shop manager
+        [[FBShopManager sharedInstance] updateShopRedeemToken:redeemToken
+                                                andExpiration:expiration
+                                                      forShop:shopKey];
+        
+        // Update view model's token
+        viewModel.tokenDisplay = redeemToken;
+        viewModel.expirationDate = expiration;        
     }
 }
 

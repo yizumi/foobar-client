@@ -16,7 +16,8 @@
 #import "FBConfig.h"
 #import "BookPointsViewController.h"
 
-@interface ShowCodeViewController : UIViewController <UINavigationBarDelegate>
+@interface ShowCodeViewController : UIViewController
+    <UINavigationBarDelegate,FBCommandBaseDelegate>
 {
     NSString* _BUTTON_LABELS;
     NSArray* _buttons;
@@ -25,6 +26,7 @@
 - (void) onSegmentChanged:(id)sender;
 - (void) onClick:(id)sender;
 - (IBAction) onMainButtonPush:(id)sender;
+- (IBAction) onExpButtonPush:(id)sender;
 
 @property (nonatomic, retain) IBOutlet FBCodeButton* buttonA;
 @property (nonatomic, retain) IBOutlet FBCodeButton* buttonB;

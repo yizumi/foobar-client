@@ -24,13 +24,13 @@
 @property (retain,nonatomic) NSString* instruction;
 @property (retain,nonatomic) NSNumber* isTokenInputValid;
 @property (retain,nonatomic) NSDate* expirationDate;
-@property (retain,nonatomic) FBConfig* config;
 @property (nonatomic) int remainingTimeInSec;
 @property (assign,nonatomic) NSTimer* timer;
+@property (retain,nonatomic) NSNumber* shopKey;
 
 - (void) toggleInputTokenChar:(char)chr;
 - (void) beginExpirationTimer;
-- (void) checkExpiration:(NSTimer*)timer;
+- (void) refreshExpiration:(NSTimer*)timer;
 - (void) stopExpirationTimer;
 
 @end

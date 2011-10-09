@@ -8,6 +8,7 @@
 #import "FooBarAppDelegate.h"
 #import "FBConfig.h"
 #import "FBGetTokenForDevice.h"
+#import "APCWindow.h"
 
 @implementation FooBarAppDelegate
 
@@ -19,7 +20,6 @@
 {
     if ([self class] == [FooBarAppDelegate class])
     {
-        // UIApplication* myApp = [UIApplication sharedApplication];
         if ([[FBConfig sharedInstance] test] == 0)
         {
             [[FBConfig sharedInstance] setTest:1];
@@ -120,6 +120,7 @@
     // Get the unique identifier of the device
     FBGetTokenForDevice* cmd = [[[FBGetTokenForDevice alloc] init] autorelease];
     [cmd setDelegate:self];
+    cmd.deviceToken = deviceToken;
     [cmd execAsync];
 }
 
@@ -131,7 +132,31 @@
     
     if( [[userInfo objectForKey:@"aps"] objectForKey:@"alert"] != NULL)
     {
-        alertMsg = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]; 
+        NSDictionary* dict = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+        NSString* locKey = (NSString*)[dict valueForKey:@"loc-key"];
+        NSString* msgTpl = NSLocalizedString(locKey, @"");
+        NSArray* locArgs = (NSArray*)[dict valueForKey:@"loc-args"];
+        switch ([locArgs count])
+        {
+            case 1:
+                alertMsg = [NSString stringWithFormat:msgTpl, 
+                            [locArgs objectAtIndex:0]];
+                break;
+            case 2:
+                alertMsg = [NSString stringWithFormat:msgTpl,
+                            [locArgs objectAtIndex:0],
+                            [locArgs objectAtIndex:1]];
+                break;
+            case 3:
+                alertMsg = [NSString stringWithFormat:msgTpl,
+                            [locArgs objectAtIndex:0],
+                            [locArgs objectAtIndex:1],
+                            [locArgs objectAtIndex:2]];
+            default:
+                alertMsg = msgTpl;
+                break;                
+        }
+        
     }
     else
     {

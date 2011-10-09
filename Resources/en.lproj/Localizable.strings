@@ -5,6 +5,10 @@
   Created by 泉 雄介 on 10/9/11.
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
+"APN_OK" = "OK";
+"APN_ADD_POINTS" = "%@ sent you %@ points!";
 "BookPoints_EnterPointsToGiveOrRedeem" = "Enter Points to Give or Redeem";
 "BookPoints_ButtonGive" = "Give";
 "BookPoints_ButtonRedeem" = "Redeem";
+"ShowCodeView_Expiration" = "This token will expire in %d:%d";
+"ShowCodeView_Expired" = "This token has expired";

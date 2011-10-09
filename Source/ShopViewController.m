@@ -276,6 +276,22 @@
 // Redeem token, then display the shiznitRedeemTokenDisplay
 - (void) getRedeemToken
 {
+    NSDate* expiration = (NSDate*)[_managedObject valueForKey:@"redeemTokenExpiration"];
+    NSString* redeemToken = (NSString*)[_managedObject valueForKey:@"redeemToken"];
+    
+    // If the redeem token is there, 
+    if (redeemToken != nil && expiration != nil)
+    {
+        // and hasn't expired,
+        if ([expiration timeIntervalSinceNow] > 0)
+        {
+            // then just jump to the screen
+            [self showRedeemTokenView:redeemToken withExpiration:expiration];
+            return;
+        }
+    }
+    
+    // Otherwise, go get the redeem token!
     FBGetRedeemToken* cmd = [[[FBGetRedeemToken alloc] init] autorelease];
     [cmd setDelegate:self];
     cmd.shopKey = (NSNumber*)[_managedObject valueForKey:@"key"];
@@ -285,13 +301,17 @@
 // Called when this receives the redeem token from the back end
 - (void) showRedeemTokenView:(NSString*)redeemToken withExpiration:(NSDate*)expirationDate
 {
+    // Get shop key
+    NSNumber* shopKey = (NSNumber*)[_managedObject valueForKey:@"key"];
     // Now get the shiznit
     ShowCodeViewController* controller = [[ShowCodeViewController alloc]initWithNibName:@"ShowCodeView" 
                                                                                  bundle:nil];
     ShowCodeViewModel* viewModel = controller.viewModel;
+    
     [viewModel setValue:[NSNumber numberWithInt:K_MODE_REDEEM] forKey:@"mode"];
     [viewModel setValue:redeemToken forKey:@"tokenDisplay"];
     [viewModel setValue:expirationDate forKey:@"expirationDate"];
+    [viewModel setValue:shopKey forKey:@"shopKey"];
     
     [self.navigationController pushViewController:controller animated:YES];
     [controller release];

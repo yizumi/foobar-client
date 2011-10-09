@@ -15,10 +15,10 @@
 @synthesize tokenInput;
 @synthesize instruction;
 @synthesize isTokenInputValid;
-@synthesize config;
 @synthesize expirationDate;
 @synthesize remainingTimeInSec;
 @synthesize timer;
+@synthesize shopKey;
 
 - (ShowCodeViewModel*) init
 {
@@ -31,7 +31,6 @@
     self.tokenDisplay = @"";
     self.mode = K_MODE_TAKE;
     self.instruction = @"Show Code to Salesperson";
-    self.config = [FBConfig sharedInstance];
     
     [self addObserver:self 
            forKeyPath:@"mode" 
@@ -56,18 +55,18 @@
 {
     NSLog(@"ViewModel is being dealloc'ed");
     
-    NSUserDefaults* konfig = [NSUserDefaults standardUserDefaults];
-    // Remove 
-    [konfig removeObserver:self forKeyPath:K_DEFAULTS_USER_TOKEN];
     [self removeObserver:self forKeyPath:@"mode"];
     [self removeObserver:self forKeyPath:@"tokenInput"];
     
+    NSUserDefaults* konfig = [NSUserDefaults standardUserDefaults];
+    [konfig removeObserver:self forKeyPath:K_DEFAULTS_USER_TOKEN];
+
     [tokenInput release];
     [tokenDisplay release];
     [mode release];
     [instruction release];
     [isTokenInputValid release];
-    [config release];
+    [shopKey release];
     [super dealloc];
 }
 
@@ -163,13 +162,14 @@
     // Should only be activated for MODE=3
     timer = [NSTimer scheduledTimerWithTimeInterval:1
                                               target:self
-                                            selector:@selector(checkExpiration:)
+                                            selector:@selector(refreshExpiration:)
                                             userInfo:nil
                                              repeats:YES];
-
+    // Since it takes 1 second for checkExpiration to be called, let's call refreshExpiration immediately
+    [self refreshExpiration:nil];
 }
 
-- (void) checkExpiration:(NSTimer*)timer
+- (void) refreshExpiration:(NSTimer*)timer
 {
     // This is where we want to update the remaining time
     NSLog(@"Timer working...");
