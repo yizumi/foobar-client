@@ -14,6 +14,7 @@
 		FD23F087143E8E1F007EA7B6 /* FBGetRedeemToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */; };
 		FD23F08A14414A59007EA7B6 /* FBGetTokenForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */; };
 		FD23F08D144153E8007EA7B6 /* FBShop.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08C144153E8007EA7B6 /* FBShop.m */; };
+		FD23F0901441CBE8007EA7B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD23F0921441CBE8007EA7B6 /* Localizable.strings */; };
 		FD283E9813C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
 		FD283E9A13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
 		FD283E9C13C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
@@ -130,6 +131,8 @@
 		FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetTokenForDevice.m; path = Source/FBGetTokenForDevice.m; sourceTree = "<group>"; };
 		FD23F08B144153E8007EA7B6 /* FBShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShop.h; path = Source/FBShop.h; sourceTree = "<group>"; };
 		FD23F08C144153E8007EA7B6 /* FBShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShop.m; path = Source/FBShop.m; sourceTree = "<group>"; };
+		FD23F0911441CBE8007EA7B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD23F0931441CC11007EA7B6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FD283E9313C02AED00FC57EE /* foobar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foobar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD283E9713C02AED00FC57EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD283E9913C02AED00FC57EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -393,6 +396,7 @@
 				FDBC296B142FDA3B00FABA0C /* Points.png */,
 				FDBC296C142FDA3B00FABA0C /* ShowCode.png */,
 				FD8C3B8D141A2B99004D7A5C /* icon.png */,
+				FD23F0921441CBE8007EA7B6 /* Localizable.strings */,
 			);
 			name = Resources;
 			path = FooBar;
@@ -678,6 +682,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = FD283E8813C02AED00FC57EE;
 			productRefGroup = FD283E9413C02AED00FC57EE /* Products */;
@@ -721,6 +726,7 @@
 				FDBC29FF1430979800FABA0C /* FooBarTests-Info.plist in Resources */,
 				FDE79DB114349ABF00FB6AF3 /* ShopLogin.xib in Resources */,
 				FDE79DB914349E1C00FB6AF3 /* TextFormCell.xib in Resources */,
+				FD23F0901441CBE8007EA7B6 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +838,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FD23F0921441CBE8007EA7B6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD23F0911441CBE8007EA7B6 /* en */,
+				FD23F0931441CC11007EA7B6 /* ja */,
+			);
+			name = Localizable.strings;
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		FDBC29B6142FDAFF00FABA0C /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  foobar
+
+  Created by 泉 雄介 on 10/9/11.
+  Copyright 2011 __MyCompanyName__. All rights reserved.
+*/
+"BookPoints_EnterPointsToGiveOrRedeem" = "加算または還元するポイントを入力してください";
+"BookPoints_ButtonGive" = "加算";
+"BookPoints_ButtonRedeem" = "還元";

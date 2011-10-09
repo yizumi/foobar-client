@@ -24,8 +24,13 @@
 @synthesize button7;
 @synthesize button8;
 @synthesize button9;
+@synthesize clearButton;
+@synthesize backSpaceButton;
+@synthesize buttonGive;
+@synthesize buttonRedeem;
 @synthesize numberField;
 @synthesize userToken;
+@synthesize titleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +50,11 @@
     [_buttons release];
     [numberField release];
     [userToken release];
+    [titleLabel release];
+    [deleteButton release];
+    [backSpaceButton release];
+    [buttonGive release];
+    [buttonRedeem release];
     [super dealloc];
 }
 
@@ -80,6 +90,11 @@
         UIButton* button = (UIButton*)item;
         [button addTarget:self action:@selector(onNumericButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     }];
+    
+    // Localization
+    titleLabel.text = NSLocalizedString(@"BookPoints_EnterPointsToGiveOrRedeem", @"");
+    [buttonGive setTitle:NSLocalizedString(@"BookPoints_ButtonGive",@"") forState:UIControlStateNormal];
+    [buttonRedeem setTitle:NSLocalizedString(@"BookPoints_ButtonRedeem",@"") forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -102,6 +117,11 @@
 
 - (void)viewDidUnload
 {
+    [self setTitleLabel:nil];
+    [self setClearButton:nil];
+    [self setBackSpaceButton:nil];
+    [self setButtonGive:nil];
+    [self setButtonRedeem:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -112,6 +132,8 @@
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+// ============================== IBAction Handlers ===================================
 
 - (IBAction)onCancelPushed:(id)sender
 {
@@ -150,6 +172,17 @@
     [cmd execAsync];
 }
 
+- (IBAction)onClearPushed:(id)sender
+{
+    numberField.text = @"";
+}
+
+- (IBAction)onBkspPushed:(id)sender
+{
+    int current = [numberField.text intValue];
+    int newInt = (current / 10);
+    numberField.text = [NSString stringWithFormat:@"%d", newInt];
+}
 
 // ================================= ShopLoginViewControllerDelegate =================================
 - (void) didLogin:(ShopLoginViewController*)ctrl

@@ -4,7 +4,7 @@ foobar-client
 ( ) Persist the shop name, and show the shop name in the Book Points screen
 ( ) Refresh Shop List automatically upon changes
 ( ) No Redeem Token refresh if token is there and hasn't expired
-( ) Add Clear button, Back Space button in Book Points page
+(x) Add Clear button, Back Space button in Book Points page
 (x) Save User Token, Store Id, all that shit in NSUserDefaults [DONE]
 (x) Allow GetTokenForDevice to accept APN device Id
 	- Change the data model [DONE]
@@ -16,4 +16,4 @@ foobar-client
 (x) Rename Store to Shop [DONE]
 (x) Allow GetTokenForDevice without APN response. [DONE]
 (x) Implement Store Regsiter
-( ) Internationalization for all the messages (EN|JP|KR|CN)
+(#) Internationalization for all the messages (EN|JP|KR|CN)
