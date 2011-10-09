@@ -1,5 +1,5 @@
 //
-//  StoreViewController.h
+//  ShopViewController.h
 //  foobar
 //
 //  Created by 泉 雄介 on 9/5/11.
@@ -7,16 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBStore.h"
-#import "StoreViewCell.h"
+#import "FBShop.h"
+#import "ShopViewCell.h"
+#import "FBCommandBase.h"
 
-@interface StoreViewController : UITableViewController {
+@interface ShopViewController : UITableViewController
+    <FBCommandBaseDelegate>
+{
     NSManagedObject* _managedObject;
 }
 
 @property (nonatomic, retain) NSManagedObject* managedObject;
 
-- (void) setImage:(NSString*) urlString on:(StoreViewCell*) cell;
+- (void) setImage:(NSString*) urlString on:(ShopViewCell*) cell;
 
 // ======================= Private Methods =======================
 - (void) showCodeViewWithToken:(NSString*)token;

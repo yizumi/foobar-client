@@ -14,8 +14,8 @@
 #define K_MODE_GIVE 1
 #define K_MODE_REDEEM 2
 
-@interface ShowCodeViewModel : NSObject {
-    NSTimer* _timer;
+@interface ShowCodeViewModel : NSObject
+{
 }
 
 @property (retain,nonatomic) NSNumber* mode;
@@ -25,6 +25,8 @@
 @property (retain,nonatomic) NSNumber* isTokenInputValid;
 @property (retain,nonatomic) NSDate* expirationDate;
 @property (retain,nonatomic) FBConfig* config;
+@property (nonatomic) int remainingTimeInSec;
+@property (assign,nonatomic) NSTimer* timer;
 
 - (void) toggleInputTokenChar:(char)chr;
 - (void) beginExpirationTimer;

@@ -8,8 +8,8 @@
 
 #import "FooBarTests.h"
 
-#import "FBStoreManager.h"
-#import "FBStore.h"
+#import "FBShopManager.h"
+#import "FBShop.h"
 #import "APCDateUtil.h"
 #import "ASIHTTPRequest.h"
 #import "NSObject+SBJson.h"
@@ -35,11 +35,11 @@
     // STFail(@"Unit tests are not implemented yet in FooBarTests");
 }
 
-- (void)testFBStoreManager
+- (void)testFBShopManager
 {
-    FBStoreManager* mgr = [FBStoreManager sharedInstance];
+    FBShopManager* mgr = [FBShopManager sharedInstance];
     NSDictionary* dict = [[[NSDictionary alloc]initWithObjectsAndKeys:
-                           @"41268108", @"identifier",
+                           41268108, @"key",
                            @"まんじまけろーに", @"name",
                            @"東京都港区南麻布３−１９−２５", @"address",
                            @"http://www.manjimakeroni.jp", @"url",
@@ -50,21 +50,21 @@
                            nil] autorelease];
     
     [mgr updateWithDictionary:dict];
-    FBStore* store = [[mgr getByIdentifier:@"41268108"]autorelease];
-    STAssertNotNil(store, @"getByIdetnfier failed");
-    NSLog(@"Store Name: %@", store.name);
-    STAssertEquals(store.name, @"まんじまけろーに", @"name");
-    STAssertEquals(store.address, @"東京都港区南麻布３−１９−２５", @"address");
-    STAssertEquals(store.url, @"http://www.manjimakeroni.jp", @"url");
-    STAssertEquals(store.tel, @"03-5423-0000", @"tel");
-    STAssertEquals(store.firstVisit, [APCDateUtil dateWithString:@"2011-01-01 10:00:00 AM"], @"firstVisit");
-    STAssertEquals(store.lastVisit, [APCDateUtil dateWithString:@"2011-08-01 06:00:00 AM"], @"lastVisit");
+    FBShop* shop = [[mgr getByIdentifier:@"41268108"]autorelease];
+    STAssertNotNil(shop, @"getByIdetnfier failed");
+    NSLog(@"Shop Name: %@", shop.name);
+    STAssertEquals(shop.name, @"まんじまけろーに", @"name");
+    STAssertEquals(shop.address, @"東京都港区南麻布３−１９−２５", @"address");
+    STAssertEquals(shop.url, @"http://www.manjimakeroni.jp", @"url");
+    STAssertEquals(shop.tel, @"03-5423-0000", @"tel");
+    STAssertEquals(shop.firstVisit, [APCDateUtil dateWithString:@"2011-01-01 10:00:00 AM"], @"firstVisit");
+    STAssertEquals(shop.lastVisit, [APCDateUtil dateWithString:@"2011-08-01 06:00:00 AM"], @"lastVisit");
 }
 
-- (void)testFBStoreManagerUpdateWithList
+- (void)testFBShopManagerUpdateWithList
 {
-    FBStoreManager * mgr = [FBStoreManager sharedInstance];
-    NSURL* url = [NSURL URLWithString:@"http://localhost:8080/getStoreListForDevice.php"];
+    FBShopManager * mgr = [FBShopManager sharedInstance];
+    NSURL* url = [NSURL URLWithString:@"http://localhost:8080/getShopListForDevice.php"];
     ASIHTTPRequest* req = [ASIHTTPRequest requestWithURL:url];
     [req startSynchronous];
     if( [req error] != nil )
@@ -76,10 +76,10 @@
     
     NSArray* array = [[req responseString] JSONValue];
     [mgr updateWithList:array];
-    FBStore* store = [mgr getByIdentifier:@"41268109"];
-    NSLog(@"Name:%@", store.name);
+    FBShop* shop = [mgr getByIdentifier:@"41268109"];
+    NSLog(@"Name:%@", shop.name);
     NSLog(@"Ariran Korean Dining");
-    STAssertEquals(store.name, @"Ariran Korean Dining", @"name");
+    STAssertEquals(shop.name, @"Ariran Korean Dining", @"name");
 }
 
 - (void) testDateParse
@@ -96,9 +96,9 @@
 
 - (void) testSQL
 {
-    // todo: getting the initial characters from the FBStoreManager [DONE]
+    // todo: getting the initial characters from the FBShopManager [DONE]
     
-    // todo: display the store details in the disclosure panel [DONE]
+    // todo: display the shop details in the disclosure panel [DONE]
     
     // todo: display the redeem matrix
     
@@ -106,9 +106,9 @@
     
     // todo: display the coupon details in the disclosure panel
     
-    // todo: add store icon
+    // todo: add shop icon
     
-    // todo: adding store pictures in the disclosure panel [DONE]
+    // todo: adding shop pictures in the disclosure panel [DONE]
     
     // todo: add foobar icon [DONE]
     

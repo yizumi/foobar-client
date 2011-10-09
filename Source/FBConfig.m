@@ -8,30 +8,12 @@
 
 #import "FBConfig.h"
 
-
 @implementation FBConfig
 
-#if DEBUG
-NSString* const K_URL_REGISTER_DEVICE_TOKEN     = @"http://localhost:8888/foobar/GetTokenForDevice";
-NSString* const K_URL_GIVE_OR_REDEEM_POINTS     = @"http://localhost:8888/foobar/AddPoints";
-NSString* const K_URL_GET_STORE_LIST_FOR_DEVICE = @"http://localhost:8888/foobar/GetShopListForDevice";
-NSString* const K_URL_LOGIN_STORE               = @"http://localhost:8888/foobar/LoginShop";
-NSString* const K_URL_REGISTER_STORE            = @"http://localhost:8888/foobar/CreateShop";
-NSString* const K_URL_GET_REDEEM_TOKEN          = @"http://localhost:8888/foobar/GetRedeemToken";
-NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
-#else
-NSString* const K_URL_REGISTER_DEVICE_TOKEN     = @"https://ripsys01.appspot.com/foobar/GetTokenForDevice";
-NSString* const K_URL_GIVE_OR_REDEEM_POINTS     = @"https://ripsys01.appspot.com/foobar/AddPoints";
-NSString* const K_URL_GET_STORE_LIST_FOR_DEVICE = @"https://ripsys01.appspot.com/foobar/GetShopListForDevice";
-NSString* const K_URL_LOGIN_STORE               = @"https://ripsys01.appspot.com/foobar/LoginShop";
-NSString* const K_URL_REGISTER_STORE            = @"https://ripsys01.appspot.com/foobar/CreateShop";
-NSString* const K_URL_GET_REDEEM_TOKEN          = @"https://ripsys01.appspot.com/foobar/GetRedeemToken";
-NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
-#endif
-
-NSString* const K_DEFAULTS_USER_TOKEN           = @"userToken";
-NSString* const K_DEFAULTS_SHOP_KEY             = @"shopKey";
-NSString* const K_DEFAULTS_TEST                 = @"test";
+NSString* const K_DEFAULTS_TEST                     = @"test";
+NSString* const K_DEFAULTS_SHOP_KEY                 = @"shopKey";
+NSString* const K_DEFAULTS_SHOP_NAME                = @"shopName";
+NSString* const K_DEFAULTS_USER_TOKEN               = @"userToken";
 
 static FBConfig* _sharedInstance;
 

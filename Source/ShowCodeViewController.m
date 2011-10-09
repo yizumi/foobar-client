@@ -7,6 +7,7 @@
 //
 
 #import "ShowCodeViewController.h"
+#import "FBConfig.h"
 
 @implementation ShowCodeViewController
 
@@ -96,16 +97,16 @@
                    options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
                    context:nil];
     [viewModel addObserver:self 
-                forKeyPath:@"expiration" 
-                   options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
-                   context:nil];
-    [viewModel addObserver:self 
                  forKeyPath:@"instruction" 
                     options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
                     context:nil];
     [viewModel addObserver:self 
                 forKeyPath:@"tokenDisplay" 
                    options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) 
+                   context:nil];
+    [viewModel addObserver:self
+                forKeyPath:@"remainingTimeInSec"
+                   options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld)
                    context:nil];
 
     // Attach the event handler on segmentedControl buttons (Toggles b/w take and give)
@@ -131,7 +132,6 @@
     [viewModel setValue:viewModel.mode forKey:@"mode"];
     [viewModel setValue:viewModel.tokenDisplay forKey:@"tokenDisplay"];
     [viewModel setValue:viewModel.instruction forKey:@"instruction"];
-    [viewModel setValue:viewModel.expirationDate forKey:@"expirationDate"];
 }
 
 - (void)viewDidUnload
@@ -141,6 +141,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"Starting timer");
+    [viewModel beginExpirationTimer];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -153,9 +159,9 @@
 {    
     NSLog(@"I'm being cleaned up");
     [viewModel removeObserver:self forKeyPath:@"mode"];
-    [viewModel removeObserver:self forKeyPath:@"expiration"];
     [viewModel removeObserver:self forKeyPath:@"instruction"];
     [viewModel removeObserver:self forKeyPath:@"tokenDisplay"];
+    [viewModel removeObserver:self forKeyPath:@"remainingTimeInSec"];
     
     [_buttons forEach:^(id button){ [button release]; }];
     [_buttons release];
@@ -222,14 +228,31 @@
                                       context:context];
         }
     }
-    else if ([keyPath isEqual:@"expirationDate"])
+    else if ([keyPath isEqual:@"remainingTimeInSec"])
     {
-        // Do something about the progress bar...
+        NSNumber* remTimeInSec = (NSNumber*)[change objectForKey:NSKeyValueChangeNewKey];
+        if ([remTimeInSec doubleValue] > 0)
+        {
+            float threeHrs = (180 * 60);
+            float rate = [remTimeInSec floatValue] / threeHrs;
+            NSLog(@"What's the shiznit: %@ / rate: %f", remTimeInSec, rate);
+            [progress setProgress:rate];
+            int min = [remTimeInSec intValue] / 60;
+            int sec = [remTimeInSec intValue] % 60;
+            NSString* instruction = [NSString stringWithFormat:@"このトークンはあと%d分%d秒有効です", min, sec];
+            NSLog(@"Instruction: %@", instruction);
+            [buttonRedeem setTitle:instruction forState:UIControlStateNormal];
+        }
+        else
+        {
+            [progress setProgress:0];
+            [buttonRedeem setTitle:@"このトークンは有効期限切れです" forState:UIControlStateNormal];
+        }
     }
 }
 
 
-// ================================= EVENT HANDLERS =================================150
+// ================================= EVENT HANDLERS =================================
 - (void)onClick:(id)sender
 {
     FBCodeButton* button = (FBCodeButton*)sender;
@@ -267,13 +290,18 @@
     {
         if( [viewModel.isTokenInputValid boolValue] )
         {
-            // Well, now I want to Open the View to enter points and send.
-            // What should I do?
+            UIBarButtonItem* backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                           style:UIBarButtonItemStyleDone
+                                                                          target:nil
+                                                                          action:nil];
+            self.navigationItem.backBarButtonItem = backButton;
+            [backButton release];
+
             BookPointsViewController* controller = [[BookPointsViewController alloc]initWithNibName:@"BookPoints" 
                                                                                              bundle:nil];
-            controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            controller.userToken = viewModel.tokenInput;
             // controller.delegate = self;
-            [self presentModalViewController:controller animated:YES];
+            [self.navigationController pushViewController:controller animated:YES];
             [controller release];
         }
     }

@@ -1,12 +1,12 @@
 //
-//  StoreViewController.m
+//  ShopViewController.m
 //  foobar
 //
 //  Created by 泉 雄介 on 9/5/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "StoreViewController.h"
+#import "ShopViewController.h"
 #import "ContactCell.h"
 #import "ASIHTTPRequest.h"
 #import "APCString.h"
@@ -14,14 +14,16 @@
 #import "ShowCodeViewController.h"
 #import "ShowCodeViewModel.h"
 #import "NSObject+SBJson.h"
+#import "FBConst.h"
+#import "FBGetRedeemToken.h"
 
-@implementation StoreViewController
+@implementation ShopViewController
 
 @synthesize managedObject = _managedObject;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:@"StoreView" bundle:nil];
+    self = [super initWithNibName:@"ShopView" bundle:nil];
     if (self) {
         _managedObject = nil;
     }
@@ -118,13 +120,13 @@
     // ==== General Info Section ====
     if( indexPath.section == 0 )
     {
-        StoreViewCell* cell;
-        cell = (StoreViewCell*)[tableView dequeueReusableCellWithIdentifier:@"StoreViewCell"];
+        ShopViewCell* cell;
+        cell = (ShopViewCell*)[tableView dequeueReusableCellWithIdentifier:@"ShopViewCell"];
         if( cell == nil )
         {
-            UIViewController* ctrl = [[UIViewController alloc] initWithNibName:@"StoreViewCell"
+            UIViewController* ctrl = [[UIViewController alloc] initWithNibName:@"ShopViewCell"
                                                                         bundle:nil];
-            cell = (StoreViewCell *)ctrl.view;
+            cell = (ShopViewCell *)ctrl.view;
             [ctrl release];
         }
         cell.nameLabel.text = [_managedObject valueForKey:@"name"];
@@ -194,7 +196,7 @@
     return nil;
 }
 
-- (void) setImage:(NSString*) urlString on:(StoreViewCell*) cell
+- (void) setImage:(NSString*) urlString on:(ShopViewCell*) cell
 {
     NSURL* url = [NSURL URLWithString:urlString];
     __block ASIHTTPRequest* req = [ASIHTTPRequest requestWithURL:url];
@@ -209,7 +211,7 @@
         NSError* error = [req error];
         NSLog(@"%@", error);
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"Error while getting store list" 
+                                                        message:@"Error while getting shop list" 
                                                        delegate:nil 
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -263,8 +265,8 @@
     ShowCodeViewModel* viewModel;
     viewModel = (ShowCodeViewModel*)ctrl.viewModel;
     [viewModel setValue:[NSNumber numberWithInt:K_MODE_REDEEM] forKey:@"mode"]; // Set the mode to "REDEEM"
-    NSString* identifier = (NSString*)[_managedObject valueForKey:@"identifier"];
-    [viewModel setValue:identifier forKey:@"storeId"];
+    NSString* identifier = (NSString*)[_managedObject valueForKey:@"key"];
+    [viewModel setValue:identifier forKey:@"shopKey"];
     
     // Show the control
     [self.navigationController pushViewController:ctrl animated:YES];
@@ -274,69 +276,13 @@
 // Redeem token, then display the shiznitRedeemTokenDisplay
 - (void) getRedeemToken
 {
-    NSString* token = (NSString*)[_managedObject valueForKey:@"redeemToken"];
-    NSDate* exp = (NSDate*)[_managedObject valueForKey:@"redeemTokenExpiration"];
-    if( token != nil && exp != nil )
-    {
-        NSTimeInterval span = [exp timeIntervalSinceNow];
-        if (span > 0)
-        {
-            [self showRedeemTokenView:token withExpiration:exp];
-            return;
-        }
-    }
-    
-    // Initialize values to send
-    NSString* storeId = (NSString*)[_managedObject valueForKey:@"address"];
-    NSString* deviceId = [[FBConfig sharedInstance] deviceToken];
-
-    // Create URL, Request and Send the Request
-    NSURL* url = [NSURL URLWithString:K_URL_GET_REDEEM_TOKEN];
-    __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
-    [req setPostValue:deviceId forKey:@"deviceId"];
-    [req setPostValue:storeId forKey:@"storeId"];
-    [req setCompletionBlock:^(void){
-        NSString* responseString = [req responseString];
-        NSDictionary* obj = [responseString JSONValue];
-        if (obj==nil) {
-            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                           message:@"Could not issue redeem token"
-                                                          delegate:nil
-                                                 cancelButtonTitle:nil 
-                                                 otherButtonTitles:@"OK", nil];
-            [alert show];
-            [alert autorelease];
-            return;
-        }
-        NSString* redeemToken = [obj objectForKey:@"redeemToken"];
-        NSString* expDateStr = [obj objectForKey:@"expirationDate"];
-        NSString* identifier = (NSString*)[_managedObject valueForKey:@"identifier"];
-        NSDate* expirationDate = [APCDateUtil dateWithString:expDateStr];
-        NSLog(@"RedeemToke: %@, ExpirationDate: %@", redeemToken, expirationDate);
-        [[FBStoreManager sharedInstance] updateStoreRedeemToken:redeemToken
-                                                  andExpiration:expirationDate 
-                                                       forStore:identifier];         
-        [self showRedeemTokenView:redeemToken withExpiration:expirationDate];
-    }];
-    [req setFailedBlock:^(void){
-        NSError* error = [req error];
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                       message:@"Failed to issue redeem token"
-                                                      delegate:nil
-                                             cancelButtonTitle:nil 
-                                             otherButtonTitles:@"OK", nil];
-        [alert show];
-        [alert autorelease];
-        NSLog(@"Error while getting redeem token from server: %@",error);
-    }];
-    
-    // Send the Request
-#if DEBUG
-    [req setValidatesSecureCertificate:NO];
-#endif
-    [req startAsynchronous];    
+    FBGetRedeemToken* cmd = [[[FBGetRedeemToken alloc] init] autorelease];
+    [cmd setDelegate:self];
+    cmd.shopKey = (NSNumber*)[_managedObject valueForKey:@"key"];
+    [cmd execAsync];
 }
 
+// Called when this receives the redeem token from the back end
 - (void) showRedeemTokenView:(NSString*)redeemToken withExpiration:(NSDate*)expirationDate
 {
     // Now get the shiznit
@@ -351,23 +297,22 @@
     [controller release];
 }
 
+// ================================== 
+
+- (void)execSuccess:(id)request withResponse:(id)response
+{
+    if ([request class] == [FBGetRedeemToken class])
+    {
+        NSString* redeemToken = [response objectForKey:@"redeemToken"];
+        NSString* expDateStr = [response objectForKey:@"expiration"];
+        NSNumber* shopKey = (NSNumber*)[_managedObject valueForKey:@"key"];
+        NSDate* expirationDate = [APCDateUtil dateWithString:expDateStr];
+        NSLog(@"RedeemToke: %@, ExpirationDate: %@", redeemToken, expirationDate);
+        [[FBShopManager sharedInstance] updateShopRedeemToken:redeemToken
+                                                andExpiration:expirationDate 
+                                                      forShop:shopKey];         
+        [self showRedeemTokenView:redeemToken withExpiration:expirationDate];
+    }
+}
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

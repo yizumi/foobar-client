@@ -11,9 +11,12 @@
 
 #import "ASIFormDataRequest.h"
 #import "NSObject+SBJson.h"
+#import "FBCommandBase.h"
 
-@interface FooBarAppDelegate : NSObject <UIApplicationDelegate,
-UITabBarControllerDelegate> {
+@interface FooBarAppDelegate : NSObject <
+    UIApplicationDelegate,
+    UITabBarControllerDelegate,
+    FBCommandBaseDelegate> {
 
 }
 

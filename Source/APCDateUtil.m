@@ -16,7 +16,7 @@ NSDateFormatter* JSON_DATEFORMAT;
 {
     if (JSON_DATEFORMAT == nil) {
         JSON_DATEFORMAT = [[NSDateFormatter alloc]init];
-        [JSON_DATEFORMAT setDateFormat:@"yyyy-MM-ddHH:mm:ssZZZZ"];
+        [JSON_DATEFORMAT setDateFormat:@"yyyy-MM-dd HH:mm:ssZZZZ"];
     }
     return JSON_DATEFORMAT;
 }

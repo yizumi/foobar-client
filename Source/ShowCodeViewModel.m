@@ -17,6 +17,8 @@
 @synthesize isTokenInputValid;
 @synthesize config;
 @synthesize expirationDate;
+@synthesize remainingTimeInSec;
+@synthesize timer;
 
 - (ShowCodeViewModel*) init
 {
@@ -66,7 +68,6 @@
     [instruction release];
     [isTokenInputValid release];
     [config release];
-    _timer = nil;
     [super dealloc];
 }
 
@@ -111,7 +112,6 @@
                 break;
             case 2:
                 [self setValue:@"Present Code to Salesperson" forKey:@"instruction"];
-                [self beginExpirationTimer];
         }
     }
     
@@ -144,28 +144,46 @@
     }
 }
 
+
+// ======================================== TIMER STUFF =====================================
 - (void) beginExpirationTimer
 {
+    if ([mode intValue] != K_MODE_REDEEM)
+    {
+        NSLog(@"Invalid mode for timer");
+        return;
+    }
+    
+    if (timer != nil && [timer isValid])
+    {
+        NSLog(@"Timer already active");
+        return;
+    }
     NSLog(@"Beginning the timer");
     // Should only be activated for MODE=3
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1
+    timer = [NSTimer scheduledTimerWithTimeInterval:1
                                               target:self
                                             selector:@selector(checkExpiration:)
                                             userInfo:nil
                                              repeats:YES];
+
 }
 
 - (void) checkExpiration:(NSTimer*)timer
 {
+    // This is where we want to update the remaining time
     NSLog(@"Timer working...");
+    NSNumber* remTimeInSec = [NSNumber numberWithDouble:[expirationDate timeIntervalSinceNow]];
+    [self setValue:remTimeInSec forKey:@"remainingTimeInSec"];
 }
 
 - (void) stopExpirationTimer
 {
-    if (_timer && [_timer isValid])
+    if (timer != nil && [timer isValid])
     {
         NSLog(@"Stopping the timer");
-        [_timer invalidate];
+        [timer invalidate];
+        timer = nil;
     }
     else
     {

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD00C1EA143D116300D68CE4 /* FBAddPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FD00C1E9143D116300D68CE4 /* FBAddPoints.m */; };
+		FD00C1EE143D195200D68CE4 /* FBRedeemPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FD00C1ED143D195100D68CE4 /* FBRedeemPoints.m */; };
+		FD00C1F1143D1A4800D68CE4 /* FBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FD00C1F0143D1A4800D68CE4 /* FBConst.m */; };
+		FD23F083143E8C6B007EA7B6 /* FBGetShopListForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F082143E8C6B007EA7B6 /* FBGetShopListForDevice.m */; };
+		FD23F087143E8E1F007EA7B6 /* FBGetRedeemToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */; };
+		FD23F08A14414A59007EA7B6 /* FBGetTokenForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */; };
+		FD23F08D144153E8007EA7B6 /* FBShop.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08C144153E8007EA7B6 /* FBShop.m */; };
 		FD283E9813C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
 		FD283E9A13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
 		FD283E9C13C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
@@ -38,9 +45,8 @@
 		FDBC2973142FDA3B00FABA0C /* Coupon.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC296A142FDA3B00FABA0C /* Coupon.png */; };
 		FDBC2974142FDA3B00FABA0C /* Points.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC296B142FDA3B00FABA0C /* Points.png */; };
 		FDBC2975142FDA3B00FABA0C /* ShowCode.png in Resources */ = {isa = PBXBuildFile; fileRef = FDBC296C142FDA3B00FABA0C /* ShowCode.png */; };
-		FDBC297C142FDA7000FABA0C /* FBStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2977142FDA7000FABA0C /* FBStore.m */; };
-		FDBC297D142FDA7000FABA0C /* FBStoreExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2979142FDA7000FABA0C /* FBStoreExt.m */; };
-		FDBC297E142FDA7000FABA0C /* FBStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC297B142FDA7000FABA0C /* FBStoreManager.m */; };
+		FDBC297D142FDA7000FABA0C /* FBShopExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2979142FDA7000FABA0C /* FBShopExt.m */; };
+		FDBC297E142FDA7000FABA0C /* FBShopManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC297B142FDA7000FABA0C /* FBShopManager.m */; };
 		FDBC2981142FDA9800FABA0C /* FooBarData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDBC297F142FDA9800FABA0C /* FooBarData.xcdatamodeld */; };
 		FDBC2999142FDAB600FABA0C /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2984142FDAB600FABA0C /* SBJsonParser.m */; };
 		FDBC299A142FDAB600FABA0C /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC2986142FDAB600FABA0C /* SBJsonStreamParser.m */; };
@@ -67,15 +73,15 @@
 		FDBC29C9142FDB9E00FABA0C /* ShowCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29C4142FDB9E00FABA0C /* ShowCodeView.xib */; };
 		FDBC29CA142FDB9E00FABA0C /* ShowCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29C6142FDB9E00FABA0C /* ShowCodeViewController.m */; };
 		FDBC29CB142FDB9E00FABA0C /* ShowCodeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29C8142FDB9E00FABA0C /* ShowCodeViewModel.m */; };
-		FDBC29D4142FDBC100FABA0C /* StoreListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29CD142FDBC100FABA0C /* StoreListCell.m */; };
-		FDBC29D5142FDBC100FABA0C /* StoreListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29CE142FDBC100FABA0C /* StoreListCell.xib */; };
-		FDBC29D6142FDBC100FABA0C /* StoreListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29D0142FDBC100FABA0C /* StoreListCellController.m */; };
+		FDBC29D4142FDBC100FABA0C /* ShopListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29CD142FDBC100FABA0C /* ShopListCell.m */; };
+		FDBC29D5142FDBC100FABA0C /* ShopListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29CE142FDBC100FABA0C /* ShopListCell.xib */; };
+		FDBC29D6142FDBC100FABA0C /* ShopListCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29D0142FDBC100FABA0C /* ShopListCellController.m */; };
 		FDBC29D7142FDBC100FABA0C /* StoreListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29D1142FDBC100FABA0C /* StoreListView.xib */; };
-		FDBC29D8142FDBC100FABA0C /* StoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29D3142FDBC100FABA0C /* StoreListViewController.m */; };
-		FDBC29DF142FDBE000FABA0C /* StoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29D9142FDBE000FABA0C /* StoreView.xib */; };
-		FDBC29E0142FDBE000FABA0C /* StoreViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29DB142FDBE000FABA0C /* StoreViewCell.m */; };
-		FDBC29E1142FDBE000FABA0C /* StoreViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29DC142FDBE000FABA0C /* StoreViewCell.xib */; };
-		FDBC29E2142FDBE000FABA0C /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29DE142FDBE000FABA0C /* StoreViewController.m */; };
+		FDBC29D8142FDBC100FABA0C /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29D3142FDBC100FABA0C /* ShopListViewController.m */; };
+		FDBC29DF142FDBE000FABA0C /* ShopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29D9142FDBE000FABA0C /* ShopView.xib */; };
+		FDBC29E0142FDBE000FABA0C /* ShopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29DB142FDBE000FABA0C /* ShopViewCell.m */; };
+		FDBC29E1142FDBE000FABA0C /* ShopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29DC142FDBE000FABA0C /* ShopViewCell.xib */; };
+		FDBC29E2142FDBE000FABA0C /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29DE142FDBE000FABA0C /* ShopViewController.m */; };
 		FDBC29E6142FDBF600FABA0C /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29E4142FDBF600FABA0C /* ContactCell.m */; };
 		FDBC29E7142FDBF600FABA0C /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29E5142FDBF600FABA0C /* ContactCell.xib */; };
 		FDBC29EB142FDC0C00FABA0C /* CouponView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29E8142FDC0C00FABA0C /* CouponView.xib */; };
@@ -89,6 +95,14 @@
 		FDBC29FF1430979800FABA0C /* FooBarTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */; };
 		FDBC2A001430A52E00FABA0C /* FooBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29F91430974A00FABA0C /* FooBarTests.m */; };
 		FDD22EF213E01F9D0048D284 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD22EF113E01F9D0048D284 /* SenTestingKit.framework */; };
+		FDE79DB114349ABF00FB6AF3 /* ShopLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE79DB014349ABF00FB6AF3 /* ShopLogin.xib */; };
+		FDE79DB414349B8F00FB6AF3 /* ShopLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DB314349B8F00FB6AF3 /* ShopLoginViewController.m */; };
+		FDE79DB914349E1C00FB6AF3 /* TextFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE79DB814349E1C00FB6AF3 /* TextFormCell.xib */; };
+		FDE79DBC1434A17400FB6AF3 /* TextFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DBB1434A17400FB6AF3 /* TextFormCell.m */; };
+		FDE79DC61438931400FB6AF3 /* FBCommandBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DC51438931400FB6AF3 /* FBCommandBase.m */; };
+		FDE79DC91438965B00FB6AF3 /* FBLoginShop.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DC81438965B00FB6AF3 /* FBLoginShop.m */; };
+		FDE79DD414390DBB00FB6AF3 /* FBCreateShop.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DD314390DBB00FB6AF3 /* FBCreateShop.m */; };
+		FDE79DDB143B544E00FB6AF3 /* APCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DDA143B544E00FB6AF3 /* APCWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,11 +116,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD00C1E8143D116300D68CE4 /* FBAddPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBAddPoints.h; path = Source/FBAddPoints.h; sourceTree = "<group>"; };
+		FD00C1E9143D116300D68CE4 /* FBAddPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBAddPoints.m; path = Source/FBAddPoints.m; sourceTree = "<group>"; };
+		FD00C1EC143D195100D68CE4 /* FBRedeemPoints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBRedeemPoints.h; path = Source/FBRedeemPoints.h; sourceTree = "<group>"; };
+		FD00C1ED143D195100D68CE4 /* FBRedeemPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBRedeemPoints.m; path = Source/FBRedeemPoints.m; sourceTree = "<group>"; };
+		FD00C1EF143D1A4700D68CE4 /* FBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConst.h; path = Source/FBConst.h; sourceTree = "<group>"; };
+		FD00C1F0143D1A4800D68CE4 /* FBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBConst.m; path = Source/FBConst.m; sourceTree = "<group>"; };
+		FD23F081143E8C6B007EA7B6 /* FBGetShopListForDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGetShopListForDevice.h; path = Source/FBGetShopListForDevice.h; sourceTree = "<group>"; };
+		FD23F082143E8C6B007EA7B6 /* FBGetShopListForDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetShopListForDevice.m; path = Source/FBGetShopListForDevice.m; sourceTree = "<group>"; };
+		FD23F085143E8E1E007EA7B6 /* FBGetRedeemToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGetRedeemToken.h; path = Source/FBGetRedeemToken.h; sourceTree = "<group>"; };
+		FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetRedeemToken.m; path = Source/FBGetRedeemToken.m; sourceTree = "<group>"; };
+		FD23F08814414A57007EA7B6 /* FBGetTokenForDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGetTokenForDevice.h; path = Source/FBGetTokenForDevice.h; sourceTree = "<group>"; };
+		FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetTokenForDevice.m; path = Source/FBGetTokenForDevice.m; sourceTree = "<group>"; };
+		FD23F08B144153E8007EA7B6 /* FBShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShop.h; path = Source/FBShop.h; sourceTree = "<group>"; };
+		FD23F08C144153E8007EA7B6 /* FBShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShop.m; path = Source/FBShop.m; sourceTree = "<group>"; };
 		FD283E9313C02AED00FC57EE /* foobar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foobar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD283E9713C02AED00FC57EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD283E9913C02AED00FC57EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FD283EBD13C02AED00FC57EE /* FooBarTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FooBarTests.octest; path = "/Users/izumi/Desktop/iPhone Apps/foobar/build/Release-iphoneos/FooBarTests.octest"; sourceTree = "<absolute>"; };
 		FD48394C13DCD7BF00EA0397 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		FD48394F13DCD7C600EA0397 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FD48395113DCD7CD00EA0397 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -145,12 +172,10 @@
 		FDBC296A142FDA3B00FABA0C /* Coupon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coupon.png; path = Resources/Coupon.png; sourceTree = SOURCE_ROOT; };
 		FDBC296B142FDA3B00FABA0C /* Points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Points.png; path = Resources/Points.png; sourceTree = SOURCE_ROOT; };
 		FDBC296C142FDA3B00FABA0C /* ShowCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ShowCode.png; path = Resources/ShowCode.png; sourceTree = SOURCE_ROOT; };
-		FDBC2976142FDA7000FABA0C /* FBStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStore.h; path = Source/FBStore.h; sourceTree = "<group>"; };
-		FDBC2977142FDA7000FABA0C /* FBStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStore.m; path = Source/FBStore.m; sourceTree = "<group>"; };
-		FDBC2978142FDA7000FABA0C /* FBStoreExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStoreExt.h; path = Source/FBStoreExt.h; sourceTree = "<group>"; };
-		FDBC2979142FDA7000FABA0C /* FBStoreExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStoreExt.m; path = Source/FBStoreExt.m; sourceTree = "<group>"; };
-		FDBC297A142FDA7000FABA0C /* FBStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBStoreManager.h; path = Source/FBStoreManager.h; sourceTree = "<group>"; };
-		FDBC297B142FDA7000FABA0C /* FBStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBStoreManager.m; path = Source/FBStoreManager.m; sourceTree = "<group>"; };
+		FDBC2978142FDA7000FABA0C /* FBShopExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShopExt.h; path = Source/FBShopExt.h; sourceTree = "<group>"; };
+		FDBC2979142FDA7000FABA0C /* FBShopExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShopExt.m; path = Source/FBShopExt.m; sourceTree = "<group>"; };
+		FDBC297A142FDA7000FABA0C /* FBShopManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBShopManager.h; path = Source/FBShopManager.h; sourceTree = "<group>"; };
+		FDBC297B142FDA7000FABA0C /* FBShopManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBShopManager.m; path = Source/FBShopManager.m; sourceTree = "<group>"; };
 		FDBC2980142FDA9800FABA0C /* FooBarData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FooBarData.xcdatamodel; sourceTree = "<group>"; };
 		FDBC2982142FDAB600FABA0C /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = Source/SBJson.h; sourceTree = "<group>"; };
 		FDBC2983142FDAB600FABA0C /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = Source/SBJsonParser.h; sourceTree = "<group>"; };
@@ -199,20 +224,20 @@
 		FDBC29C6142FDB9E00FABA0C /* ShowCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCodeViewController.m; path = Source/ShowCodeViewController.m; sourceTree = SOURCE_ROOT; };
 		FDBC29C7142FDB9E00FABA0C /* ShowCodeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowCodeViewModel.h; path = Source/ShowCodeViewModel.h; sourceTree = SOURCE_ROOT; };
 		FDBC29C8142FDB9E00FABA0C /* ShowCodeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowCodeViewModel.m; path = Source/ShowCodeViewModel.m; sourceTree = SOURCE_ROOT; };
-		FDBC29CC142FDBC100FABA0C /* StoreListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreListCell.h; path = Source/StoreListCell.h; sourceTree = SOURCE_ROOT; };
-		FDBC29CD142FDBC100FABA0C /* StoreListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreListCell.m; path = Source/StoreListCell.m; sourceTree = SOURCE_ROOT; };
-		FDBC29CE142FDBC100FABA0C /* StoreListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreListCell.xib; path = Source/StoreListCell.xib; sourceTree = SOURCE_ROOT; };
-		FDBC29CF142FDBC100FABA0C /* StoreListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreListCellController.h; path = Source/StoreListCellController.h; sourceTree = SOURCE_ROOT; };
-		FDBC29D0142FDBC100FABA0C /* StoreListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreListCellController.m; path = Source/StoreListCellController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29CC142FDBC100FABA0C /* ShopListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopListCell.h; path = Source/ShopListCell.h; sourceTree = SOURCE_ROOT; };
+		FDBC29CD142FDBC100FABA0C /* ShopListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopListCell.m; path = Source/ShopListCell.m; sourceTree = SOURCE_ROOT; };
+		FDBC29CE142FDBC100FABA0C /* ShopListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopListCell.xib; path = Source/ShopListCell.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29CF142FDBC100FABA0C /* ShopListCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopListCellController.h; path = Source/ShopListCellController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29D0142FDBC100FABA0C /* ShopListCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopListCellController.m; path = Source/ShopListCellController.m; sourceTree = SOURCE_ROOT; };
 		FDBC29D1142FDBC100FABA0C /* StoreListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreListView.xib; path = Source/StoreListView.xib; sourceTree = SOURCE_ROOT; };
-		FDBC29D2142FDBC100FABA0C /* StoreListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreListViewController.h; path = Source/StoreListViewController.h; sourceTree = SOURCE_ROOT; };
-		FDBC29D3142FDBC100FABA0C /* StoreListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreListViewController.m; path = Source/StoreListViewController.m; sourceTree = SOURCE_ROOT; };
-		FDBC29D9142FDBE000FABA0C /* StoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreView.xib; path = Source/StoreView.xib; sourceTree = SOURCE_ROOT; };
-		FDBC29DA142FDBE000FABA0C /* StoreViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewCell.h; path = Source/StoreViewCell.h; sourceTree = SOURCE_ROOT; };
-		FDBC29DB142FDBE000FABA0C /* StoreViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewCell.m; path = Source/StoreViewCell.m; sourceTree = SOURCE_ROOT; };
-		FDBC29DC142FDBE000FABA0C /* StoreViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreViewCell.xib; path = Source/StoreViewCell.xib; sourceTree = SOURCE_ROOT; };
-		FDBC29DD142FDBE000FABA0C /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreViewController.h; path = Source/StoreViewController.h; sourceTree = SOURCE_ROOT; };
-		FDBC29DE142FDBE000FABA0C /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewController.m; path = Source/StoreViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29D2142FDBC100FABA0C /* ShopListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopListViewController.h; path = Source/ShopListViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29D3142FDBC100FABA0C /* ShopListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopListViewController.m; path = Source/ShopListViewController.m; sourceTree = SOURCE_ROOT; };
+		FDBC29D9142FDBE000FABA0C /* ShopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopView.xib; path = Source/ShopView.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29DA142FDBE000FABA0C /* ShopViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewCell.h; path = Source/ShopViewCell.h; sourceTree = SOURCE_ROOT; };
+		FDBC29DB142FDBE000FABA0C /* ShopViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewCell.m; path = Source/ShopViewCell.m; sourceTree = SOURCE_ROOT; };
+		FDBC29DC142FDBE000FABA0C /* ShopViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopViewCell.xib; path = Source/ShopViewCell.xib; sourceTree = SOURCE_ROOT; };
+		FDBC29DD142FDBE000FABA0C /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = Source/ShopViewController.h; sourceTree = SOURCE_ROOT; };
+		FDBC29DE142FDBE000FABA0C /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopViewController.m; path = Source/ShopViewController.m; sourceTree = SOURCE_ROOT; };
 		FDBC29E3142FDBF600FABA0C /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = Source/ContactCell.h; sourceTree = SOURCE_ROOT; };
 		FDBC29E4142FDBF600FABA0C /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = Source/ContactCell.m; sourceTree = SOURCE_ROOT; };
 		FDBC29E5142FDBF600FABA0C /* ContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactCell.xib; path = Source/ContactCell.xib; sourceTree = SOURCE_ROOT; };
@@ -230,7 +255,22 @@
 		FDBC29F91430974A00FABA0C /* FooBarTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FooBarTests.m; path = Tests/FooBarTests.m; sourceTree = SOURCE_ROOT; };
 		FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FooBarTests-Info.plist"; path = "Tests/FooBarTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FDBC29FC1430976100FABA0C /* FooBarTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FooBarTests-Prefix.pch"; path = "Tests/FooBarTests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		FDBC2A0A1433349C00FABA0C /* foobar-tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foobar-tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD22EF113E01F9D0048D284 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FDE79DB014349ABF00FB6AF3 /* ShopLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopLogin.xib; path = Source/ShopLogin.xib; sourceTree = SOURCE_ROOT; };
+		FDE79DB214349B8F00FB6AF3 /* ShopLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopLoginViewController.h; path = Source/ShopLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		FDE79DB314349B8F00FB6AF3 /* ShopLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopLoginViewController.m; path = Source/ShopLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		FDE79DB814349E1C00FB6AF3 /* TextFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TextFormCell.xib; path = Source/TextFormCell.xib; sourceTree = SOURCE_ROOT; };
+		FDE79DBA1434A17400FB6AF3 /* TextFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextFormCell.h; path = Source/TextFormCell.h; sourceTree = SOURCE_ROOT; };
+		FDE79DBB1434A17400FB6AF3 /* TextFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextFormCell.m; path = Source/TextFormCell.m; sourceTree = SOURCE_ROOT; };
+		FDE79DC41438931400FB6AF3 /* FBCommandBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBCommandBase.h; path = Source/FBCommandBase.h; sourceTree = "<group>"; };
+		FDE79DC51438931400FB6AF3 /* FBCommandBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBCommandBase.m; path = Source/FBCommandBase.m; sourceTree = "<group>"; };
+		FDE79DC71438965B00FB6AF3 /* FBLoginShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginShop.h; path = Source/FBLoginShop.h; sourceTree = "<group>"; };
+		FDE79DC81438965B00FB6AF3 /* FBLoginShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLoginShop.m; path = Source/FBLoginShop.m; sourceTree = "<group>"; };
+		FDE79DD214390DBA00FB6AF3 /* FBCreateShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBCreateShop.h; path = Source/FBCreateShop.h; sourceTree = "<group>"; };
+		FDE79DD314390DBB00FB6AF3 /* FBCreateShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBCreateShop.m; path = Source/FBCreateShop.m; sourceTree = "<group>"; };
+		FDE79DD9143B544E00FB6AF3 /* APCWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCWindow.h; path = Source/APCWindow.h; sourceTree = "<group>"; };
+		FDE79DDA143B544E00FB6AF3 /* APCWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCWindow.m; path = Source/APCWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				FD283E9313C02AED00FC57EE /* foobar.app */,
+				FDBC2A0A1433349C00FABA0C /* foobar-tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -305,12 +346,14 @@
 		FD283E9D13C02AED00FC57EE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FDE79DB514349D2B00FB6AF3 /* Common */,
 				FDBC29B9142FDB2500FABA0C /* InfoPlist.strings */,
 				FDBC29B6142FDAFF00FABA0C /* MainWindow.xib */,
 				FD8E9BAC141AE18B00F04696 /* ShowCodeView */,
+				FDE79DAF143499A900FB6AF3 /* ShopLogin */,
 				FD8E9BAE141AE1AC00F04696 /* BookPoints */,
-				FD8E9BAF141AE1C900F04696 /* StoreList */,
-				FD8E9BB0141AE4BF00F04696 /* StoreView */,
+				FD8E9BAF141AE1C900F04696 /* ShopList */,
+				FD8E9BB0141AE4BF00F04696 /* ShopView */,
 				FD8E9BB1141AE4E500F04696 /* CouponView */,
 			);
 			name = View;
@@ -420,12 +463,12 @@
 			isa = PBXGroup;
 			children = (
 				FDBC297F142FDA9800FABA0C /* FooBarData.xcdatamodeld */,
-				FDBC2976142FDA7000FABA0C /* FBStore.h */,
-				FDBC2977142FDA7000FABA0C /* FBStore.m */,
-				FDBC2978142FDA7000FABA0C /* FBStoreExt.h */,
-				FDBC2979142FDA7000FABA0C /* FBStoreExt.m */,
-				FDBC297A142FDA7000FABA0C /* FBStoreManager.h */,
-				FDBC297B142FDA7000FABA0C /* FBStoreManager.m */,
+				FD23F08B144153E8007EA7B6 /* FBShop.h */,
+				FD23F08C144153E8007EA7B6 /* FBShop.m */,
+				FDBC2978142FDA7000FABA0C /* FBShopExt.h */,
+				FDBC2979142FDA7000FABA0C /* FBShopExt.m */,
+				FDBC297A142FDA7000FABA0C /* FBShopManager.h */,
+				FDBC297B142FDA7000FABA0C /* FBShopManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -454,35 +497,35 @@
 			name = BookPoints;
 			sourceTree = "<group>";
 		};
-		FD8E9BAF141AE1C900F04696 /* StoreList */ = {
+		FD8E9BAF141AE1C900F04696 /* ShopList */ = {
 			isa = PBXGroup;
 			children = (
-				FDBC29CC142FDBC100FABA0C /* StoreListCell.h */,
-				FDBC29CD142FDBC100FABA0C /* StoreListCell.m */,
-				FDBC29CE142FDBC100FABA0C /* StoreListCell.xib */,
-				FDBC29CF142FDBC100FABA0C /* StoreListCellController.h */,
-				FDBC29D0142FDBC100FABA0C /* StoreListCellController.m */,
+				FDBC29CC142FDBC100FABA0C /* ShopListCell.h */,
+				FDBC29CD142FDBC100FABA0C /* ShopListCell.m */,
+				FDBC29CE142FDBC100FABA0C /* ShopListCell.xib */,
+				FDBC29CF142FDBC100FABA0C /* ShopListCellController.h */,
+				FDBC29D0142FDBC100FABA0C /* ShopListCellController.m */,
 				FDBC29D1142FDBC100FABA0C /* StoreListView.xib */,
-				FDBC29D2142FDBC100FABA0C /* StoreListViewController.h */,
-				FDBC29D3142FDBC100FABA0C /* StoreListViewController.m */,
+				FDBC29D2142FDBC100FABA0C /* ShopListViewController.h */,
+				FDBC29D3142FDBC100FABA0C /* ShopListViewController.m */,
 			);
-			name = StoreList;
+			name = ShopList;
 			sourceTree = "<group>";
 		};
-		FD8E9BB0141AE4BF00F04696 /* StoreView */ = {
+		FD8E9BB0141AE4BF00F04696 /* ShopView */ = {
 			isa = PBXGroup;
 			children = (
 				FDBC29E5142FDBF600FABA0C /* ContactCell.xib */,
 				FDBC29E3142FDBF600FABA0C /* ContactCell.h */,
 				FDBC29E4142FDBF600FABA0C /* ContactCell.m */,
-				FDBC29D9142FDBE000FABA0C /* StoreView.xib */,
-				FDBC29DA142FDBE000FABA0C /* StoreViewCell.h */,
-				FDBC29DB142FDBE000FABA0C /* StoreViewCell.m */,
-				FDBC29DC142FDBE000FABA0C /* StoreViewCell.xib */,
-				FDBC29DD142FDBE000FABA0C /* StoreViewController.h */,
-				FDBC29DE142FDBE000FABA0C /* StoreViewController.m */,
+				FDBC29D9142FDBE000FABA0C /* ShopView.xib */,
+				FDBC29DD142FDBE000FABA0C /* ShopViewController.h */,
+				FDBC29DE142FDBE000FABA0C /* ShopViewController.m */,
+				FDBC29DA142FDBE000FABA0C /* ShopViewCell.h */,
+				FDBC29DB142FDBE000FABA0C /* ShopViewCell.m */,
+				FDBC29DC142FDBE000FABA0C /* ShopViewCell.xib */,
 			);
-			name = StoreView;
+			name = ShopView;
 			sourceTree = "<group>";
 		};
 		FD8E9BB1141AE4E500F04696 /* CouponView */ = {
@@ -498,6 +541,8 @@
 		FD9EE70113C8387000FC80D8 /* APC */ = {
 			isa = PBXGroup;
 			children = (
+				FDE79DD9143B544E00FB6AF3 /* APCWindow.h */,
+				FDE79DDA143B544E00FB6AF3 /* APCWindow.m */,
 				FDBC29A7142FDAE600FABA0C /* APCArray.h */,
 				FDBC29A8142FDAE600FABA0C /* APCArray.m */,
 				FDBC29A9142FDAE600FABA0C /* APCDateUtil.h */,
@@ -530,11 +575,57 @@
 				FDBC29F5142FDC6B00FABA0C /* main.m */,
 				FDBC29F0142FDC4C00FABA0C /* FBConfig.h */,
 				FDBC29F1142FDC4C00FABA0C /* FBConfig.m */,
+				FD00C1EF143D1A4700D68CE4 /* FBConst.h */,
+				FD00C1F0143D1A4800D68CE4 /* FBConst.m */,
 				FDA661BB13C565ED006F4EE7 /* API */,
+				FDE79DC3143892D300FB6AF3 /* Command */,
 				FD7F0E0313C485D50061548E /* Model */,
 				FD283E9D13C02AED00FC57EE /* View */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		FDE79DAF143499A900FB6AF3 /* ShopLogin */ = {
+			isa = PBXGroup;
+			children = (
+				FDE79DB014349ABF00FB6AF3 /* ShopLogin.xib */,
+				FDE79DB214349B8F00FB6AF3 /* ShopLoginViewController.h */,
+				FDE79DB314349B8F00FB6AF3 /* ShopLoginViewController.m */,
+			);
+			name = ShopLogin;
+			sourceTree = "<group>";
+		};
+		FDE79DB514349D2B00FB6AF3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FDE79DB814349E1C00FB6AF3 /* TextFormCell.xib */,
+				FDE79DBA1434A17400FB6AF3 /* TextFormCell.h */,
+				FDE79DBB1434A17400FB6AF3 /* TextFormCell.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		FDE79DC3143892D300FB6AF3 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				FDE79DC41438931400FB6AF3 /* FBCommandBase.h */,
+				FDE79DC51438931400FB6AF3 /* FBCommandBase.m */,
+				FDE79DC71438965B00FB6AF3 /* FBLoginShop.h */,
+				FDE79DC81438965B00FB6AF3 /* FBLoginShop.m */,
+				FDE79DD214390DBA00FB6AF3 /* FBCreateShop.h */,
+				FDE79DD314390DBB00FB6AF3 /* FBCreateShop.m */,
+				FD00C1E8143D116300D68CE4 /* FBAddPoints.h */,
+				FD00C1E9143D116300D68CE4 /* FBAddPoints.m */,
+				FD00C1EC143D195100D68CE4 /* FBRedeemPoints.h */,
+				FD00C1ED143D195100D68CE4 /* FBRedeemPoints.m */,
+				FD23F081143E8C6B007EA7B6 /* FBGetShopListForDevice.h */,
+				FD23F082143E8C6B007EA7B6 /* FBGetShopListForDevice.m */,
+				FD23F085143E8E1E007EA7B6 /* FBGetRedeemToken.h */,
+				FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */,
+				FD23F08814414A57007EA7B6 /* FBGetTokenForDevice.h */,
+				FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */,
+			);
+			name = Command;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,7 +664,7 @@
 			);
 			name = "foobar-tests";
 			productName = FooBarTests;
-			productReference = FD283EBD13C02AED00FC57EE /* FooBarTests.octest */;
+			productReference = FDBC2A0A1433349C00FABA0C /* foobar-tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -618,16 +709,18 @@
 				FDBC29BB142FDB2500FABA0C /* InfoPlist.strings in Resources */,
 				FDBC29C2142FDB6300FABA0C /* BookPoints.xib in Resources */,
 				FDBC29C9142FDB9E00FABA0C /* ShowCodeView.xib in Resources */,
-				FDBC29D5142FDBC100FABA0C /* StoreListCell.xib in Resources */,
+				FDBC29D5142FDBC100FABA0C /* ShopListCell.xib in Resources */,
 				FDBC29D7142FDBC100FABA0C /* StoreListView.xib in Resources */,
-				FDBC29DF142FDBE000FABA0C /* StoreView.xib in Resources */,
-				FDBC29E1142FDBE000FABA0C /* StoreViewCell.xib in Resources */,
+				FDBC29DF142FDBE000FABA0C /* ShopView.xib in Resources */,
+				FDBC29E1142FDBE000FABA0C /* ShopViewCell.xib in Resources */,
 				FDBC29E7142FDBF600FABA0C /* ContactCell.xib in Resources */,
 				FDBC29EB142FDC0C00FABA0C /* CouponView.xib in Resources */,
 				FDBC29EF142FDC2C00FABA0C /* FooBar-Info.plist in Resources */,
 				FDBC29FD1430976100FABA0C /* FooBarTests-Info.plist in Resources */,
 				FDBC29FE1430978900FABA0C /* FooBarTests-Info.plist in Resources */,
 				FDBC29FF1430979800FABA0C /* FooBarTests-Info.plist in Resources */,
+				FDE79DB114349ABF00FB6AF3 /* ShopLogin.xib in Resources */,
+				FDE79DB914349E1C00FB6AF3 /* TextFormCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,9 +763,8 @@
 				FD48397313DCD86000EA0397 /* ASIInputStream.m in Sources */,
 				FD48397413DCD86000EA0397 /* ASINetworkQueue.m in Sources */,
 				FD48397713DCD87900EA0397 /* Reachability.m in Sources */,
-				FDBC297C142FDA7000FABA0C /* FBStore.m in Sources */,
-				FDBC297D142FDA7000FABA0C /* FBStoreExt.m in Sources */,
-				FDBC297E142FDA7000FABA0C /* FBStoreManager.m in Sources */,
+				FDBC297D142FDA7000FABA0C /* FBShopExt.m in Sources */,
+				FDBC297E142FDA7000FABA0C /* FBShopManager.m in Sources */,
 				FDBC2981142FDA9800FABA0C /* FooBarData.xcdatamodeld in Sources */,
 				FDBC2999142FDAB600FABA0C /* SBJsonParser.m in Sources */,
 				FDBC299A142FDAB600FABA0C /* SBJsonStreamParser.m in Sources */,
@@ -695,16 +787,29 @@
 				FDBC29C3142FDB6300FABA0C /* BookPointsViewController.m in Sources */,
 				FDBC29CA142FDB9E00FABA0C /* ShowCodeViewController.m in Sources */,
 				FDBC29CB142FDB9E00FABA0C /* ShowCodeViewModel.m in Sources */,
-				FDBC29D4142FDBC100FABA0C /* StoreListCell.m in Sources */,
-				FDBC29D6142FDBC100FABA0C /* StoreListCellController.m in Sources */,
-				FDBC29D8142FDBC100FABA0C /* StoreListViewController.m in Sources */,
-				FDBC29E0142FDBE000FABA0C /* StoreViewCell.m in Sources */,
-				FDBC29E2142FDBE000FABA0C /* StoreViewController.m in Sources */,
+				FDBC29D4142FDBC100FABA0C /* ShopListCell.m in Sources */,
+				FDBC29D6142FDBC100FABA0C /* ShopListCellController.m in Sources */,
+				FDBC29D8142FDBC100FABA0C /* ShopListViewController.m in Sources */,
+				FDBC29E0142FDBE000FABA0C /* ShopViewCell.m in Sources */,
+				FDBC29E2142FDBE000FABA0C /* ShopViewController.m in Sources */,
 				FDBC29E6142FDBF600FABA0C /* ContactCell.m in Sources */,
 				FDBC29EC142FDC0C00FABA0C /* CouponViewController.m in Sources */,
 				FDBC29F2142FDC4C00FABA0C /* FBConfig.m in Sources */,
 				FDBC29F6142FDC6B00FABA0C /* FooBarAppDelegate.m in Sources */,
 				FDBC29F7142FDC6B00FABA0C /* main.m in Sources */,
+				FDE79DB414349B8F00FB6AF3 /* ShopLoginViewController.m in Sources */,
+				FDE79DBC1434A17400FB6AF3 /* TextFormCell.m in Sources */,
+				FDE79DC61438931400FB6AF3 /* FBCommandBase.m in Sources */,
+				FDE79DC91438965B00FB6AF3 /* FBLoginShop.m in Sources */,
+				FDE79DD414390DBB00FB6AF3 /* FBCreateShop.m in Sources */,
+				FDE79DDB143B544E00FB6AF3 /* APCWindow.m in Sources */,
+				FD00C1EA143D116300D68CE4 /* FBAddPoints.m in Sources */,
+				FD00C1EE143D195200D68CE4 /* FBRedeemPoints.m in Sources */,
+				FD00C1F1143D1A4800D68CE4 /* FBConst.m in Sources */,
+				FD23F083143E8C6B007EA7B6 /* FBGetShopListForDevice.m in Sources */,
+				FD23F087143E8E1F007EA7B6 /* FBGetRedeemToken.m in Sources */,
+				FD23F08A14414A59007EA7B6 /* FBGetTokenForDevice.m in Sources */,
+				FD23F08D144153E8007EA7B6 /* FBShop.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "APCArray.h"
 #import "ASIFormDataRequest.h"
+#import "ShopLoginViewController.h"
 
-
-@interface BookPointsViewController : UIViewController {
+@interface BookPointsViewController : UIViewController
+    <ShopLoginViewControllerDelegate, FBCommandBaseDelegate>
+{
+    int viewDidAppearCount;
     NSArray* _buttons;
 }
 
@@ -31,5 +34,6 @@
 @property (retain,nonatomic) IBOutlet UIButton* button8;
 @property (retain,nonatomic) IBOutlet UIButton* button9;
 @property (retain,nonatomic) IBOutlet UITextField* numberField;
+@property (retain,nonatomic) NSString* userToken;
 
 @end

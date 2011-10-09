@@ -8,10 +8,24 @@
 
 #import "BookPointsViewController.h"
 #import "FBConfig.h"
+#import "FBAddPoints.h"
+#import "FBRedeemPoints.h"
+#import "APCWindow.h"
 
 @implementation BookPointsViewController
 
-@synthesize button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, numberField;
+@synthesize button0;
+@synthesize button1;
+@synthesize button2;
+@synthesize button3;
+@synthesize button4;
+@synthesize button5;
+@synthesize button6;
+@synthesize button7;
+@synthesize button8;
+@synthesize button9;
+@synthesize numberField;
+@synthesize userToken;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +44,7 @@
     }];
     [_buttons release];
     [numberField release];
+    [userToken release];
     [super dealloc];
 }
 
@@ -43,25 +58,46 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    _buttons = [[NSArray alloc] initWithObjects: button0, button1, button2, button3, button4,
-                button5, button6, button7, button8, button9, nil];
+    _buttons = [[NSArray alloc] initWithObjects: 
+                button0, 
+                button1,
+                button2,
+                button3, 
+                button4,
+                button5,
+                button6,
+                button7,
+                button8,
+                button9,
+                nil];
     
     [_buttons forEach:^(id item){
         UIButton* button = (UIButton*)item;
         [button addTarget:self action:@selector(onNumericButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    // If user is not logged in, show the login/registration page.
+    if (viewDidAppearCount < 1 && [[FBConfig sharedInstance] shopKey] == 0)
+    {        
+        viewDidAppearCount++;
+        ShopLoginViewController* controller = [[ShopLoginViewController alloc]initWithNibName:@"ShopLogin" 
+                                                                                 bundle:nil];
+        [controller setDelegate:self];
+        controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentModalViewController:controller animated:YES];
+        NSLog(@"Retain: %d", [controller retainCount]);
+        [controller release];
+    }
+    
+    [super viewDidAppear:animated];
 }
 
 - (void)viewDidUnload
@@ -94,50 +130,68 @@
 
 - (IBAction)onGivePushed:(id)sender
 {
-    NSNumber* points = [NSNumber numberWithInt:[numberField.text intValue]];
-    // Setup the Async Shit
-    NSURL* url = [NSURL URLWithString:K_URL_GIVE_OR_REDEEM_POINTS];
-    __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
-    [req setPostValue:@"give" forKey:@"action"];
-    [req setPostValue:points forKey:@"points"];
-    [req setPostValue:[[FBConfig sharedInstance]userToken] forKey:@"from_user_token"];
-    [req setPostValue:@"abcde" forKey:@"to_user_token"];
-    // If succeed, close the panel
-    [req setCompletionBlock:^(void){
-        NSString* res = [req responseString];
-        NSLog(@"Response: %@",res);
-        [self dismissModalViewControllerAnimated:YES];
-    }];
+    FBAddPoints* cmd = [[[FBAddPoints alloc] init] autorelease];
+    [cmd setDelegate:self];
+    cmd.userToken = userToken;
+    cmd.points = [NSNumber numberWithInt:[numberField.text intValue]];
+    cmd.shopKey = [NSNumber numberWithLong:[[FBConfig sharedInstance] shopKey]];
     
-    // If error, show the popup.
-    [req setFailedBlock:^(void){
-        NSString* res = [req responseString];
-        NSLog(@"Something went wrong: %@", res);
-        NSError* error = [req error];
-        NSLog(@"%@", error);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"Error while booking points" 
-                                                       delegate:nil 
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    }];
-    
-    // Send
-#if DEBUG
-    [req setValidatesSecureCertificate:NO];
-#endif
-    [req startAsynchronous];
+    [cmd execAsync];
 }
 
 - (IBAction)onRedeemPushed:(id)sender
 {
-    // Setup the async shit
-    // Send
-    // If succeed, close the panle.
+    FBRedeemPoints* cmd = [[[FBRedeemPoints alloc] init] autorelease];
+    [cmd setDelegate:self];
+    cmd.redeemToken = userToken;
+    cmd.points = [NSNumber numberWithInt:[numberField.text intValue]];
+    cmd.shopKey = [NSNumber numberWithLong:[[FBConfig sharedInstance] shopKey]];
     
-    // If error, show the popup.
+    [cmd execAsync];
+}
+
+
+// ================================= ShopLoginViewControllerDelegate =================================
+- (void) didLogin:(ShopLoginViewController*)ctrl
+{
+    NSLog(@"Logged in");
+}
+
+- (void) createdShop:(ShopLoginViewController*)ctrl
+{
+    NSLog(@"Shop created");
+}
+
+- (void) didCancel:(ShopLoginViewController*)ctrl
+{
+    if ([[FBConfig sharedInstance] shopKey] == 0)
+    {
+        NSLog(@"I'm gonna close myself");
+        // [ctrl dismissModalViewControllerAnimated:NO];
+        [self dismissModalViewControllerAnimated:NO];
+        // [self.parentViewController  dismissModalViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+// ================================= FBCommandDelegate =================================
+- (void)execSuccess:(id)request withResponse:(id)response
+{
+    if ([request class] == [FBAddPoints class])
+    {
+        NSNumber* points = (NSNumber*)[response valueForKey:@"currentPoints"];
+        NSString* message = [NSString stringWithFormat:@"残高は%dPt.です", [points intValue]];
+        [APCWindow alert:message withTitle:@"ポイント加算完了"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    if ([request class] == [FBRedeemPoints class])
+    {
+        NSNumber* points = (NSNumber*)[response valueForKey:@"remainingPoints"];
+        NSString* message = [NSString stringWithFormat:@"残高は%dPt.です", [points intValue]];
+        [APCWindow alert:message withTitle:@"ポイント償還完了"];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

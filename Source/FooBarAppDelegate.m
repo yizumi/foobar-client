@@ -7,6 +7,7 @@
 //
 #import "FooBarAppDelegate.h"
 #import "FBConfig.h"
+#import "FBGetTokenForDevice.h"
 
 @implementation FooBarAppDelegate
 
@@ -116,72 +117,9 @@
 - (void)getTokenForDevice:(NSString*)deviceToken
 {    
     // Get the unique identifier of the device
-    NSString* deviceId = [[UIDevice currentDevice]uniqueIdentifier];
-    
-    // Log
-    NSLog(@"Sending {DeviceId:%@}}", deviceId);
-    
-    // Create URL, Request and Send the Request
-    NSURL* url = [NSURL URLWithString:K_URL_REGISTER_DEVICE_TOKEN];
-    __block ASIFormDataRequest* req = [ASIFormDataRequest requestWithURL:url];
-    [req setTimeOutSeconds: 30];
-    [req setPostValue:deviceId forKey:@"deviceId"];
-#if DEBUG
-    [req setValidatesSecureCertificate:NO];
-#endif
-    
-    if (deviceToken != nil)
-    {
-        NSLog(@"... And {DeviceToken:%@}", deviceToken);
-        [req setPostValue:deviceToken forKey:@"deviceToken"];
-    }
-    [req setCompletionBlock:^(void){
-        NSString* responseString = [req responseString];
-        NSDictionary* obj = [responseString JSONValue];
-        if ( [[obj objectForKey:@"success"] boolValue] == YES)
-        {
-            NSString* userToken = [obj objectForKey:@"token"];
-            [[FBConfig sharedInstance] setUserToken:userToken];
-            NSLog(@"Setting user token as: %@", userToken);
-        }
-        else
-        {
-            int failCode = [[obj objectForKey:@"failCode"] intValue];
-            NSString* errorMessage = @"Unknown Error";
-            switch (failCode)
-            {
-                case 1: // FAILCODE_MISSING_DEVICE_ID
-                    errorMessage = @"Missing DeviceID";
-                    break;
-            }
-            UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                           message:errorMessage
-                                                          delegate:nil
-                                                 cancelButtonTitle:nil
-                                                 otherButtonTitles:@"OK", nil];
-            [alert show];
-            [alert autorelease];
-            NSLog(@"GetTokenForDevice Failed (Code:%@)", failCode);
-        }
-    }];
-    [req setFailedBlock:^(void){
-        NSError* error = [req error];
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                       message:[error localizedDescription]
-                                                      delegate:nil
-                                             cancelButtonTitle:nil 
-                                             otherButtonTitles:@"OK", nil];
-        [alert show];
-        [alert autorelease];
-        NSLog(@"Error while getting user token from server:%@",error);
-    }];
-    
-    // Send the Request
-#if DEBUG
-    [req setValidatesSecureCertificate:NO];
-#endif
-    [req startAsynchronous];
-
+    FBGetTokenForDevice* cmd = [[[FBGetTokenForDevice alloc] init] autorelease];
+    [cmd setDelegate:self];
+    [cmd execAsync];
 }
 
 - (void)application:(UIApplication*)application didReceiveRemoteNotification:(NSDictionary *)userInfo
@@ -226,6 +164,38 @@
                                           otherButtonTitles:nil];
     [alert show];
     [alert release];
+}
+
+// ================================= FBCommandBaseDelegate ================================
+
+- (void) execSuccess:(id)request withResponse:(id)response
+{
+    if ([[response objectForKey:@"success"] boolValue] == YES)
+    {
+        NSString* userToken = [response objectForKey:@"token"];
+        [[FBConfig sharedInstance] setUserToken:userToken];
+        NSLog(@"Setting user token as: %@", userToken);
+    }
+    else
+    {
+        int failCode = [[response objectForKey:@"failCode"] intValue];
+        NSString* errorMessage = @"Unknown Error";
+        switch (failCode)
+        {
+            case 1: // FAILCODE_MISSING_DEVICE_ID
+                errorMessage = @"Missing DeviceID";
+                break;
+        }
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
+                                                       message:errorMessage
+                                                      delegate:nil
+                                             cancelButtonTitle:nil
+                                             otherButtonTitles:@"OK", nil];
+        [alert show];
+        [alert autorelease];
+        NSLog(@"GetTokenForDevice Failed (Code:%@)", failCode);
+    }
+
 }
 
 @end

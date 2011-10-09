@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBStoreManager.h"
+#import "FBShopManager.h"
 #import "APCArray.h"
 #import "APCString.h"
 #import "FBCodeButton.h"
@@ -16,7 +16,8 @@
 #import "FBConfig.h"
 #import "BookPointsViewController.h"
 
-@interface ShowCodeViewController : UIViewController <UINavigationBarDelegate> {
+@interface ShowCodeViewController : UIViewController <UINavigationBarDelegate>
+{
     NSString* _BUTTON_LABELS;
     NSArray* _buttons;
 }
