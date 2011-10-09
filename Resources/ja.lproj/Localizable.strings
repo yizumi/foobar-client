@@ -6,7 +6,7 @@
   Copyright 2011 __MyCompanyName__. All rights reserved.
 */
 "APN_OK" = "OK";
-"APN_ADD_POINTS" = "%sから%sPt届きました!";
+"APN_ADD_POINTS" = "%@から%@Pt届きました!";
 "BookPoints_EnterPointsToGiveOrRedeem" = "加算または還元するポイントを入力してください";
 "BookPoints_ButtonGive" = "加算";
 "BookPoints_ButtonRedeem" = "還元";
