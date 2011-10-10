@@ -2,8 +2,9 @@ foobar-client
 
 (x) Enable Push Notification
 ( ) Resize Oversized Pictures
-( ) Add Logout button in Book Points screen
-( ) Persist the shop name, and show the shop name in the Book Points screen
+( ) 2. Support Image Upload
+( ) 1. Add Logout button in Book Points screen
+(x) Persist the shop name, and show the shop name in the Book Points screen
 (x) Refresh Shop List automatically upon changes
 (x) No Redeem Token refresh if token is there and hasn't expired
 	(x) But allow user to refresh token if requested

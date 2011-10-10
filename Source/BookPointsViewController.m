@@ -91,6 +91,10 @@
         [button addTarget:self action:@selector(onNumericButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     }];
     
+    // Set Shop Name
+    NSString* shopName = [[FBConfig sharedInstance] shopName];
+    [self setTitle:shopName];
+    
     // Localization
     titleLabel.text = NSLocalizedString(@"BookPoints_EnterPointsToGiveOrRedeem", @"");
     [buttonGive setTitle:NSLocalizedString(@"BookPoints_ButtonGive",@"") forState:UIControlStateNormal];

@@ -73,6 +73,17 @@ static FBConfig* _sharedInstance;
     [[NSUserDefaults standardUserDefaults] setObject:number forKey:K_DEFAULTS_SHOP_KEY];
 }
 
+- (NSString*) shopName
+{
+    NSString* name = (NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:K_DEFAULTS_SHOP_NAME];
+    return name;
+}
+
+- (void) setShopName:(NSString*)value
+{
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:K_DEFAULTS_SHOP_NAME];
+}
+
 - (int) test
 {
     NSNumber* number = (NSNumber*)[[NSUserDefaults standardUserDefaults] objectForKey:K_DEFAULTS_TEST];
