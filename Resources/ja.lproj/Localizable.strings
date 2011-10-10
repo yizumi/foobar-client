@@ -10,5 +10,7 @@
 "BookPoints_EnterPointsToGiveOrRedeem" = "加算または還元するポイントを入力してください";
 "BookPoints_ButtonGive" = "加算";
 "BookPoints_ButtonRedeem" = "還元";
+"BookPoints_ButtonLogout" = "ログアウト";
+"BookPoints_LogoutComplete" = "ログアウトしました";
 "ShowCodeView_Expiration" = "このトークンはあと%d分%d秒有効です";
 "ShowCodeView_Expired" = "このトークンは有効期限切れです";

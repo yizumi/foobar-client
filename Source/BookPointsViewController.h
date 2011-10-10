@@ -29,6 +29,7 @@
 - (IBAction)onRedeemPushed:(id)sender;
 - (IBAction)onClearPushed:(id)sender;
 - (IBAction)onBkspPushed:(id)sender;
+- (IBAction)onLogoutPushed:(id)sender;
 
 @property (retain,nonatomic) IBOutlet UIButton* button0;
 @property (retain,nonatomic) IBOutlet UIButton* button1;

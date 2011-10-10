@@ -91,6 +91,14 @@
         [button addTarget:self action:@selector(onNumericButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     }];
     
+    // Prepare logout button
+    NSString* logout = NSLocalizedString(@"BookPoints_ButtonLogout",@"");
+    UIBarButtonItem *logoutButton = [[[UIBarButtonItem alloc] initWithTitle:logout
+                                                                     style:UIBarButtonItemStyleDone
+                                                                    target:self
+                                                                     action:@selector(onLogoutPushed:)]autorelease];
+    self.navigationItem.rightBarButtonItem = logoutButton;
+    
     // Set Shop Name
     NSString* shopName = [[FBConfig sharedInstance] shopName];
     [self setTitle:shopName];
@@ -188,15 +196,27 @@
     numberField.text = [NSString stringWithFormat:@"%d", newInt];
 }
 
+- (IBAction)onLogoutPushed:(id)sender
+{
+    NSString* shopName = [[FBConfig sharedInstance] shopName];
+    [[FBConfig sharedInstance] setShopKey:0];
+    [[FBConfig sharedInstance] setShopName:nil];
+    
+    [APCWindow alert:NSLocalizedString(@"BookPoints_LogoutComplete",shopName) withTitle:shopName];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 // ================================= ShopLoginViewControllerDelegate =================================
 - (void) didLogin:(ShopLoginViewController*)ctrl
 {
     NSLog(@"Logged in");
+    [self setTitle:[[FBConfig sharedInstance] shopName]];
 }
 
 - (void) createdShop:(ShopLoginViewController*)ctrl
 {
     NSLog(@"Shop created");
+    [self setTitle:[[FBConfig sharedInstance] shopName]];
 }
 
 - (void) didCancel:(ShopLoginViewController*)ctrl

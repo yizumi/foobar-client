@@ -10,5 +10,7 @@
 "BookPoints_EnterPointsToGiveOrRedeem" = "Enter Points to Give or Redeem";
 "BookPoints_ButtonGive" = "Give";
 "BookPoints_ButtonRedeem" = "Redeem";
-"ShowCodeView_Expiration" = "This token will expire in %d:%d";
+"BookPoints_ButtonLogout" = "Logout";
+"BookPoints_LogoutComplete" = "Logout Complete";
+"ShowCodeView_Expiration" = "This token will expire in %dhr%dmin";
 "ShowCodeView_Expired" = "This token has expired";

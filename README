@@ -1,5 +1,6 @@
 foobar-client
 
+( ) In ShopView screen, unselect the UITableViewItem when selected.
 (x) Enable Push Notification
 ( ) Resize Oversized Pictures
 ( ) 2. Support Image Upload
