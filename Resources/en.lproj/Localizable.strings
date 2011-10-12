@@ -14,3 +14,9 @@
 "BookPoints_LogoutComplete" = "Logout Complete";
 "ShowCodeView_Expiration" = "This token will expire in %dhr%dmin";
 "ShowCodeView_Expired" = "This token has expired";
+"ShopLogin_Required" = "(Required)";
+"ShopLogin_ButtonCancel" = "Cancel";
+"ShopLogin_ButtonCamera" = "Take a photo";
+"ShopLogin_ButtonPhotoLibrary" = "Photo Library";
+"ShopLogin_ButtonPhotoAlbum" = "Photo Album";
+"ShopLogin_ShopImage" = "Select Photo";

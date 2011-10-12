@@ -233,11 +233,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Source/ShopLoginViewController.m"
-         timestampString = "339514032.699859"
+         timestampString = "339940640.661791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "258"
-         endingLineNumber = "258"
+         startingLineNumber = "313"
+         endingLineNumber = "313"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -247,11 +247,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Source/ShopViewController.m"
-         timestampString = "339860905.524675"
+         timestampString = "340089677.931652"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "326"
-         endingLineNumber = "326"
+         startingLineNumber = "327"
+         endingLineNumber = "327"
          landmarkName = "-execSuccess:withResponse:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -267,6 +267,20 @@
          startingLineNumber = "129"
          endingLineNumber = "129"
          landmarkName = "-application:didReceiveRemoteNotification:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "0"
+         filePath = "/Users/izumi/work/pokeb-asi-http-request-404bbfe/Classes/ASIFormDataRequest.m"
+         timestampString = "340090504.240697"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
+         landmarkName = "-addData:withFileName:andContentType:forKey:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

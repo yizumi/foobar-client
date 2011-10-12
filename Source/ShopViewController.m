@@ -133,7 +133,7 @@
         NSNumber* points = (NSNumber*)[_managedObject valueForKey:@"points"];
         NSString* pointsStr = [[[NSString alloc] initWithFormat:@"%d Pt.", [points intValue]]autorelease];
         cell.pointsLabel.text = pointsStr;
-        [self setImage:[_managedObject valueForKey:@"imageUrl"] on:cell];
+        [self setImage:[_managedObject valueForKey:@"key"] on:cell];
         return cell;
     }
     
@@ -196,8 +196,9 @@
     return nil;
 }
 
-- (void) setImage:(NSString*) urlString on:(ShopViewCell*) cell
+- (void) setImage:(NSNumber*) key on:(ShopViewCell*) cell
 {
+    NSString* urlString = [NSString stringWithFormat:K_SHOP_IMAGE_URL, [key longValue]];
     NSURL* url = [NSURL URLWithString:urlString];
     __block ASIHTTPRequest* req = [ASIHTTPRequest requestWithURL:url];
     // Invoked up on successful completion

@@ -14,3 +14,9 @@
 "BookPoints_LogoutComplete" = "ログアウトしました";
 "ShowCodeView_Expiration" = "このトークンはあと%d分%d秒有効です";
 "ShowCodeView_Expired" = "このトークンは有効期限切れです";
+"ShopLogin_Required" = "(必須)";
+"ShopLogin_ButtonCancel" = "キャンセル";
+"ShopLogin_ButtonCamera" = "写真を撮る";
+"ShopLogin_ButtonPhotoLibrary" = "フォトライブラリ";
+"ShopLogin_ButtonPhotoAlbum" = "アルバム";
+"ShopLogin_ShopImage" = "ショップの写真を選択";

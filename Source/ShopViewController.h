@@ -19,7 +19,7 @@
 
 @property (nonatomic, retain) NSManagedObject* managedObject;
 
-- (void) setImage:(NSString*) urlString on:(ShopViewCell*) cell;
+- (void) setImage:(NSNumber*) key on:(ShopViewCell*) cell;
 
 // ======================= Private Methods =======================
 - (void) showCodeViewWithToken:(NSString*)token;

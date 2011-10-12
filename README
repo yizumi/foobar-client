@@ -1,10 +1,11 @@
 foobar-client
 
-( ) In ShopView screen, unselect the UITableViewItem when selected.
+( ) 3. Enable Calling from Telephone number button
+( ) 4. In ShopView screen, unselect the UITableViewItem when selected.
 (x) Enable Push Notification
-( ) Resize Oversized Pictures
-( ) 2. Support Image Upload
-( ) 1. Add Logout button in Book Points screen
+(x) Resize Oversized Pictures
+(x) Support Image Upload
+(x) Add Logout button in Book Points screen
 (x) Persist the shop name, and show the shop name in the Book Points screen
 (x) Refresh Shop List automatically upon changes
 (x) No Redeem Token refresh if token is there and hasn't expired
