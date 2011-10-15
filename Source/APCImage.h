@@ -12,5 +12,6 @@
 @interface UIImage (APCImage)
 
 - (UIImage*)scaleToSize:(CGSize)size;
+- (UIImage*)scaleAndCropToSize:(CGSize)targetSize;
 
 @end

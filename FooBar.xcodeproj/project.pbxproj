@@ -10,6 +10,7 @@
 		FD00C1EA143D116300D68CE4 /* FBAddPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FD00C1E9143D116300D68CE4 /* FBAddPoints.m */; };
 		FD00C1EE143D195200D68CE4 /* FBRedeemPoints.m in Sources */ = {isa = PBXBuildFile; fileRef = FD00C1ED143D195100D68CE4 /* FBRedeemPoints.m */; };
 		FD00C1F1143D1A4800D68CE4 /* FBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = FD00C1F0143D1A4800D68CE4 /* FBConst.m */; };
+		FD110D701449C3810053C06B /* NoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = FD110D6F1449C3810053C06B /* NoImage.png */; };
 		FD23F083143E8C6B007EA7B6 /* FBGetShopListForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F082143E8C6B007EA7B6 /* FBGetShopListForDevice.m */; };
 		FD23F087143E8E1F007EA7B6 /* FBGetRedeemToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */; };
 		FD23F08A14414A59007EA7B6 /* FBGetTokenForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */; };
@@ -126,6 +127,7 @@
 		FD00C1ED143D195100D68CE4 /* FBRedeemPoints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBRedeemPoints.m; path = Source/FBRedeemPoints.m; sourceTree = "<group>"; };
 		FD00C1EF143D1A4700D68CE4 /* FBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConst.h; path = Source/FBConst.h; sourceTree = "<group>"; };
 		FD00C1F0143D1A4800D68CE4 /* FBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBConst.m; path = Source/FBConst.m; sourceTree = "<group>"; };
+		FD110D6F1449C3810053C06B /* NoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NoImage.png; path = Resources/NoImage.png; sourceTree = SOURCE_ROOT; };
 		FD23F081143E8C6B007EA7B6 /* FBGetShopListForDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGetShopListForDevice.h; path = Source/FBGetShopListForDevice.h; sourceTree = "<group>"; };
 		FD23F082143E8C6B007EA7B6 /* FBGetShopListForDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetShopListForDevice.m; path = Source/FBGetShopListForDevice.m; sourceTree = "<group>"; };
 		FD23F085143E8E1E007EA7B6 /* FBGetRedeemToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGetRedeemToken.h; path = Source/FBGetRedeemToken.h; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 		FD283ED913C0812E00FC57EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD110D6F1449C3810053C06B /* NoImage.png */,
 				FDBC2964142FDA3B00FABA0C /* ButtonAquaGreen.png */,
 				FDBC2965142FDA3B00FABA0C /* ButtonAquaRed.png */,
 				FDBC2966142FDA3B00FABA0C /* FBCodeButtonOn.png */,
@@ -741,6 +744,7 @@
 				FDE79DB914349E1C00FB6AF3 /* TextFormCell.xib in Resources */,
 				FD23F0901441CBE8007EA7B6 /* Localizable.strings in Resources */,
 				FD23F114144311A7007EA7B6 /* ImageFormCell.xib in Resources */,
+				FD110D701449C3810053C06B /* NoImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

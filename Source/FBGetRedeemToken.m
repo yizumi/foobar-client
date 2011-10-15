@@ -38,6 +38,7 @@
         case 1: return @"デバイスが見つかりません";
         case 2: return @"ショップが見つかりません";
         case 3: return @"ポイント残高がありません";
+        case 4: return @"トークンの払い出しに失敗しました";
         default: return @"不明なエラーが発生しました";
     }
 }

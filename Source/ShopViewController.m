@@ -16,6 +16,7 @@
 #import "NSObject+SBJson.h"
 #import "FBConst.h"
 #import "FBGetRedeemToken.h"
+#import "APCImage.h"
 
 @implementation ShopViewController
 
@@ -72,6 +73,10 @@
 {
     return 3;
 }
+
+// =============================================================================================
+// =============================== TableViewController Handler =================================
+// =============================================================================================
 
 // Returns the title for the secion
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -196,36 +201,10 @@
     return nil;
 }
 
-- (void) setImage:(NSNumber*) key on:(ShopViewCell*) cell
-{
-    NSString* urlString = [NSString stringWithFormat:K_SHOP_IMAGE_URL, [key longValue]];
-    NSURL* url = [NSURL URLWithString:urlString];
-    __block ASIHTTPRequest* req = [ASIHTTPRequest requestWithURL:url];
-    // Invoked up on successful completion
-    [req setCompletionBlock:^(void){
-        NSData* data = [req responseData];
-        cell.imageView.image = [UIImage imageWithData:data];
-        [cell setNeedsLayout];
-    }];
-    // Invoked up on failure
-    [req setFailedBlock:^(void) {
-        NSError* error = [req error];
-        NSLog(@"%@", error);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                        message:@"Error while getting shop list" 
-                                                       delegate:nil 
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    }];
-    
-    [req startAsynchronous];
-}
-
 // Event handler for cell tap
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(indexPath.section == 1)
     {
         switch (indexPath.row)
@@ -242,36 +221,53 @@
     {
         switch(indexPath.row)
         {
+            case 0:
+            // Link to telephone
+            {
+                NSString* telLink = [NSString stringWithFormat:@"tel:%@", [_managedObject valueForKey:@"tel"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telLink]];
+                break;
+            }
             // Link to map.
             case 1:
-                {
-                    NSString* address = (NSString*)[_managedObject valueForKey:@"address"];
-                    NSString* urlStr = [NSString stringWithFormat:K_URL_MAP, [address urlEncode]];
-                    NSURL *url = [NSURL URLWithString:urlStr];
-                    [[UIApplication sharedApplication]openURL:url];
-                    NSLog(@"Hi: %@", urlStr);
-                }
+            {
+                NSString* address = (NSString*)[_managedObject valueForKey:@"address"];
+                NSString* urlStr = [NSString stringWithFormat:K_URL_MAP, [address urlEncode]];
+                NSURL *url = [NSURL URLWithString:urlStr];
+                [[UIApplication sharedApplication]openURL:url];
+                NSLog(@"Hi: %@", urlStr);
                 break;
+            }
             default:
                 break;
         }
     }
 }
 
-- (void)showCodeViewWithToken:(NSString*)token
+// =============================================================================================
+// ================================== Private Handlers =========================================
+// =============================================================================================
+
+- (void) setImage:(NSNumber*) key on:(ShopViewCell*) cell
 {
-    ShowCodeViewController* ctrl;
-    ctrl = [[ShowCodeViewController alloc]initWithNibName:@"ShowCodeView" 
-                                                   bundle:nil];
-    ShowCodeViewModel* viewModel;
-    viewModel = (ShowCodeViewModel*)ctrl.viewModel;
-    [viewModel setValue:[NSNumber numberWithInt:K_MODE_REDEEM] forKey:@"mode"]; // Set the mode to "REDEEM"
-    NSString* identifier = (NSString*)[_managedObject valueForKey:@"key"];
-    [viewModel setValue:identifier forKey:@"shopKey"];
+    NSString* urlString = [NSString stringWithFormat:K_SHOP_IMAGE_URL, [key longValue]];
+    NSURL* url = [NSURL URLWithString:urlString];
+    __block ASIHTTPRequest* req = [ASIHTTPRequest requestWithURL:url];
+    // Invoked up on successful completion
+    [req setCompletionBlock:^(void){
+        NSData* data = [req responseData];
+        UIImage* image = [UIImage imageWithData:data];
+        cell.imageView.image = [image scaleAndCropToSize:CGSizeMake(100,100)];
+        [cell setNeedsLayout];
+    }];
+    // Invoked up on failure
+    [req setFailedBlock:^(void) {
+        cell.imageView.image = [UIImage imageNamed:@"NoImage.png"];
+        [cell setNeedsLayout];
+        NSLog(@"%@", [req error]);
+    }];
     
-    // Show the control
-    [self.navigationController pushViewController:ctrl animated:YES];
-    [ctrl release];
+    [req startAsynchronous];
 }
 
 // Redeem token, then display the shiznitRedeemTokenDisplay
@@ -318,7 +314,26 @@
     [controller release];
 }
 
-// ================================== 
+- (void)showCodeViewWithToken:(NSString*)token
+{
+    ShowCodeViewController* ctrl;
+    ctrl = [[ShowCodeViewController alloc]initWithNibName:@"ShowCodeView" 
+                                                   bundle:nil];
+    ShowCodeViewModel* viewModel;
+    viewModel = (ShowCodeViewModel*)ctrl.viewModel;
+    [viewModel setValue:[NSNumber numberWithInt:K_MODE_REDEEM] forKey:@"mode"]; // Set the mode to "REDEEM"
+    NSString* identifier = (NSString*)[_managedObject valueForKey:@"key"];
+    [viewModel setValue:identifier forKey:@"shopKey"];
+    
+    // Show the control
+    [self.navigationController pushViewController:ctrl animated:YES];
+    [ctrl release];
+}
+
+
+// =============================================================================================
+// ================================== FBCommandBaseDelegate ====================================
+// =============================================================================================
 
 - (void)execSuccess:(id)request withResponse:(id)response
 {

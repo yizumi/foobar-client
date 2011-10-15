@@ -11,7 +11,7 @@
 
 @implementation FBConst
 
-#if DEBUG
+#if TARGET_IPHONE_SIMULATOR
 NSString* const K_BASE_FOOBAR_URL               = @"http://localhost:8888/foobar/%@";
 NSString* const K_URL_MAP                       = @"http://maps.google.com/maps?q=%@&ie=UTF8";
 NSString* const K_SHOP_IMAGE_URL                = @"http://localhost:8888/foobar/GetShopImage?shopKey=%d&filter=100x100";

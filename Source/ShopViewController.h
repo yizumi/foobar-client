@@ -19,9 +19,8 @@
 
 @property (nonatomic, retain) NSManagedObject* managedObject;
 
-- (void) setImage:(NSNumber*) key on:(ShopViewCell*) cell;
-
 // ======================= Private Methods =======================
+- (void) setImage:(NSNumber*) key on:(ShopViewCell*) cell;
 - (void) showCodeViewWithToken:(NSString*)token;
 - (void) getRedeemToken;
 - (void) showRedeemTokenView:(NSString*)redeemToken withExpiration:(NSDate*)expiration;

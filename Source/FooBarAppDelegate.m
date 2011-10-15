@@ -196,32 +196,9 @@
 
 - (void) execSuccess:(id)request withResponse:(id)response
 {
-    if ([[response objectForKey:@"success"] boolValue] == YES)
-    {
-        NSString* userToken = [response objectForKey:@"token"];
-        [[FBConfig sharedInstance] setUserToken:userToken];
-        NSLog(@"Setting user token as: %@", userToken);
-    }
-    else
-    {
-        int failCode = [[response objectForKey:@"failCode"] intValue];
-        NSString* errorMessage = @"Unknown Error";
-        switch (failCode)
-        {
-            case 1: // FAILCODE_MISSING_DEVICE_ID
-                errorMessage = @"Missing DeviceID";
-                break;
-        }
-        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"Error"
-                                                       message:errorMessage
-                                                      delegate:nil
-                                             cancelButtonTitle:nil
-                                             otherButtonTitles:@"OK", nil];
-        [alert show];
-        [alert autorelease];
-        NSLog(@"GetTokenForDevice Failed (Code:%@)", failCode);
-    }
-
+    NSString* userToken = [response objectForKey:@"token"];
+    [[FBConfig sharedInstance] setUserToken:userToken];
+    NSLog(@"Setting user token as: %@", userToken);
 }
 
 @end
