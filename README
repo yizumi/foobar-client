@@ -1,7 +1,11 @@
 foobar-client
 
+( ) 0. Reduce the size of image before sending
+( ) 1. Create Transaction Page
+( ) 2. Create Terms of Service link in ShopLogin screen
 ( ) 3. Enable Calling from Telephone number button
 ( ) 4. In ShopView screen, unselect the UITableViewItem when selected.
+( ) 5. Create "About" page
 (x) Enable Push Notification
 (x) Resize Oversized Pictures
 (x) Support Image Upload

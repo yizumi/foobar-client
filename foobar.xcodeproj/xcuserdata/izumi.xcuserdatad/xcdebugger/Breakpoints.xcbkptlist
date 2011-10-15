@@ -233,11 +233,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Source/ShopLoginViewController.m"
-         timestampString = "339940640.661791"
+         timestampString = "340248234.032859"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "313"
-         endingLineNumber = "313"
+         startingLineNumber = "314"
+         endingLineNumber = "314"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -273,14 +273,14 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         isPathRelative = "0"
-         filePath = "/Users/izumi/work/pokeb-asi-http-request-404bbfe/Classes/ASIFormDataRequest.m"
-         timestampString = "340090504.240697"
+         isPathRelative = "1"
+         filePath = "Source/ShopLoginViewController.m"
+         timestampString = "340248203.222863"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "152"
-         endingLineNumber = "152"
-         landmarkName = "-addData:withFileName:andContentType:forKey:"
+         startingLineNumber = "403"
+         endingLineNumber = "403"
+         landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
