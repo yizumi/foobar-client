@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBShopManager.h"
+#import "ShopInfoService.h"
 #import "APCArray.h"
 #import "APCString.h"
 #import "FBCodeButton.h"

@@ -11,10 +11,9 @@
 #import "ASIFormDataRequest.h"
 #import "ASIHTTPRequest.h"
 #import "FBConfig.h"
-#import "FBShopManager.h"
+#import "ShopInfoService.h"
 #import "ShopListCellController.h"
 #import "ShopViewController.h"
-#import "FBShopExt.h"
 #import "FBGetShopListForDevice.h"
 
 @implementation ShopListViewController
@@ -61,7 +60,7 @@
     
     self.navigationItem.leftBarButtonItem = refresh;
     self.navigationItem.title = @"Points";
-    self.fetchedResults = [[FBShopManager sharedInstance] fetchShopInfos];
+    self.fetchedResults = [[ShopInfoService sharedInstance] fetchShopInfos];
     [refresh release];
 }
 
@@ -149,7 +148,7 @@
     }
     
     // NSArray* 
-    FBShop* shop = [self.fetchedResults objectAtIndexPath:indexPath];
+    ShopInfo* shop = [self.fetchedResults objectAtIndexPath:indexPath];
     [cell.titleLabel setText: shop.name];
     [cell.pointLabel setText:[[NSString alloc] initWithFormat:@"%d Pt.",[shop.points intValue]]];
 
@@ -179,8 +178,8 @@
     if ([request class] == [FBGetShopListForDevice class])
     {
         NSArray* shops = [response objectForKey:@"shops"];
-        [[FBShopManager sharedInstance] updateWithList:shops];
-        self.fetchedResults = [[FBShopManager sharedInstance] fetchShopInfos];
+        [[ShopInfoService sharedInstance] updateWithList:shops];
+        self.fetchedResults = [[ShopInfoService sharedInstance] fetchShopInfos];
         UITableView* v = (UITableView*)self.view;
         [v reloadData];
     }

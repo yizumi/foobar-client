@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBShop.h"
+#import "ShopInfo.h"
 
 @interface ShopListCell : UITableViewCell {
-    FBShop* _shopInfo;
+    ShopInfo* _shopInfo;
     UILabel* _titleLabel;
     UILabel* _pointLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel* pointLabel;
-@property (nonatomic, retain) FBShop* shopInfo;
+@property (nonatomic, retain) ShopInfo* shopInfo;
 
 @end

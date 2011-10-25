@@ -23,7 +23,7 @@
     [super dealloc];
 }
 
-- (void)setShopInfo:(FBShop *)shopInfo
+- (void)setShopInfo:(ShopInfo *)shopInfo
 {
     if( _shopInfo != nil )
     {

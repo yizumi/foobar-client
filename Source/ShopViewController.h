@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FBShop.h"
+#import "ShopInfo.h"
 #import "ShopViewCell.h"
 #import "FBCommandBase.h"
 

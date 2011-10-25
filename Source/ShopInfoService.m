@@ -6,20 +6,19 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "FBShopManager.h"
+#import "ShopInfoService.h"
 #import "SBJson.h"
 #import "APCDateUtil.h"
-#import "FBShopExt.h"
 
-@implementation FBShopManager
+@implementation ShopInfoService
 
-static FBShopManager *_sharedInstance = nil;
+static ShopInfoService *_sharedInstance = nil;
 
-+ (FBShopManager *) sharedInstance
++ (ShopInfoService *) sharedInstance
 {
     if( !_sharedInstance )
     {
-        _sharedInstance = [[FBShopManager alloc] init];
+        _sharedInstance = [[ShopInfoService alloc] init];
     }
     return _sharedInstance;
 }
@@ -67,9 +66,9 @@ static FBShopManager *_sharedInstance = nil;
     return _context;
 }
 
-- (FBShop *) insertNew
+- (ShopInfo *) insertNew
 {
-    FBShop *shop = [NSEntityDescription insertNewObjectForEntityForName:@"FBShop" inManagedObjectContext:self.context];
+    ShopInfo *shop = [NSEntityDescription insertNewObjectForEntityForName:@"FBShop" inManagedObjectContext:self.context];
     return shop;
 }
 
@@ -130,7 +129,7 @@ static FBShopManager *_sharedInstance = nil;
 {
     // See if the data exists already
     NSNumber* shopKey = (NSNumber *)[obj objectForKey:@"key"];
-    FBShop* shop = [self getByIdentifier:shopKey];
+    ShopInfo* shop = [self getByIdentifier:shopKey];
     
     // If not, insert a new record
     if( shop == nil )
@@ -159,7 +158,7 @@ static FBShopManager *_sharedInstance = nil;
                  andExpiration:(NSDate*)expDate 
                        forShop:(NSNumber*)shopKey
 {
-    FBShop* shop = [self getByIdentifier:shopKey];
+    ShopInfo* shop = [self getByIdentifier:shopKey];
     if (shop == nil )
     {
         NSLog(@"Error: Could not find shop by identifier: %@", shopKey);
@@ -175,7 +174,7 @@ static FBShopManager *_sharedInstance = nil;
 
 // Returns ShopInfo for the given identifier.
 // Returns nil if not found.
-- (FBShop *) getByIdentifier:(NSNumber *)shopKey
+- (ShopInfo *) getByIdentifier:(NSNumber *)shopKey
 {
     NSFetchRequest *request;
     NSEntityDescription *description;
@@ -202,7 +201,7 @@ static FBShopManager *_sharedInstance = nil;
     
     if( [result count] > 0 )
     {
-        FBShop* shop = (FBShop*)[result objectAtIndex:0];
+        ShopInfo* shop = (ShopInfo*)[result objectAtIndex:0];
         return shop;
     }
     else

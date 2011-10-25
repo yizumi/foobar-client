@@ -9,19 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import <CoreData/NSManagedObjectContext.h>
-#import "FBShop.h"
-#import "FBShopExt.h"
+#import "ShopInfo.h"
 #import "APCArray.h"
 
-@interface FBShopManager : NSObject {
+@interface ShopInfoService : NSObject {
     NSManagedObjectContext *_context;
 }
 
 @property (readonly, nonatomic) NSManagedObjectContext *context;
 
-+ (FBShopManager *) sharedInstance;
++ (ShopInfoService *) sharedInstance;
 
-- (FBShop *) insertNew;
+- (ShopInfo *) insertNew;
 - (void) commit;
 - (NSArray *) shops;
 - (NSURL *)applicationDocumentsDirectory;
@@ -31,7 +30,7 @@
 - (void) updateShopRedeemToken:(NSString*)token 
                   andExpiration:(NSDate*)expDate 
                        forShop:(NSNumber*)shopKey;
-- (FBShop *) getByIdentifier:(NSNumber*)shopKey;
+- (ShopInfo *) getByIdentifier:(NSNumber*)shopKey;
 - (NSFetchedResultsController*) fetchShopInfos;
 
 @end

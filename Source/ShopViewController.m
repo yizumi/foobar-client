@@ -344,7 +344,7 @@
         NSNumber* shopKey = (NSNumber*)[_managedObject valueForKey:@"key"];
         NSDate* expirationDate = [APCDateUtil dateWithString:expDateStr];
         NSLog(@"RedeemToke: %@, ExpirationDate: %@", redeemToken, expirationDate);
-        [[FBShopManager sharedInstance] updateShopRedeemToken:redeemToken
+        [[ShopInfoService sharedInstance] updateShopRedeemToken:redeemToken
                                                 andExpiration:expirationDate 
                                                       forShop:shopKey];         
         [self showRedeemTokenView:redeemToken withExpiration:expirationDate];

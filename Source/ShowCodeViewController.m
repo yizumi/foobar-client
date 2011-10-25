@@ -338,7 +338,7 @@
         NSDate* expiration = (NSDate*)[APCDateUtil dateWithString:expirationStr];
         
         // Update the shop info using shop manager
-        [[FBShopManager sharedInstance] updateShopRedeemToken:redeemToken
+        [[ShopInfoService sharedInstance] updateShopRedeemToken:redeemToken
                                                 andExpiration:expiration
                                                       forShop:shopKey];
         
