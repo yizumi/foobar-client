@@ -1,16 +1,17 @@
 //
-//  FBShop.h
+//  ShopInfo.h
 //  foobar
 //
-//  Created by 泉 雄介 on 10/9/11.
+//  Created by 泉 雄介 on 10/27/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "APCDataModel.h"
 
 
-@interface ShopInfo : NSManagedObject {
+@interface ShopInfo : APCDataModel {
 @private
 }
 @property (nonatomic, retain) NSString * redeemToken;
@@ -24,6 +25,5 @@
 @property (nonatomic, retain) NSDate * firstVisit;
 @property (nonatomic, retain) NSString * tel;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSNumber * key;
 
 @end

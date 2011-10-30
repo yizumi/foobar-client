@@ -14,7 +14,6 @@
 		FD23F083143E8C6B007EA7B6 /* FBGetShopListForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F082143E8C6B007EA7B6 /* FBGetShopListForDevice.m */; };
 		FD23F087143E8E1F007EA7B6 /* FBGetRedeemToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */; };
 		FD23F08A14414A59007EA7B6 /* FBGetTokenForDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */; };
-		FD23F08D144153E8007EA7B6 /* ShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F08C144153E8007EA7B6 /* ShopInfo.m */; };
 		FD23F0901441CBE8007EA7B6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD23F0921441CBE8007EA7B6 /* Localizable.strings */; };
 		FD23F114144311A7007EA7B6 /* ImageFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD23F113144311A7007EA7B6 /* ImageFormCell.xib */; };
 		FD23F117144312B9007EA7B6 /* ImageFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD23F116144312B9007EA7B6 /* ImageFormCell.m */; };
@@ -38,6 +37,10 @@
 		FD48397313DCD86000EA0397 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = FD48396913DCD86000EA0397 /* ASIInputStream.m */; };
 		FD48397413DCD86000EA0397 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FD48396B13DCD86000EA0397 /* ASINetworkQueue.m */; };
 		FD48397713DCD87900EA0397 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FD48397613DCD87900EA0397 /* Reachability.m */; };
+		FD5211B814599E400089877A /* APCDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5211B714599E400089877A /* APCDataModel.m */; };
+		FD5211BB14599E520089877A /* ShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5211BA14599E520089877A /* ShopInfo.m */; };
+		FD5211BE14599E600089877A /* TransactionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5211BD14599E600089877A /* TransactionInfo.m */; };
+		FD5211C1145E0AEE0089877A /* APCDataModelService.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5211C0145E0AEE0089877A /* APCDataModelService.m */; };
 		FD7F0E0513C486070061548E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7F0E0413C486070061548E /* CoreData.framework */; };
 		FD8835071447C3F400B4F0F9 /* APCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8835061447C3F300B4F0F9 /* APCImage.m */; };
 		FD8C3B8E141A2B99004D7A5C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8C3B8D141A2B99004D7A5C /* icon.png */; };
@@ -134,8 +137,6 @@
 		FD23F086143E8E1E007EA7B6 /* FBGetRedeemToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetRedeemToken.m; path = Source/FBGetRedeemToken.m; sourceTree = "<group>"; };
 		FD23F08814414A57007EA7B6 /* FBGetTokenForDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGetTokenForDevice.h; path = Source/FBGetTokenForDevice.h; sourceTree = "<group>"; };
 		FD23F08914414A58007EA7B6 /* FBGetTokenForDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGetTokenForDevice.m; path = Source/FBGetTokenForDevice.m; sourceTree = "<group>"; };
-		FD23F08B144153E8007EA7B6 /* ShopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopInfo.h; path = Source/ShopInfo.h; sourceTree = "<group>"; };
-		FD23F08C144153E8007EA7B6 /* ShopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopInfo.m; path = Source/ShopInfo.m; sourceTree = "<group>"; };
 		FD23F0911441CBE8007EA7B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FD23F0931441CC11007EA7B6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FD23F113144311A7007EA7B6 /* ImageFormCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageFormCell.xib; path = Source/ImageFormCell.xib; sourceTree = SOURCE_ROOT; };
@@ -172,6 +173,14 @@
 		FD48396C13DCD86000EA0397 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../../../work/pokeb-asi-http-request-404bbfe/Classes/ASIProgressDelegate.h"; sourceTree = "<group>"; };
 		FD48397513DCD87900EA0397 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../../work/pokeb-asi-http-request-404bbfe/External/Reachability/Reachability.h"; sourceTree = "<group>"; };
 		FD48397613DCD87900EA0397 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../../work/pokeb-asi-http-request-404bbfe/External/Reachability/Reachability.m"; sourceTree = "<group>"; };
+		FD5211B614599E350089877A /* APCDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCDataModel.h; path = Source/APCDataModel.h; sourceTree = "<group>"; };
+		FD5211B714599E400089877A /* APCDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCDataModel.m; path = Source/APCDataModel.m; sourceTree = "<group>"; };
+		FD5211B914599E520089877A /* ShopInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopInfo.h; path = Source/ShopInfo.h; sourceTree = "<group>"; };
+		FD5211BA14599E520089877A /* ShopInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopInfo.m; path = Source/ShopInfo.m; sourceTree = "<group>"; };
+		FD5211BC14599E600089877A /* TransactionInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionInfo.h; path = Source/TransactionInfo.h; sourceTree = "<group>"; };
+		FD5211BD14599E600089877A /* TransactionInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionInfo.m; path = Source/TransactionInfo.m; sourceTree = "<group>"; };
+		FD5211BF145E0AEE0089877A /* APCDataModelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCDataModelService.h; path = Source/APCDataModelService.h; sourceTree = "<group>"; };
+		FD5211C0145E0AEE0089877A /* APCDataModelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCDataModelService.m; path = Source/APCDataModelService.m; sourceTree = "<group>"; };
 		FD7F0E0413C486070061548E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FD8835051447C3F200B4F0F9 /* APCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCImage.h; path = Source/APCImage.h; sourceTree = "<group>"; };
 		FD8835061447C3F300B4F0F9 /* APCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCImage.m; path = Source/APCImage.m; sourceTree = "<group>"; };
@@ -187,7 +196,7 @@
 		FDBC296A142FDA3B00FABA0C /* Coupon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coupon.png; path = Resources/Coupon.png; sourceTree = SOURCE_ROOT; };
 		FDBC296B142FDA3B00FABA0C /* Points.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Points.png; path = Resources/Points.png; sourceTree = SOURCE_ROOT; };
 		FDBC296C142FDA3B00FABA0C /* ShowCode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ShowCode.png; path = Resources/ShowCode.png; sourceTree = SOURCE_ROOT; };
-		FDBC297A142FDA7000FABA0C /* ShopInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; name = ShopInfoService.h; path = Source/ShopInfoService.h; sourceTree = "<group>"; };
+		FDBC297A142FDA7000FABA0C /* ShopInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopInfoService.h; path = Source/ShopInfoService.h; sourceTree = "<group>"; };
 		FDBC297B142FDA7000FABA0C /* ShopInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopInfoService.m; path = Source/ShopInfoService.m; sourceTree = "<group>"; };
 		FDBC2980142FDA9800FABA0C /* FooBarData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FooBarData.xcdatamodel; sourceTree = "<group>"; };
 		FDBC2982142FDAB600FABA0C /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = Source/SBJson.h; sourceTree = "<group>"; };
@@ -478,10 +487,12 @@
 			isa = PBXGroup;
 			children = (
 				FDBC297F142FDA9800FABA0C /* FooBarData.xcdatamodeld */,
-				FD23F08B144153E8007EA7B6 /* ShopInfo.h */,
-				FD23F08C144153E8007EA7B6 /* ShopInfo.m */,
+				FD5211B914599E520089877A /* ShopInfo.h */,
+				FD5211BA14599E520089877A /* ShopInfo.m */,
 				FDBC297A142FDA7000FABA0C /* ShopInfoService.h */,
 				FDBC297B142FDA7000FABA0C /* ShopInfoService.m */,
+				FD5211BC14599E600089877A /* TransactionInfo.h */,
+				FD5211BD14599E600089877A /* TransactionInfo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -558,6 +569,10 @@
 				FDE79DDA143B544E00FB6AF3 /* APCWindow.m */,
 				FDBC29A7142FDAE600FABA0C /* APCArray.h */,
 				FDBC29A8142FDAE600FABA0C /* APCArray.m */,
+				FD5211B614599E350089877A /* APCDataModel.h */,
+				FD5211B714599E400089877A /* APCDataModel.m */,
+				FD5211BF145E0AEE0089877A /* APCDataModelService.h */,
+				FD5211C0145E0AEE0089877A /* APCDataModelService.m */,
 				FDBC29A9142FDAE600FABA0C /* APCDateUtil.h */,
 				FDBC29AA142FDAE600FABA0C /* APCDateUtil.m */,
 				FDBC29AB142FDAE600FABA0C /* APCJson.h */,
@@ -832,10 +847,13 @@
 				FD23F083143E8C6B007EA7B6 /* FBGetShopListForDevice.m in Sources */,
 				FD23F087143E8E1F007EA7B6 /* FBGetRedeemToken.m in Sources */,
 				FD23F08A14414A59007EA7B6 /* FBGetTokenForDevice.m in Sources */,
-				FD23F08D144153E8007EA7B6 /* ShopInfo.m in Sources */,
 				FD23F117144312B9007EA7B6 /* ImageFormCell.m in Sources */,
 				FD8835071447C3F400B4F0F9 /* APCImage.m in Sources */,
 				FD8F6A711456EE2C005D9981 /* FBQueryTransactions.m in Sources */,
+				FD5211B814599E400089877A /* APCDataModel.m in Sources */,
+				FD5211BB14599E520089877A /* ShopInfo.m in Sources */,
+				FD5211BE14599E600089877A /* TransactionInfo.m in Sources */,
+				FD5211C1145E0AEE0089877A /* APCDataModelService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

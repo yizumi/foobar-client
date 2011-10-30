@@ -1,8 +1,8 @@
 //
-//  FBShop.m
+//  ShopInfo.m
 //  foobar
 //
-//  Created by 泉 雄介 on 10/9/11.
+//  Created by 泉 雄介 on 10/27/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -21,6 +21,5 @@
 @dynamic firstVisit;
 @dynamic tel;
 @dynamic name;
-@dynamic key;
 
 @end

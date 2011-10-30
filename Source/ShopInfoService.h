@@ -7,30 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-#import <CoreData/NSManagedObjectContext.h>
 #import "ShopInfo.h"
-#import "APCArray.h"
+#import "APCDataModelService.h"
 
-@interface ShopInfoService : NSObject {
-    NSManagedObjectContext *_context;
+@interface ShopInfoService : APCDataModelService
+{
 }
 
-@property (readonly, nonatomic) NSManagedObjectContext *context;
-
 + (ShopInfoService *) sharedInstance;
-
-- (ShopInfo *) insertNew;
-- (void) commit;
-- (NSArray *) shops;
-- (NSURL *)applicationDocumentsDirectory;
-
-- (void) updateWithList:(NSArray*)array;
-- (void) updateWithDictionary:(NSDictionary*)obj;
+- (id) init;
 - (void) updateShopRedeemToken:(NSString*)token 
                   andExpiration:(NSDate*)expDate 
                        forShop:(NSNumber*)shopKey;
-- (ShopInfo *) getByIdentifier:(NSNumber*)shopKey;
-- (NSFetchedResultsController*) fetchShopInfos;
-
+- (NSFetchedResultsController*) fetchAll;
 @end

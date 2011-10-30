@@ -60,7 +60,7 @@
     
     self.navigationItem.leftBarButtonItem = refresh;
     self.navigationItem.title = @"Points";
-    self.fetchedResults = [[ShopInfoService sharedInstance] fetchShopInfos];
+    self.fetchedResults = [[ShopInfoService sharedInstance] fetchAll];
     [refresh release];
 }
 
@@ -179,7 +179,7 @@
     {
         NSArray* shops = [response objectForKey:@"shops"];
         [[ShopInfoService sharedInstance] updateWithList:shops];
-        self.fetchedResults = [[ShopInfoService sharedInstance] fetchShopInfos];
+        self.fetchedResults = [[ShopInfoService sharedInstance] fetchAll];
         UITableView* v = (UITableView*)self.view;
         [v reloadData];
     }
