@@ -10,7 +10,12 @@
 #import "FBCommandBase.h"
 
 @interface FBQueryTransactions : FBCommandBase
-{    
+{
 }
+
+@property (nonatomic, retain) NSNumber* shopKey;
+@property (nonatomic, retain) NSString* userToken;
+@property (nonatomic, retain) NSNumber* count;
+@property (nonatomic, retain) NSNumber* page;
 
 @end

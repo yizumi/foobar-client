@@ -25,6 +25,7 @@
 
 @property (nonatomic, retain) NSString* commandUrl;
 @property (nonatomic, assign) id <FBCommandBaseDelegate> delegate;
+@property (nonatomic, assign) id userObj;
 
 - (id) initWithUrl:(NSString*) url;
 - (void) buildRequest:(ASIFormDataRequest*) request;

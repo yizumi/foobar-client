@@ -23,6 +23,8 @@
 		FD283EBE13C02AED00FC57EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9713C02AED00FC57EE /* UIKit.framework */; };
 		FD283EBF13C02AED00FC57EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9913C02AED00FC57EE /* Foundation.framework */; };
 		FD283EC013C02AED00FC57EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */; };
+		FD421F1B146015DC00D62323 /* History.png in Resources */ = {isa = PBXBuildFile; fileRef = FD421F1A146015DC00D62323 /* History.png */; };
+		FD421F1F1460176F00D62323 /* TransactionInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = FD421F1E1460176F00D62323 /* TransactionInfoService.m */; };
 		FD48394D13DCD7BF00EA0397 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD48394C13DCD7BF00EA0397 /* libz.1.2.3.dylib */; };
 		FD48395013DCD7C600EA0397 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD48394F13DCD7C600EA0397 /* CFNetwork.framework */; };
 		FD48395213DCD7CD00EA0397 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD48395113DCD7CD00EA0397 /* SystemConfiguration.framework */; };
@@ -42,6 +44,7 @@
 		FD5211BE14599E600089877A /* TransactionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5211BD14599E600089877A /* TransactionInfo.m */; };
 		FD5211C1145E0AEE0089877A /* APCDataModelService.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5211C0145E0AEE0089877A /* APCDataModelService.m */; };
 		FD7F0E0513C486070061548E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7F0E0413C486070061548E /* CoreData.framework */; };
+		FD80807014688DE7001CBBB5 /* TransactionInfoExt.m in Sources */ = {isa = PBXBuildFile; fileRef = FD80806F14688DE7001CBBB5 /* TransactionInfoExt.m */; };
 		FD8835071447C3F400B4F0F9 /* APCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8835061447C3F300B4F0F9 /* APCImage.m */; };
 		FD8C3B8E141A2B99004D7A5C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FD8C3B8D141A2B99004D7A5C /* icon.png */; };
 		FD8F6A711456EE2C005D9981 /* FBQueryTransactions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8F6A701456EE2C005D9981 /* FBQueryTransactions.m */; };
@@ -111,6 +114,8 @@
 		FDE79DC91438965B00FB6AF3 /* FBLoginShop.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DC81438965B00FB6AF3 /* FBLoginShop.m */; };
 		FDE79DD414390DBB00FB6AF3 /* FBCreateShop.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DD314390DBB00FB6AF3 /* FBCreateShop.m */; };
 		FDE79DDB143B544E00FB6AF3 /* APCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DDA143B544E00FB6AF3 /* APCWindow.m */; };
+		FDF5018C1460140D00D6C8B6 /* HistoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF5018B1460140D00D6C8B6 /* HistoryView.xib */; };
+		FDF5018F1460145300D6C8B6 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF5018E1460145300D6C8B6 /* HistoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +151,9 @@
 		FD283E9713C02AED00FC57EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FD283E9913C02AED00FC57EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FD283E9B13C02AED00FC57EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD421F1A146015DC00D62323 /* History.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = History.png; path = Resources/History.png; sourceTree = SOURCE_ROOT; };
+		FD421F1D1460176F00D62323 /* TransactionInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionInfoService.h; path = Source/TransactionInfoService.h; sourceTree = "<group>"; };
+		FD421F1E1460176F00D62323 /* TransactionInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionInfoService.m; path = Source/TransactionInfoService.m; sourceTree = "<group>"; };
 		FD48394C13DCD7BF00EA0397 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		FD48394F13DCD7C600EA0397 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FD48395113DCD7CD00EA0397 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -182,6 +190,8 @@
 		FD5211BF145E0AEE0089877A /* APCDataModelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCDataModelService.h; path = Source/APCDataModelService.h; sourceTree = "<group>"; };
 		FD5211C0145E0AEE0089877A /* APCDataModelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCDataModelService.m; path = Source/APCDataModelService.m; sourceTree = "<group>"; };
 		FD7F0E0413C486070061548E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FD80806E14688DE7001CBBB5 /* TransactionInfoExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransactionInfoExt.h; path = Source/TransactionInfoExt.h; sourceTree = "<group>"; };
+		FD80806F14688DE7001CBBB5 /* TransactionInfoExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransactionInfoExt.m; path = Source/TransactionInfoExt.m; sourceTree = "<group>"; };
 		FD8835051447C3F200B4F0F9 /* APCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCImage.h; path = Source/APCImage.h; sourceTree = "<group>"; };
 		FD8835061447C3F300B4F0F9 /* APCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCImage.m; path = Source/APCImage.m; sourceTree = "<group>"; };
 		FD8C3B8D141A2B99004D7A5C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Images/icon.png; sourceTree = SOURCE_ROOT; };
@@ -293,6 +303,9 @@
 		FDE79DD314390DBB00FB6AF3 /* FBCreateShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBCreateShop.m; path = Source/FBCreateShop.m; sourceTree = "<group>"; };
 		FDE79DD9143B544E00FB6AF3 /* APCWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCWindow.h; path = Source/APCWindow.h; sourceTree = "<group>"; };
 		FDE79DDA143B544E00FB6AF3 /* APCWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCWindow.m; path = Source/APCWindow.m; sourceTree = "<group>"; };
+		FDF5018B1460140D00D6C8B6 /* HistoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HistoryView.xib; path = Source/HistoryView.xib; sourceTree = SOURCE_ROOT; };
+		FDF5018D1460145300D6C8B6 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = Source/HistoryViewController.h; sourceTree = SOURCE_ROOT; };
+		FDF5018E1460145300D6C8B6 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryViewController.m; path = Source/HistoryViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +386,7 @@
 				FD8E9BAE141AE1AC00F04696 /* BookPoints */,
 				FDE79DB514349D2B00FB6AF3 /* Common */,
 				FD8E9BB1141AE4E500F04696 /* CouponView */,
+				FDF501891460139100D6C8B6 /* History */,
 				FD8E9BAC141AE18B00F04696 /* ShowCodeView */,
 				FD8E9BAF141AE1C900F04696 /* ShopList */,
 				FDE79DAF143499A900FB6AF3 /* ShopLogin */,
@@ -405,6 +419,7 @@
 		FD283ED913C0812E00FC57EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD421F1A146015DC00D62323 /* History.png */,
 				FD110D6F1449C3810053C06B /* NoImage.png */,
 				FDBC2964142FDA3B00FABA0C /* ButtonAquaGreen.png */,
 				FDBC2965142FDA3B00FABA0C /* ButtonAquaRed.png */,
@@ -493,6 +508,10 @@
 				FDBC297B142FDA7000FABA0C /* ShopInfoService.m */,
 				FD5211BC14599E600089877A /* TransactionInfo.h */,
 				FD5211BD14599E600089877A /* TransactionInfo.m */,
+				FD421F1D1460176F00D62323 /* TransactionInfoService.h */,
+				FD421F1E1460176F00D62323 /* TransactionInfoService.m */,
+				FD80806E14688DE7001CBBB5 /* TransactionInfoExt.h */,
+				FD80806F14688DE7001CBBB5 /* TransactionInfoExt.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -663,6 +682,16 @@
 			name = Command;
 			sourceTree = "<group>";
 		};
+		FDF501891460139100D6C8B6 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FDF5018B1460140D00D6C8B6 /* HistoryView.xib */,
+				FDF5018D1460145300D6C8B6 /* HistoryViewController.h */,
+				FDF5018E1460145300D6C8B6 /* HistoryViewController.m */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -760,6 +789,8 @@
 				FD23F0901441CBE8007EA7B6 /* Localizable.strings in Resources */,
 				FD23F114144311A7007EA7B6 /* ImageFormCell.xib in Resources */,
 				FD110D701449C3810053C06B /* NoImage.png in Resources */,
+				FDF5018C1460140D00D6C8B6 /* HistoryView.xib in Resources */,
+				FD421F1B146015DC00D62323 /* History.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +885,9 @@
 				FD5211BB14599E520089877A /* ShopInfo.m in Sources */,
 				FD5211BE14599E600089877A /* TransactionInfo.m in Sources */,
 				FD5211C1145E0AEE0089877A /* APCDataModelService.m in Sources */,
+				FDF5018F1460145300D6C8B6 /* HistoryViewController.m in Sources */,
+				FD421F1F1460176F00D62323 /* TransactionInfoService.m in Sources */,
+				FD80807014688DE7001CBBB5 /* TransactionInfoExt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,7 @@
 
 @synthesize commandUrl;
 @synthesize delegate;
+@synthesize userObj;
 
 - (id) initWithUrl:(NSString*)url
 {

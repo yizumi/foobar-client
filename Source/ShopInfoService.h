@@ -20,4 +20,5 @@
                   andExpiration:(NSDate*)expDate 
                        forShop:(NSNumber*)shopKey;
 - (NSFetchedResultsController*) fetchAll;
+
 @end

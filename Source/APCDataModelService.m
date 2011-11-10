@@ -8,6 +8,7 @@
 
 #import "APCDataModelService.h"
 #import "APCArray.h"
+#import "TransactionInfoExt.h"
 
 @implementation APCDataModelService
 
@@ -140,7 +141,7 @@
     
     request = [[[NSFetchRequest alloc] init] autorelease];
     description = [NSEntityDescription entityForName:_tableName inManagedObjectContext:self.context];
-    sort = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease];
+    sort = [[[NSSortDescriptor alloc] initWithKey:@"key" ascending:YES] autorelease];
     predicate = [NSPredicate predicateWithFormat:@"key == %@", key];
     
     [request setEntity:description];
@@ -174,19 +175,32 @@
     [super dealloc];
 }
 
-/// Use this to fetch shop info for TableListView
-- (NSFetchedResultsController*) fetchAllSortBy:(NSString*)sortFld withSectionTitle:(NSString*)sectionFld
+- (NSFetchRequest*) createBaseRequest:(NSString*)sortFld ascending:(BOOL)ascending
 {
+    // The request
     NSFetchRequest* req = [[[NSFetchRequest alloc]init] autorelease];
-    
+
     // Entity Descriptor
     NSEntityDescription* entity = [NSEntityDescription entityForName:_tableName inManagedObjectContext:self.context];
     [req setEntity:entity];
     
-    // Sort Descriptor
-    NSSortDescriptor* sort = [[[NSSortDescriptor alloc]initWithKey:sortFld
-                                                         ascending:YES] autorelease];
-    [req setSortDescriptors:[NSArray arrayWithObject:sort]];
+    // Set the Sort Descriptor, if specified
+    if (sortFld != nil)
+    {
+        NSSortDescriptor* sort = [[[NSSortDescriptor alloc]initWithKey:sortFld
+                                                             ascending:ascending] autorelease];
+        [req setSortDescriptors:[NSArray arrayWithObject:sort]];
+    }
+    
+    return req;
+}
+
+/// Use this to fetch shop info for TableListView
+- (NSFetchedResultsController*) fetchAllSortBy:(NSString*)sortFld
+                                     ascending:(BOOL)ascending 
+                              withSectionTitle:(NSString*)sectionFld
+{
+    NSFetchRequest* req = [self createBaseRequest:sortFld ascending:ascending];
     
     // Fetch Controller
     NSFetchedResultsController* frc = [[[NSFetchedResultsController alloc] initWithFetchRequest:req
@@ -204,6 +218,58 @@
         NSLog( @"Oh no.. there is an error! %@", [error localizedDescription]);
         return nil;
     }
+}
+
+- (NSNumber*) getMaxOf:(NSString*)field
+{
+    return [self get:@"max" ofField:field];
+}
+
+- (NSNumber*) getMinOf:(NSString*)field
+{
+    return [self get:@"min" ofField:field];
+}
+
+- (NSNumber*) getSumOf:(NSString*)field
+{
+    return [self get:@"sum" ofField:field];
+}
+
+- (NSNumber*) getAvgOf:(NSString*)field
+{
+    return [self get:@"avg" ofField:field];
+}
+
+- (NSNumber*) get:(NSString*)fnc ofField:(NSString*)field
+{
+    NSFetchRequest* req = [self createBaseRequest:nil];
+    [req setResultType:NSDictionaryResultType];
+    
+    NSExpression *keyPathExpression = [NSExpression expressionForKeyPath:field];
+    NSExpression *exp = [NSExpression expressionForFunction:[NSString stringWithFormat:@"%@:", fnc]
+                                                                  arguments:[NSArray arrayWithObject:keyPathExpression]];
+    NSExpressionDescription *expDesc = [[[NSExpressionDescription alloc] init] autorelease];
+    [expDesc setName:@"result"];
+    [expDesc setExpression:exp];
+    // [expDesc setExpressionResultType:(NSAttributeType)];
+    
+    [req setPropertiesToFetch:[NSArray arrayWithObject:expDesc]];
+    
+    NSError* error = nil;
+    NSArray* objects = [self.context executeFetchRequest:req error:&error];
+    if (error)
+    {
+        NSLog(@"Error while fetching aggregate result: %@", error);
+    }
+    else
+    {
+       if ([objects count] > 0)
+       {
+           NSNumber* result = (NSNumber*)[[objects objectAtIndex:0] objectForKey:@"result"];
+           return result;
+       }
+    }
+    return nil;
 }
 
 

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface APCDateUtil : NSObject
+{
+}
 
 + (NSDateFormatter*) getJSONDateFormat;
 + (NSDate*) dateWithString:(NSString*) dateStr;

@@ -29,6 +29,14 @@
 - (void) updateWithList:(NSArray*)array;
 - (void) updateWithDictionary:(NSDictionary*)obj;
 - (void) buildDataModel:(APCDataModel*)model from:(NSDictionary*)dict;
-- (NSFetchedResultsController*) fetchAllSortBy:(NSString*)sortFld withSectionTitle:(NSString*)sectionFld;
+- (NSFetchedResultsController*) fetchAllSortBy:(NSString*)sortFld
+                                     ascending:(BOOL)ascending 
+                              withSectionTitle:(NSString*)sectionFld;
+
+- (NSNumber*) getMaxOf:(NSString*)field;
+- (NSNumber*) getMinOf:(NSString*)field;
+- (NSNumber*) getSumOf:(NSString*)field;
+- (NSNumber*) getAvgOf:(NSString*)field;
+- (NSNumber*) get:(NSString*)fnc ofField:(NSString*)field;
 
 @end

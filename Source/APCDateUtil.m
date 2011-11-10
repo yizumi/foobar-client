@@ -23,6 +23,7 @@ NSDateFormatter* JSON_DATEFORMAT;
 
 + (NSDate*) dateWithString:(NSString*)dateStr
 {
+    NSLog(@"I'm being called: %@", dateStr);
     dateStr = [dateStr stringByReplacingOccurrencesOfString:@"T" withString:@""];
     NSDate* expirationDate = [[self getJSONDateFormat] dateFromString:dateStr];
     return expirationDate;

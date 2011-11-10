@@ -70,6 +70,7 @@ static ShopInfoService *_sharedInstance = nil;
 - (NSFetchedResultsController*) fetchAll
 {
     return [self fetchAllSortBy:@"name"
+                      ascending:YES
                withSectionTitle:@"sectionTitle"];
 }
 
