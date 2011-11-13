@@ -2,6 +2,11 @@ foobar-client
 
 (x) Reduce the size of image before sending
 ( ) 1. Create Transaction Page
+	(x) Modeling
+	(x) Querying
+	(x) Caching
+	(x) Showing
+	( ) Deleting
 ( ) 2. Create Terms of Service link in ShopLogin screen
 (x) Enable Calling from Telephone number button
 (x) In ShopView screen, unselect the UITableViewItem when selected.
