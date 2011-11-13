@@ -8,6 +8,8 @@
 
 #import "HistoryViewController.h"
 #import "TransactionInfo.h"
+#import "FBConfig.h"
+#import "HistoryCell.h"
 
 @implementation HistoryViewController
 
@@ -52,7 +54,7 @@
     self.fetchedResults = [[TransactionInfoService sharedInstance] fetchAll];
     
     // Also initialize the load for the most recent history items
-    [[TransactionInfoService sharedInstance] synchronizeData:page withDelegate:self];    
+    [[TransactionInfoService sharedInstance] synchronizeData:page withDelegate:self];  
 }
 
 - (void)viewDidUnload
@@ -70,6 +72,13 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    if ([[FBConfig sharedInstance] refreshHistory])
+    {
+        page = 0;
+        [[FBConfig sharedInstance] setRefreshHistory:NO];
+        [[TransactionInfoService sharedInstance] synchronizeData:page withDelegate:self];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -89,6 +98,11 @@
 }
 
 #pragma mark - Table view data source
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 48;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -125,11 +139,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"HistoryCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HistoryCell* cell = (HistoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        UIViewController* ctrl = [[UIViewController alloc]initWithNibName:CellIdentifier bundle:nil];
+        cell = (HistoryCell*)ctrl.view;
+        [ctrl release];
     }
     
     // Is this the last section?
@@ -144,7 +160,7 @@
     }
     // Configure the cell...
     TransactionInfo* hist = (TransactionInfo*)[self.fetchedResults objectAtIndexPath:indexPath];
-    cell.textLabel.text = hist.shopName;   
+    [cell bind:hist];
     
     return cell;
 }
@@ -164,7 +180,24 @@
             return;
         }
     }
-    
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return yes 
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSLog(@"To Delete");
+    }
 }
 
 // ================================ TransactionInfoServiceDelegate ================================

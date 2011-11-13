@@ -18,6 +18,7 @@ extern NSString* const K_DEFAULTS_SHOP_KEY; // as long
 extern NSString* const K_DEFAULTS_SHOP_NAME; // as NSString
 extern NSString* const K_DEFAULTS_USER_TOKEN; // as NSString
 extern NSString* const K_DEFAULTS_REFRESH_SHOP_LIST; // as boolean
+extern NSString* const K_DEFAULTS_REFRESH_HISTORY; // as boolean
 
 + (FBConfig*) sharedInstance;
 - (FBConfig*) init;
@@ -28,5 +29,6 @@ extern NSString* const K_DEFAULTS_REFRESH_SHOP_LIST; // as boolean
 @property (nonatomic, readonly) NSString* deviceToken;
 @property (nonatomic) BOOL refreshShopList;
 @property (nonatomic, retain) NSString* shopName;
+@property (nonatomic) BOOL refreshHistory;
 
 @end

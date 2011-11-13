@@ -242,7 +242,7 @@
 
 - (NSNumber*) get:(NSString*)fnc ofField:(NSString*)field
 {
-    NSFetchRequest* req = [self createBaseRequest:nil];
+    NSFetchRequest* req = [self createBaseRequest:nil ascending:YES];
     [req setResultType:NSDictionaryResultType];
     
     NSExpression *keyPathExpression = [NSExpression expressionForKeyPath:field];
@@ -271,7 +271,5 @@
     }
     return nil;
 }
-
-
 
 @end

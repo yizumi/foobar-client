@@ -20,3 +20,8 @@
 "ShopLogin_ButtonPhotoLibrary" = "Photo Library";
 "ShopLogin_ButtonPhotoAlbum" = "Photo Album";
 "ShopLogin_ShopImage" = "Select Photo";
+"HistoryCell_DateFormat" = "MMM d, yyyy";
+"HistoryCell_IssuedPoints" = "Issued";
+"HistoryCell_RedeemedPoints" = "Redeemed";
+"HistoryCell_ReceivedPoints" = "Received";
+"HistoryCell_UsedPoints" = "Used";

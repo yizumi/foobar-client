@@ -33,6 +33,7 @@
     NSLog( @"Current Test Value: %d", num);
     [[FBConfig sharedInstance] setTest:num+1];
     [[FBConfig sharedInstance] setRefreshShopList:YES];
+    [[FBConfig sharedInstance] setRefreshHistory:YES];
     
     // Ask APNS to provide the app with device token.
     // This will invoke application:didRegisterForRemoteNotificationsWithDeviceToken

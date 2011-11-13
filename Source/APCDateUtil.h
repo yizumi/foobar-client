@@ -7,6 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@interface NSDate (APCDateUtil)
+
+- (NSString*) toString:(NSString*)format;
+
+@end
 
 @interface APCDateUtil : NSObject
 {

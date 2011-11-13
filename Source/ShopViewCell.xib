@@ -2,7 +2,7 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1056</int>
-		<string key="IBDocument.SystemVersion">10K540</string>
+		<string key="IBDocument.SystemVersion">10K549</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1306</string>
 		<string key="IBDocument.AppKitVersion">1038.36</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
@@ -70,7 +70,10 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
 								</object>
-								<nil key="IBUIHighlightedColor"/>
+								<object class="NSColor" key="IBUIHighlightedColor" id="702709466">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAxIDEAA</bytes>
+								</object>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 								<float key="IBUIMinimumFontSize">15</float>
@@ -95,7 +98,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<reference key="IBUITextColor" ref="648637458"/>
-								<nil key="IBUIHighlightedColor"/>
+								<reference key="IBUIHighlightedColor" ref="702709466"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 								<int key="IBUITextAlignment">2</int>
@@ -130,7 +133,7 @@
 									<int key="NSfFlags">16</int>
 								</object>
 								<reference key="IBUITextColor" ref="648637458"/>
-								<nil key="IBUIHighlightedColor"/>
+								<reference key="IBUIHighlightedColor" ref="702709466"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 							</object>
@@ -149,7 +152,7 @@
 								<string key="IBUIText">ポイント残高</string>
 								<reference key="IBUIFont" ref="206305445"/>
 								<reference key="IBUITextColor" ref="648637458"/>
-								<nil key="IBUIHighlightedColor"/>
+								<reference key="IBUIHighlightedColor" ref="702709466"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 							</object>
@@ -171,7 +174,7 @@
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MC4xMjc3OTUzMTI2IDAuNTIxNTY4NjU2IDAuMDU4MTY4Njc2NwA</bytes>
 								</object>
-								<nil key="IBUIHighlightedColor"/>
+								<reference key="IBUIHighlightedColor" ref="702709466"/>
 								<int key="IBUIBaselineAdjustment">1</int>
 								<float key="IBUIMinimumFontSize">10</float>
 								<int key="IBUITextAlignment">2</int>
@@ -196,10 +199,7 @@
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="130977954"/>
-				<object class="NSColor" key="IBUIBackgroundColor">
-					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MSAxIDEAA</bytes>
-				</object>
+				<reference key="IBUIBackgroundColor" ref="702709466"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISeparatorStyle">1</int>
 				<reference key="IBUIContentView" ref="130977954"/>

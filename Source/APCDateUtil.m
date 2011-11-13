@@ -8,6 +8,18 @@
 
 #import "APCDateUtil.h"
 
+@implementation NSDate (APCDateUtil)
+
+- (NSString*) toString:(NSString *)format
+{
+    if (format == nil) return nil;
+    NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateFormat:format];
+    return [formatter stringFromDate:self];
+}
+
+@end
+
 @implementation APCDateUtil
 
 NSDateFormatter* JSON_DATEFORMAT;

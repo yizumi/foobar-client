@@ -20,3 +20,8 @@
 "ShopLogin_ButtonPhotoLibrary" = "フォトライブラリ";
 "ShopLogin_ButtonPhotoAlbum" = "アルバム";
 "ShopLogin_ShopImage" = "ショップの写真を選択";
+"HistoryCell_DateFormat" = "y年M月d日";
+"HistoryCell_IssuedPoints" = "付与";
+"HistoryCell_RedeemedPoints" = "償還";
+"HistoryCell_ReceivedPoints" = "加算";
+"HistoryCell_UsedPoints" = "利用";

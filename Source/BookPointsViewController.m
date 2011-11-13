@@ -240,6 +240,7 @@
         NSString* message = [NSString stringWithFormat:@"残高は%dPt.です", [points intValue]];
         [APCWindow alert:message withTitle:@"ポイント加算完了"];
         [[FBConfig sharedInstance] setRefreshShopList:YES];
+        [[FBConfig sharedInstance] setRefreshHistory:YES];
         [self.navigationController popViewControllerAnimated:YES];
     }
     
@@ -249,6 +250,7 @@
         NSString* message = [NSString stringWithFormat:@"残高は%dPt.です", [points intValue]];
         [APCWindow alert:message withTitle:@"ポイント償還完了"];
         [[FBConfig sharedInstance] setRefreshShopList:YES];
+        [[FBConfig sharedInstance] setRefreshHistory:YES];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }

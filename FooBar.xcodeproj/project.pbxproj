@@ -106,6 +106,9 @@
 		FDBC29FF1430979800FABA0C /* FooBarTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDBC29FB1430976100FABA0C /* FooBarTests-Info.plist */; };
 		FDBC2A001430A52E00FABA0C /* FooBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBC29F91430974A00FABA0C /* FooBarTests.m */; };
 		FDD22EF213E01F9D0048D284 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD22EF113E01F9D0048D284 /* SenTestingKit.framework */; };
+		FDE4ED6D146D56B50004CC7E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE4ED6C146D56B50004CC7E /* HistoryCell.xib */; };
+		FDE4ED71146D57730004CC7E /* HistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE4ED70146D57730004CC7E /* HistoryCell.m */; };
+		FDE4ED74146E28DF0004CC7E /* APCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE4ED73146E28DE0004CC7E /* APCColor.m */; };
 		FDE79DB114349ABF00FB6AF3 /* ShopLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE79DB014349ABF00FB6AF3 /* ShopLogin.xib */; };
 		FDE79DB414349B8F00FB6AF3 /* ShopLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE79DB314349B8F00FB6AF3 /* ShopLoginViewController.m */; };
 		FDE79DB914349E1C00FB6AF3 /* TextFormCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDE79DB814349E1C00FB6AF3 /* TextFormCell.xib */; };
@@ -289,6 +292,11 @@
 		FDBC29FC1430976100FABA0C /* FooBarTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FooBarTests-Prefix.pch"; path = "Tests/FooBarTests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		FDBC2A0A1433349C00FABA0C /* foobar-tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "foobar-tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD22EF113E01F9D0048D284 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/Developer/Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		FDE4ED6C146D56B50004CC7E /* HistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HistoryCell.xib; path = Source/HistoryCell.xib; sourceTree = SOURCE_ROOT; };
+		FDE4ED6F146D57730004CC7E /* HistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryCell.h; path = Source/HistoryCell.h; sourceTree = SOURCE_ROOT; };
+		FDE4ED70146D57730004CC7E /* HistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryCell.m; path = Source/HistoryCell.m; sourceTree = SOURCE_ROOT; };
+		FDE4ED72146E28DE0004CC7E /* APCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APCColor.h; path = Source/APCColor.h; sourceTree = "<group>"; };
+		FDE4ED73146E28DE0004CC7E /* APCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APCColor.m; path = Source/APCColor.m; sourceTree = "<group>"; };
 		FDE79DB014349ABF00FB6AF3 /* ShopLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShopLogin.xib; path = Source/ShopLogin.xib; sourceTree = SOURCE_ROOT; };
 		FDE79DB214349B8F00FB6AF3 /* ShopLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopLoginViewController.h; path = Source/ShopLoginViewController.h; sourceTree = SOURCE_ROOT; };
 		FDE79DB314349B8F00FB6AF3 /* ShopLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShopLoginViewController.m; path = Source/ShopLoginViewController.m; sourceTree = SOURCE_ROOT; };
@@ -602,6 +610,8 @@
 				FDBC29B0142FDAE600FABA0C /* APCString.m */,
 				FD8835051447C3F200B4F0F9 /* APCImage.h */,
 				FD8835061447C3F300B4F0F9 /* APCImage.m */,
+				FDE4ED72146E28DE0004CC7E /* APCColor.h */,
+				FDE4ED73146E28DE0004CC7E /* APCColor.m */,
 			);
 			name = APC;
 			sourceTree = "<group>";
@@ -688,6 +698,9 @@
 				FDF5018B1460140D00D6C8B6 /* HistoryView.xib */,
 				FDF5018D1460145300D6C8B6 /* HistoryViewController.h */,
 				FDF5018E1460145300D6C8B6 /* HistoryViewController.m */,
+				FDE4ED6C146D56B50004CC7E /* HistoryCell.xib */,
+				FDE4ED6F146D57730004CC7E /* HistoryCell.h */,
+				FDE4ED70146D57730004CC7E /* HistoryCell.m */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -791,6 +804,7 @@
 				FD110D701449C3810053C06B /* NoImage.png in Resources */,
 				FDF5018C1460140D00D6C8B6 /* HistoryView.xib in Resources */,
 				FD421F1B146015DC00D62323 /* History.png in Resources */,
+				FDE4ED6D146D56B50004CC7E /* HistoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,6 +902,8 @@
 				FDF5018F1460145300D6C8B6 /* HistoryViewController.m in Sources */,
 				FD421F1F1460176F00D62323 /* TransactionInfoService.m in Sources */,
 				FD80807014688DE7001CBBB5 /* TransactionInfoExt.m in Sources */,
+				FDE4ED71146D57730004CC7E /* HistoryCell.m in Sources */,
+				FDE4ED74146E28DF0004CC7E /* APCColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
