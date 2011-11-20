@@ -92,9 +92,12 @@
 // refreshes the persisted shop information with the given list of
 // dictionaries.
 //
-- (void) updateWithList:(NSArray*)shops
+- (void) updateWithList:(NSArray*)items
 {
-    [shops forEach:^(id item) {
+    if (items == nil)
+        return;
+    
+    [items forEach:^(id item) {
         NSDictionary* dict = (NSDictionary*)item;
         // Deserialize the object
         [self updateWithDictionary:dict];

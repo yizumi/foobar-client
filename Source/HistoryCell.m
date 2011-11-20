@@ -10,6 +10,7 @@
 #import "APCDateUtil.h"
 #import "FBConfig.h"
 #import "APCColor.h"
+#import "HistoryViewController.h"
 
 @implementation HistoryCell
 @synthesize dateLabel;
@@ -22,8 +23,7 @@
 - (NSString*) getAddOrRedeemText:(TransactionInfo*) trans
 {
     // Detect case when the user is on the shop-side of the transaction
-    long shopKey = [[FBConfig sharedInstance] shopKey];
-    if (shopKey == [trans.shopKey longValue])
+    if ([HistoryViewController isShopRecord:trans])
     {
         // Points Issued
         if ([trans.addOrRedeem isEqual:@"Add"])
@@ -39,8 +39,7 @@
 // Returns
 - (UIColor*) getColor:(TransactionInfo*) trans
 {
-    long shopKey = [[FBConfig sharedInstance] shopKey];
-    if (shopKey == [trans.shopKey longValue])
+    if ([HistoryViewController isShopRecord:trans])
     {
         // Points Issued
         if ([trans.addOrRedeem isEqual:@"Add"])
@@ -98,6 +97,16 @@
     frame2.origin.x = frame.origin.x + frame.size.width + 2;
     addOrRedeemLabel.frame = frame2;
     [addOrRedeemLabel setTextColor:[self getColor:trans]];
+    
+    if ([trans.isCancelled boolValue])
+    {
+        [dateLabel setTextColor:[UIColor grayColor]];
+        [shopNameLabel setTextColor:[UIColor grayColor]];
+        [addOrRedeemLabel setTextColor:[UIColor grayColor]];
+        [pointsLabel setTextColor:[UIColor grayColor]];
+    }
+    
+    NSLog(@"Item %@ has a cancelled flag of %@", trans.key, trans.isCancelled);
 }
 
 

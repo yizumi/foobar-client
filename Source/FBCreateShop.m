@@ -59,9 +59,9 @@
 {
     switch (failCode)
     {
-        case 1: return @"そのメールアドレスは既に使用されています";
-        case 2: return @"必須項目が入力されていません";
-        default: return @"不明なエラーが発生しました";
+        case 1: return NSLocalizedString(@"FBCreateShop_MailAddressInUser",@"");
+        case 2: return NSLocalizedString(@"FBCreateShop_MissingRequiredFields",@"");
+        default: return NSLocalizedString(@"FBCommandBase_UnexpectedError",@"");
     }
 }
 

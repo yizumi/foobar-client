@@ -28,8 +28,8 @@
 {
     switch (failCode)
     {
-        case 1: return @"デバイスが登録されていません";
-        default: return @"不明なエラーが発生しました";
+        case 1: return NSLocalizedString(@"FBGetShopListForDevice_DeviceNotFound",@"");
+        default: return NSLocalizedString(@"FBCommandBase_UnexpectedError",@"");
     }
 }
 

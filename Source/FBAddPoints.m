@@ -40,11 +40,11 @@
 {
     switch (failCode)
     {
-        case 10: return @"ユーザが見つかりません";
-        case 20: return @"ショップが見つかりません";
-        case 30: return @"ユーザのポイントが上限に達しています";
-        case 40: return @"ショップの付与可能ポイントが上限に達しています";
-        default: return @"不明なエラーが発生しました";
+        case 10: return NSLocalizedString(@"FBAddPoints_UserNotFound",@"");
+        case 20: return NSLocalizedString(@"FBAddPoints_ShopNotFound",@"");
+        case 30: return NSLocalizedString(@"FBAddPoints_ExceedsLimit",@"");
+        case 40: return NSLocalizedString(@"FBAddPoints_ExceedsReserve",@"");
+        default: return NSLocalizedString(@"FBCommandBase_UnexpectedError",@"");
     }
 }
 

@@ -52,6 +52,22 @@ static ShopInfoService *_sharedInstance = nil;
     NSLog(@"Saved redemption code for %@", shopKey);
 }
 
+- (void) updateRemainingPoints:(NSNumber*)points
+                       forShop:(NSNumber*)shopKey
+{
+    ShopInfo* shop = (ShopInfo*)[self getByKey:shopKey];
+    if (shop == nil)
+    {
+        NSLog(@"Error: Could not find shop by identifier: %@", shopKey);
+        return;
+    }
+    
+    shop.points = points;
+    
+    [self commit];
+    NSLog(@"Saved remaining points for ShopInfo(%@", shopKey);
+}
+
 - (void)buildDataModel:(APCDataModel *)model from:(NSDictionary *)obj
 {
     ShopInfo* shop = (ShopInfo*)model;

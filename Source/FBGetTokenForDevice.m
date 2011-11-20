@@ -33,8 +33,8 @@
 {
     switch (failCode)
     {
-        case 1: return @"デバイスIDがMissingです";
-        default: return @"不明なエラーが発生しました";
+        case 1: return NSLocalizedString(@"FBGetTokenForDevice_DeviceNotFound",@"");
+        default: return NSLocalizedString(@"FBCommandBase_UnexpectedError",@"");
     }
 }
 

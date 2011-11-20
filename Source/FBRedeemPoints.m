@@ -32,11 +32,11 @@
 {
     switch (failCode)
     {
-        case 1: return @"ショップIDが無効です";
-        case 2: return @"償還用トークンが無効です";
-        case 3: return @"ポイントが足りません";
-        case 4: return @"償還用トークンが期限切れです";
-        default: return @"不明なエラーが発生しました";
+        case 1: return NSLocalizedString(@"FBRedeemPoints_InvalidShopId",@"");
+        case 2: return NSLocalizedString(@"FBRedeemPoints_InvalidRedemptionCode",@"");
+        case 3: return NSLocalizedString(@"FBRedeemPoints_NotEnoughPoints",@"");
+        case 4: return NSLocalizedString(@"FBRedeemPoints_ExpiredRedemptionCode",@"");
+        default: return NSLocalizedString(@"FBCommandBase_UnexpectedError",@"");
     }
 }
 

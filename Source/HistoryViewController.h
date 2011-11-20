@@ -8,15 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "TransactionInfo.h"
 #import "TransactionInfoService.h"
 
 @interface HistoryViewController : UITableViewController
-    <TransactionInfoServiceDelegate>
+    <TransactionInfoServiceDelegate,FBCommandBaseDelegate>
 {
     @private
     int page;
     BOOL canLoadMore;
 }
+
++ (BOOL) isShopRecord:(TransactionInfo*)tran;
 
 @property (nonatomic, retain) NSFetchedResultsController* fetchedResults;
 

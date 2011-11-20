@@ -10,11 +10,17 @@
 #import "TransactionInfo.h"
 #import "FBConfig.h"
 #import "HistoryCell.h"
+#import "FBCancelTransaction.h"
+#import "ShopInfoService.h"
 
 @implementation HistoryViewController
 
 @synthesize fetchedResults;
 
++ (BOOL) isShopRecord:(TransactionInfo*)tran
+{
+    return [[tran shopKey] longValue] == [[FBConfig sharedInstance] shopKey];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -54,7 +60,7 @@
     self.fetchedResults = [[TransactionInfoService sharedInstance] fetchAll];
     
     // Also initialize the load for the most recent history items
-    [[TransactionInfoService sharedInstance] synchronizeData:page withDelegate:self];  
+    // [[TransactionInfoService sharedInstance] synchronizeData:page withDelegate:self];  
 }
 
 - (void)viewDidUnload
@@ -141,6 +147,24 @@
 {
     static NSString *CellIdentifier = @"HistoryCell";
     
+    // Is this the last section?
+    if (indexPath.section == [[self.fetchedResults sections] count] -1)
+    {
+        id<NSFetchedResultsSectionInfo> info = [[self.fetchedResults sections] objectAtIndex:indexPath.section];
+        if (indexPath.row == [info numberOfObjects])
+        {
+            UITableViewCell* cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"TableViewCell"];
+            if (cell == nil)
+            {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                               reuseIdentifier:@"TableViewCell"];
+                [cell autorelease];
+            }
+            cell.textLabel.text = NSLocalizedString(@"HistoryViewController_LoadMore",@"");
+            return cell;
+        }
+    }
+
     HistoryCell* cell = (HistoryCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         UIViewController* ctrl = [[UIViewController alloc]initWithNibName:CellIdentifier bundle:nil];
@@ -148,16 +172,6 @@
         [ctrl release];
     }
     
-    // Is this the last section?
-    if (indexPath.section == [[self.fetchedResults sections] count] -1)
-    {
-        id<NSFetchedResultsSectionInfo> info = [[self.fetchedResults sections] objectAtIndex:indexPath.section];
-        if (indexPath.row == [info numberOfObjects])
-        {
-            cell.textLabel.text = @"Load More";
-            return cell;
-        }
-    }
     // Configure the cell...
     TransactionInfo* hist = (TransactionInfo*)[self.fetchedResults objectAtIndexPath:indexPath];
     [cell bind:hist];
@@ -184,8 +198,17 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return yes 
-    return YES;
+    if (indexPath.section == [[self.fetchedResults sections] count] -1)
+    {
+        id<NSFetchedResultsSectionInfo> info = [[self.fetchedResults sections] objectAtIndex:indexPath.section];
+        if (indexPath.row == [info numberOfObjects])
+        {
+            return NO;
+        }
+    }
+    // Return yes if it's a store's property
+    TransactionInfo* tran = (TransactionInfo*)[self.fetchedResults objectAtIndexPath:indexPath];
+    return [HistoryViewController isShopRecord:tran];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -196,7 +219,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        NSLog(@"To Delete");
+        TransactionInfo* tran = (TransactionInfo*)[self.fetchedResults objectAtIndexPath:indexPath];
+        if ([HistoryViewController isShopRecord:tran])
+        {
+            FBCancelTransaction* cmd = [[[FBCancelTransaction alloc] init] autorelease];
+            cmd.delegate = self;
+            cmd.transactionKey = tran.key;
+            [cmd execAsync];
+        }
     }
 }
 
@@ -212,5 +242,36 @@
     [t setNeedsDisplay];
     page++;
 }
+
+// ================================ FBCommandBaseDelegate ================================
+- (void)execSuccess:(id)request withResponse:(id)response
+{
+    if ([request class] == [FBCancelTransaction class])
+    {
+        NSDictionary* dict = (NSDictionary*)response;
+        
+        // we need to mark the item as cancelled
+        NSNumber* key = (NSNumber*)[dict valueForKey:@"transactionKey"];
+        [[TransactionInfoService sharedInstance] markItemAsCancelled:key];
+        
+        // Remove the item from the database
+        self.fetchedResults = [[TransactionInfoService sharedInstance] fetchAll];
+        UITableView* table = (UITableView*)self.view;
+        [table reloadData];
+        [table setNeedsDisplay];
+        [table setNeedsLayout];
+        
+        // Let's update the shop info if user is, YOU!
+        NSString* userToken = (NSString*)[dict valueForKey:@"userToken"];
+        if ([[[FBConfig sharedInstance] userToken] isEqualToString:userToken])
+        {
+            NSNumber* shopKey = (NSNumber*)[dict valueForKey:@"shopKey"];
+            NSNumber* remainingPoints = (NSNumber*)[dict valueForKey:@"remainingPoints"];
+            [[ShopInfoService sharedInstance] updateRemainingPoints:remainingPoints forShop:shopKey];
+            [FBConfig sharedInstance].refreshShopList = YES;
+        }
+    }
+}
+
 
 @end

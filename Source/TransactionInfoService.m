@@ -54,6 +54,7 @@ static TransactionInfoService *_sharedInstance = nil;
         trans.shopMessage = nil;
     trans.shopName = (NSString*)[obj valueForKey:@"shopName"];
     trans.userName = (NSString*)[obj valueForKey:@"userName"];
+    trans.isCancelled = (NSNumber*)[obj valueForKey:@"cancelled"];
 }
 
 - (NSFetchedResultsController*) fetchAll
@@ -70,7 +71,7 @@ static TransactionInfoService *_sharedInstance = nil;
     cmd.delegate = self;
     cmd.shopKey = [NSNumber numberWithLong:[[FBConfig sharedInstance] shopKey]];
     cmd.userToken = [[FBConfig sharedInstance] userToken];
-    cmd.count = [NSNumber numberWithInt:25];
+    cmd.count = [NSNumber numberWithInt:5];
     cmd.page = [NSNumber numberWithInt:page];
     cmd.userObj = delegate;
     [cmd execAsync];
@@ -103,4 +104,25 @@ static TransactionInfoService *_sharedInstance = nil;
         }
     }
 }
+
+// Loads the item, toggles the isCancelled flag, saves the item.
+- (void) markItemAsCancelled:(NSNumber *)key
+{
+    // Load the item
+    TransactionInfo* tran = (TransactionInfo*)[self getByKey:key];
+    if (tran == nil)
+    {
+        NSLog(@"Could not find TransactionInfo(%@)", key);
+        return;
+    }
+    
+    // toggle the flag
+    tran.isCancelled = [NSNumber numberWithBool:YES];
+    
+    // save the item
+    [self commit];  
+    
+    NSLog(@"Marked the transaction as Cancelled");
+}
+
 @end

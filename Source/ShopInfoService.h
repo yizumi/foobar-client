@@ -19,6 +19,8 @@
 - (void) updateShopRedeemToken:(NSString*)token 
                   andExpiration:(NSDate*)expDate 
                        forShop:(NSNumber*)shopKey;
+- (void) updateRemainingPoints:(NSNumber*)points
+                       forShop:(NSNumber*)shopKey;
 - (NSFetchedResultsController*) fetchAll;
 
 @end

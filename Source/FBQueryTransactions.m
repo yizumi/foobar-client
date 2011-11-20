@@ -49,10 +49,10 @@
 {
     switch (failCode)
     {
-        case 1: return @"クエリーに必要なパラメータが足りません";
-        case 2: return @"ユーザIDが不明です";
-        case 3: return @"ショップIDが不明です";
-        default: return @"不明なエラーが発生しました";
+        case 1: return NSLocalizedString(@"FBQueryTransaction_MissingParameters",@"");
+        case 2: return NSLocalizedString(@"FBQueryTransaction_UserNotFound",@"");
+        case 3: return NSLocalizedString(@"FBQueryTransaction_ShopNotFound",@"");
+        default: return NSLocalizedString(@"FBCommandBase_UnexpectedError",@"");
     }
 }
 

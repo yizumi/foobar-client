@@ -36,4 +36,7 @@
 // Asynchronously synchronizes the local data with the remote persistence
 - (void) synchronizeData:(int)page withDelegate:(id<TransactionInfoServiceDelegate>)delegate;
 
+// Marks the item as canelled
+- (void) markItemAsCancelled:(NSNumber*)key;
+
 @end

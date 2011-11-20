@@ -177,7 +177,11 @@
 {
     if ([request class] == [FBGetShopListForDevice class])
     {
-        NSArray* shops = [response objectForKey:@"shops"];
+        NSDictionary* dict = (NSDictionary*)response;
+        id items = [dict objectForKey:@"shops"];
+        if (items == nil || [items class] == [NSNull class]) return;
+        
+        NSArray* shops = (NSArray*)items;
         [[ShopInfoService sharedInstance] updateWithList:shops];
         self.fetchedResults = [[ShopInfoService sharedInstance] fetchAll];
         UITableView* v = (UITableView*)self.view;
